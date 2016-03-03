@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="app.sys.systemmgr.usermanager.action" extends="app" namespace="/test">
+        <!--用户登录-->
+        <action name="userMgrAction"  class="app.sys.test.action.UserMgrAction">
+            <result name="success">/test/userLogin.jsp</result>
+            <result name="input">/test/userLogin.jsp</result>
+            <result name="loginSuccess">/test/home.jsp</result>
+        </action>
+        <action name="leaveMgrAction"  class="app.sys.test.action.LeaveAction">
+            <result name="success">/test/home.jsp</result>
+            <result name="task_show">/test/taskList.jsp</result>
+            <result name="task-deptLeaderVerify">/test/taskHandlePage/task-deptLeaderVerify.jsp</result>
+            <result name="task-hrVerify">/test/taskHandlePage/task-hrVerify.jsp</result>
+            <result name="task-modifyApply">/test/taskHandlePage/task-modifyApply.jsp</result>
+            <result name="task-reportBack">/test/taskHandlePage/task-reportBack.jsp</result>
+            <result name="claimed" type="redirect">leaveMgrAction!getTaskList</result>
+        </action>
+    </package>
+</struts>
