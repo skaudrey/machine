@@ -1,5 +1,9 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +19,12 @@
 	<script type="text/javascript" src="js/basic.js" ></script>
 	<script type="text/javascript" src="js/jquery/jquery.cookie.min.js" ></script>
 	<script type="text/javascript" src="js/control-left.js"></script>
+    <!--滚动条插件  -->
+    <link rel="stylesheet" href="css/dmz/jquery.mCustomScrollbar.css" />
+    <script src="js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/mScrollBar/jquery.mousewheel.min.js"></script>
+    <script src="js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="js/dmz/setCustomScrollBar.js"></script>
 
 </head>
 <body>
@@ -76,46 +86,92 @@
 	</div>
 </nav>
 <div class="page">
-	<div id="sidebar" class="sidebar">
-		<div class="sidebar-menu nav-collapse">
+	<div id="sidebar" class="sidebar scroller" style="height: 600px">
+		<div class="sidebar-menu nav-collapse ">
 			<div class="divide-20"></div>
 			<div id="search-bar">
 				<input type="text" class="form-control search"  placeholder="Search">
 				<i class="fa fa-search search-icon"></i>
 			</div>
-			<ul id="leftcontent">
 
-				<li class="has-sub">
-					<a href="/DmzModual!getModual" class="">
-						<i class="fa fa-th-large fa-fw"></i>
-						<span class="menu-text">地名志系统</span>
-						<i  class="fa fa-caret-left arrow"></i>
+                <ul id="leftcontent">
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">空间信息基础平台管理</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">用户部门权限管理</span>
 
-					</a>
-				</li>
-				<li class="has-sub">
-					<a href="javascript:;" class="">
-						<i class="fa fa-th-large fa-fw"></i>
-						<span class="menu-text">第二篇 名胜古迹</span>
-						<i  class="fa fa-caret-left arrow"></i>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">地名数据管理</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">地名业务管理</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">门牌业务管理</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">行政区划管理</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="_dmz/dmz.jsp">
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">界桩界限管理</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="_dmz/dmz.jsp" class="">
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">地名志系统</span>
 
-					</a>
-					<ul class="sub">
-						<li class="has-sub-sub">
-							<a href="javascript:;" class=""><span class="sub-menu-text">第一章 风景名胜</span>
-								<i  class="fa fa-caret-left arrow"></i>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">统计与分析</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">地名成果应用</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">系统维护子系统</span>
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="javascript:;" class="">
+                            <i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">统计与分析</span>
+                        </a>
+                    </li>
+                </ul>
 
-							</a>
-							<ul class="sub-sub">
-								<li><a class="" href="#"><span class="sub-sub-menu-text">第一节 风景名胜区</span></a></li>
-								<li><a class="" href="#"><span class="sub-sub-menu-text">第二节 风景点</span></a></li>
-							</ul>
-						</li>
-						<li><a class="" href="orders.html"><span class="sub-menu-text">第二章 古迹、古建筑</span></a></li>
-						<li><a class="" href="orders.html"><span class="sub-menu-text">第三章 纪念地</span></a></li>
-					</ul>
-				</li>
-			</ul>
+
 
 		</div>
 	</div>
@@ -138,19 +194,19 @@
 	</div>
 </div>
 
-<s:iterator value="store3" status="st" var="obj">
-	<input type="hidden" name="level" id="level<s:property value="#obj.priId" />" value="<s:property value="#obj.level" />">
-	<input type="hidden" name="priId" id="priId<s:property value="#obj.priId" />" value="<s:property value="#obj.priId" />" >
-	<input type="hidden" name="name" id="name<s:property value="#obj.priId" />" value="<s:property value="#obj.name" />" >
-	<input type="hidden" name="action" id="action<s:property value="#obj.priId" />" value="<s:property value="#obj.action" />" >
-	<input type="hidden" name="description" id="description<s:property value="#obj.priId" />" value="<s:property value="#obj.description" />" >
-	<input type="hidden" name="upPriId" id="upPriId<s:property value="#obj.priId" />" value="<s:property value="#obj.upPriId" />" >
-</s:iterator>
+<%--<s:iterator value="store3" status="st" var="obj">--%>
+	<%--<input type="hidden" name="level" id="level<s:property value="#obj.priId" />" value="<s:property value="#obj.level" />">--%>
+	<%--<input type="hidden" name="priId" id="priId<s:property value="#obj.priId" />" value="<s:property value="#obj.priId" />" >--%>
+	<%--<input type="hidden" name="name" id="name<s:property value="#obj.priId" />" value="<s:property value="#obj.name" />" >--%>
+	<%--<input type="hidden" name="action" id="action<s:property value="#obj.priId" />" value="<s:property value="#obj.action" />" >--%>
+	<%--<input type="hidden" name="description" id="description<s:property value="#obj.priId" />" value="<s:property value="#obj.description" />" >--%>
+	<%--<input type="hidden" name="upPriId" id="upPriId<s:property value="#obj.priId" />" value="<s:property value="#obj.upPriId" />" >--%>
+<%--</s:iterator>--%>
 </body>
 <script>
 
 
-
+    $(document).ready($("#sidebar").mCustomScrollbar({ theme:"dark-thin"}));
 	var timer=window.setInterval("resetIframe($('#iframe'))",500);
 	//        function reinitIframeEND(){
 	//            var iframe = $("#iframe");
@@ -164,7 +220,7 @@
 	//            window.clearInterval(timer);
 	//        }
 
-	$(document).ready(addLeftItem());
+//	$(document).ready(addLeftItem());
 	$(document).ready(resetIframe($('#iframe')));
 </script>
 </html>

@@ -1,6 +1,6 @@
 /**
- * Ìí¼Ó×ó²àµÄÄÚÈİ
- * ×ó²àµ¼º½À¸µÄÄÚÈİ£º{level£º £¬priId:  ,name: ;action:    ;description:   ;upPriId:   ;}
+ * æ·»åŠ å·¦ä¾§çš„å†…å®¹
+ * å·¦ä¾§å¯¼èˆªæ çš„å†…å®¹ï¼š{levelï¼š ï¼ŒpriId:  ,name: ;action:    ;description:   ;upPriId:   ;}
  */
 
 function addLeftItem(){
@@ -12,15 +12,16 @@ function addLeftItem(){
     var upPriIdList=$("input[name='upPriId']");
     var totalLevel=1;
     var levelContent=new Map();
+    var removeList=new Array();
     levelContent.put("leftcontent","");
     addFirstItem(levelList,priIdList,nameList,actionList
-        ,descriptionList,upPriIdList,levelContent,totalLevel);
+        ,descriptionList,upPriIdList,levelContent,totalLevel,removeList);
 }
 function addFirstItem(levelList,priIdList,nameList,actionList,
-                      descriptionList,upPriIdList,levelContent,totalLevel){
+                      descriptionList,upPriIdList,levelContent,totalLevel,removeList){
     var size=priIdList.length;
-    var removeList=new Array();
-    if(size==0){
+
+    if(size==removeList.length){
         appendStr(levelContent);
         configClass(totalLevel);
         return ;
@@ -31,15 +32,15 @@ function addFirstItem(levelList,priIdList,nameList,actionList,
         if(level==totalLevel){
             var key="priId"+priIdList[i].value;
 
-            //¸ù¾İ²ã´ÎÉèÖÃÑùÊ½£º
+            //æ ¹æ®å±‚æ¬¡è®¾ç½®æ ·å¼ï¼š
             var levelClass="has";
             for(var m=0;m<totalLevel;m++){
                 levelClass+="-sub";
             }
-            //ÔÚlevelcontentÀïÌí¼ÓÄÚÈİ
+            //åœ¨levelcontenté‡Œæ·»åŠ å†…å®¹
             if(totalLevel==1){
 
-                ///ºÍÆäËû²ã´¦ÀíµÄ²»Í¬£ºÌí¼ÓÁË×ó±ßµÄÑùÊ½Í¼±ê°´Å¥
+                ///å’Œå…¶ä»–å±‚å¤„ç†çš„ä¸åŒï¼šæ·»åŠ äº†å·¦è¾¹çš„æ ·å¼å›¾æ ‡æŒ‰é’®
                 var str="<li id='priId"+priIdList[i].value+"' class='"+levelClass+"'><a href='#' class='' onclick=setIframe('/index.jsp')>"+
                     "<i class='fa fa-th-large fa-fw'></i><span class='menu-text'>"+nameList[i].value+"</span></a></li>";
                 var content=levelContent.get("leftcontent");
@@ -51,20 +52,20 @@ function addFirstItem(levelList,priIdList,nameList,actionList,
                 levelContent.put("priId"+upPriIdList[i].value,content+str);
             }
             levelContent.put(key,"<ul>");
-            removeList.push(i);
+            removeList.push(priIdList[i].value);
         }
     }
-    for(var j=0;j<removeList.length;j++){
-        var remove=removeList[j];
-        levelList.splice(remove,1);
-        priIdList.splice(remove,1);
-        nameList.splice(remove,1);
-        actionList.splice(remove,1);
-        descriptionList.splice(remove,1);
-        upPriIdList.splice(remove,1);
-    }
+    //for(var j=0;j<removeList.length;j++){
+    //    var remove=removeList[j];
+    //    levelList.splice(remove,1);
+    //    priIdList.splice(remove,1);
+    //    nameList.splice(remove,1);
+    //    actionList.splice(remove,1);
+    //    descriptionList.splice(remove,1);
+    //    upPriIdList.splice(remove,1);
+    //}
     totalLevel=1+totalLevel*1;
-    addFirstItem(levelList,priIdList,nameList,actionList,descriptionList,upPriIdList,levelContent,totalLevel)
+    addFirstItem(levelList,priIdList,nameList,actionList,descriptionList,upPriIdList,levelContent,totalLevel,removeList)
 }
 
 function configClass(totalLevel){
@@ -109,7 +110,8 @@ function resetIframe(e){
         {
             var bodyHeight=$("body").height();
             e.contents().find("body").css("min-height",bodyHeight-$("#header").outerHeight());
-            var height=e.contents().find("html").height();
+            var height=e.contents().find("body").height();
+            //alert(height)
             e.css("height",height);
         }
         else
@@ -118,11 +120,11 @@ function resetIframe(e){
 
 function setIframe(src){
     $("#iframe").attr("src",src);
-    resetIframe($("#iframe"));
+    setInterval("resetIframe($('#iframe'))",1000);
 }
 /**
  *
- * ÃèÊö£ºjsÊµÏÖµÄmap·½·¨
+ * æè¿°ï¼šjså®ç°çš„mapæ–¹æ³•
  * @returns {Map}
  */
 function Map(){
@@ -130,7 +132,7 @@ function Map(){
         this.key = key;
         this.value = value;
     };
-    // Ìí¼Ómap¼üÖµ¶Ô
+    // æ·»åŠ mapé”®å€¼å¯¹
     var put = function(key, value){
         for (var i = 0; i < this.arr.length; i++) {
             if ( this.arr[i].key === key ) {
@@ -140,7 +142,7 @@ function Map(){
         };
         this.arr[this.arr.length] = new struct(key, value);
     };
-    // ¸ù¾İkey»ñÈ¡value
+    // æ ¹æ®keyè·å–value
     var get = function(key) {
         for (var i = 0; i < this.arr.length; i++) {
             if ( this.arr[i].key === key ) {
@@ -155,7 +157,7 @@ function Map(){
     var getKeyByIndex=function(index){
         return this.arr[index].key;
     };
-    // ¸ù¾İkeyÉ¾³ı
+    // æ ¹æ®keyåˆ é™¤
     var remove = function(key) {
         var v;
         for (var i = 0; i < this.arr.length; i++) {
@@ -166,11 +168,11 @@ function Map(){
             this.arr.unshift(v);
         }
     };
-    // »ñÈ¡map¼üÖµ¶Ô¸öÊı
+    // è·å–mapé”®å€¼å¯¹ä¸ªæ•°
     var size = function() {
         return this.arr.length;
     };
-    // ÅĞ¶ÏmapÊÇ·ñÎª¿Õ
+    // åˆ¤æ–­mapæ˜¯å¦ä¸ºç©º
     var isEmpty = function() {
         return this.arr.length <= 0;
     };

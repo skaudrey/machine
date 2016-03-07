@@ -34,18 +34,18 @@ body{
 	border-right: 1px solid #e7e7e7;
 }
 /*左侧导航栏列表*/
-.sidebar-menu >ul{
+ul#leftcontent{
 	/*border-bottom: 1px solid #FFFFFF !important;*/
 	border-top: 1px solid #FFFFFF !important;
 }
 /*左侧导航栏列表项*/
-.sidebar-menu >ul >li >a{
+ul#leftcontent >li >a{
 	border-bottom: 1px solid #ffffff !important;
 	border-top: 1px solid #e7e7e7 !important;
 	color: #555555 !important;
 }
 /*左侧导航栏列表项icon*/
-.sidebar-menu >ul >li >a i{
+ul#leftcontent >li >a i{
 	
 	color: #555555 ;
 }
@@ -74,9 +74,9 @@ ul[class^="sub-sub"]{
 
 /*左侧导航栏 一级菜单打开
 左侧导航栏一级菜单，鼠标滑过*/
-.sidebar-menu >ul >li.has-sub.open>a,
-.sidebar-menu >ul >li >a:hover,
-.sidebar-menu >ul >li:hover >a{
+ul#leftcontent >li.has-sub.open>a,
+ul#leftcontent >li >a:hover,
+ul#leftcontent >li:hover >a{
 	background: #FFFFFF;
 }
 
@@ -84,8 +84,8 @@ li[class^="has-sub-sub"]:hover{
 	background: #F6F6F6;
 }
 /*左侧导航栏一级菜单方向icon的before，以及打开时的before*/
-.sidebar-menu >ul>li>a i.arrow:before,
-.sidebar-menu >ul>li>a i.arrow.open:before{
+ul#leftcontent>li>a i.arrow:before,
+ul#leftcontent>li>a i.arrow.open:before{
 	color: #555555 !important;
 }
 

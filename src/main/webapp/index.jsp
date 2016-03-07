@@ -65,7 +65,10 @@
 <script>
 
 	$('#loginBtn').click(function (){
-		window.location.href="/privilege!loginIn?userId="+$("#user").val()+"&password="+$("#password").val()+"";
+		//window.location.href="/privilege!loginIn?userId="+$("#user").val()+"&password="+$("#password").val()+"";
+		if($("#user").val()=="admin" && $("#password").val()=="123"){
+			window.location.href="main.jsp";
+		}
 	});
 
 </script>

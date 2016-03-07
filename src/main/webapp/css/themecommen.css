@@ -60,7 +60,7 @@ body{
 
 	padding: 0!important;
 	width: 250px;
-	/*position: fixed;*/
+	position: fixed;
 
 }
 
@@ -93,8 +93,9 @@ body{
 	padding: 0;
 	margin-top: 15px;
 }
+
 /*左侧导航栏列表项*/
-.sidebar-menu >ul >li{
+ul#leftcontent >li{
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -102,7 +103,7 @@ body{
 }
 
 /*左侧导航栏列表项链接*/
-.sidebar-menu >ul >li >a{
+ul#leftcontent >li >a{
 	display: block;
 	position: relative;
 	margin: 0;
@@ -114,7 +115,7 @@ body{
 	text-transform: uppercase;
 }
 /*左侧导航栏列表项icon*/
-.sidebar-menu >ul >li >a i{
+ul#leftcontent >li >a i{
 	font-size: 16px;
 	margin-left: 5px;
 }
