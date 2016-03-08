@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>JSP Page</title>
 
-	<link rel="stylesheet" href="<%=basepath%>/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css" />
 	<link rel="stylesheet" href="<%=basepath%>/css/theme/default.css"  id="skin-switcher"/>
 	<link rel="stylesheet" href="<%=basepath%>/css/themecommen.css" />
 	<link rel="stylesheet" href="<%=basepath%>/css/font-awesome.min.css" />

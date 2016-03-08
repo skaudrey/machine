@@ -120,7 +120,13 @@ function resetIframe(e){
 
 function setIframe(src){
     $("#iframe").attr("src",src);
-    setInterval("resetIframe($('#iframe'))",500);
+    if(src=="leaderDmz.html"){
+
+    }else{
+        setInterval("resetIframe($('#iframe'))",500);
+    }
+
+
     //resetIframe($("#iframe"));
 }
 /**

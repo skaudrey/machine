@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>民政地理空间信息服务平台-地名维护</title>
+	<title>民政地理空间信息服务平台-行政区划调整</title>
 	<!-- Bootstrap -->
 	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -74,8 +74,12 @@
 		</div>
 	</div>
 </form>
-<!--左上角button-->
-<button type="button" class="btn btn-default btn-sm pull-left btn-pull-left1">导出Excel</button>
+<!--左上角button组-->
+<div class="btn-group pull-left btn-pull-left1">
+	<button type="button" class="btn btn-info btn-sm" style="width: auto;">行政区划设立</button>
+	<button type="button" class="btn btn-default btn-sm">导入</button>
+	<button type="button" class="btn btn-default btn-sm">导出</button>
+</div>
 <br />
 <br />
 <div class="margin-general">
@@ -85,8 +89,8 @@
 			<th>行政区划</th>
 			<th>标准名称</th>
 			<th>罗马拼写</th>
+			<th>地名编码</th>
 			<th>地名类型</th>
-			<th>登记时间</th>
 			<th>操作</th>
 		</tr>
 		</thead>

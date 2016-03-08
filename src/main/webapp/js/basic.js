@@ -242,6 +242,12 @@ var App=function(){
 			setSkin($.cookie('skin_color'));
 		}
 	}
+	var handleSidebarHover=function(){
+		$("li.has-sub.mini-menu").hover(function(){
+			var el=$(this).children("a").children(".menu-text");
+			el.css("display","block");
+		});
+	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	Handle Fixed Sidebar on Mobile devices
 	 /*-----------------------------------------------------------------------------------*/
@@ -281,6 +287,7 @@ var App=function(){
 			collapseSidebar();
 			handleMobileSidebar();
 			handleThemeSkins();
+			//handleSidebarHover();
 		},
 
 		//Set page

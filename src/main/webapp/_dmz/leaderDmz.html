@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
 </head>
@@ -6,24 +6,24 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>JSP Page</title>
 
-	<link rel="stylesheet" href="../css/bootstrap.min.css" />
-	<link rel="stylesheet" href="../css/theme/default.css"  id="skin-switcher"/>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/theme/default.css"  id="skin-switcher"/>
 	<!--<link rel="stylesheet" href="../css/themecommen_.css" />-->
-	<link rel="stylesheet" href="../css/font-awesome.min.css" />
-	<link rel="stylesheet" href="../css/dmz/leaderDMZ.css" />
-	<script type="text/javascript" src="../js/jquery/jquery-2.0.3.min.js" ></script>
+	<link rel="stylesheet" href="/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/css/dmz/leaderDMZ.css" />
+	<script type="text/javascript" src="/js/jquery/jquery-2.0.3.min.js" ></script>
 
-	<script type="text/javascript" src="../js/bootstrap/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="../js/basic.js" ></script>
-	<script type="text/javascript" src="../js/jquery/jquery.cookie.min.js" ></script>
-	<script type="text/javascript" src="../js/control-left.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="/js/basic.js" ></script>
+	<script type="text/javascript" src="/js/jquery/jquery.cookie.min.js" ></script>
+	<script type="text/javascript" src="/js/control-left.js"></script>
 	<!--滚动条插件  -->
-	<link rel="stylesheet" href="../css/dmz/jquery.mCustomScrollbar.css" />
-	<script src="../js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
-	<script src="../js/mScrollBar/jquery.mousewheel.min.js"></script>
-	<script src="../js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
-	<script src="../js/dmz/setCustomScrollBar.js"></script>
-	<script type="text/javascript" src="../js/dmz/leaderDmz.js" ></script>
+	<link rel="stylesheet" href="/css/dmz/jquery.mCustomScrollbar.css" />
+	<script src="/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
+	<script src="/js/mScrollBar/jquery.mousewheel.min.js"></script>
+	<script src="/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
+	<script src="/js/dmz/setCustomScrollBar.js"></script>
+	<script type="text/javascript" src="/js/dmz/leaderDmz.js" ></script>
 	<style>
 		#sidebar{
 			padding: 0!important;
@@ -88,7 +88,7 @@
 </body>
 
 <script>
-    $(".scroller").css("max-height",document.documentElement.clientHeight-5);
+    $(".sidebar-menu").css("max-height",document.documentElement.clientHeight-5);
 	$(document).ready($(".scroller").mCustomScrollbar());
 	$("li").click(function(e){
 		$("li","#leftcontent").removeClass("selected");
