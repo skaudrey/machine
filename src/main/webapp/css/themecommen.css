@@ -59,7 +59,7 @@ body{
 	padding: 0!important;
 	width: 250px;
 	position: fixed;
-
+    /*overflow-y: auto;*/
 }
 
 .title-logo{
@@ -270,6 +270,7 @@ li.has-sub.mini-menu> a i.arrow:before{
 }
 li.has-sub.mini-menu:hover > a > .menu-text {
 	display: block!important;
+    position: fixed;
 }
 li.has-sub.mini-menu:hover>ul.mini-menu{
 	display: block !important;

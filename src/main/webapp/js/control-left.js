@@ -120,11 +120,7 @@ function resetIframe(e){
 
 function setIframe(src){
     $("#iframe").attr("src",src);
-    if(src=="leaderDmz.html"){
-
-    }else{
-        setInterval("resetIframe($('#iframe'))",500);
-    }
+    setInterval("resetIframe($('#iframe'))",500);
 
 
     //resetIframe($("#iframe"));

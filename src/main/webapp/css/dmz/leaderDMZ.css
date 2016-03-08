@@ -20,6 +20,7 @@ body{
 }
 .sidebar-menu{
     overflow: auto;
+	height: 600px;
 }
 .scroller{
     overflow: auto;

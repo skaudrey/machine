@@ -96,7 +96,7 @@
 
                 <ul id="leftcontent">
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                        <a href="javascript:void(0);" class="" onclick=setIframe("_tianditu/tianditu.html")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">空间信息基础平台管理</span>
                         </a>
@@ -264,10 +264,36 @@
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="_dmz/dmz.jsp">
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">界桩界限管理</span>
                         </a>
+                        <ul class="sub">
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/tabletRegister.jsp")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="menu-text">界桩登记</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/tabletMaintain.jsp")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="menu-text">界桩维护</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/lineRegister.jsp")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="menu-text">界线登记</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/lineMaintain.jsp")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="menu-text">界线维护</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="has-sub">
                         <a href="_dmz/dmz.jsp" class="">
