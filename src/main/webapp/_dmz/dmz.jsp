@@ -88,24 +88,24 @@
 				<i class="fa fa-search search-icon"></i>
 			</div>
 			<ul id="leftcontent">
-				<li>
-					<a href="javascript:void(0);" onclick=setIframe("leaderDmz.jsp")>
+				<li class="has-sub">
+					<a href="javascript:void(0);" onclick=setIframe("leaderDmz.html")>
 						<i class="fa fa-bookmark-o fa-fw"></i>
 						<span class="menu-text">目录管理</span>
 					</a>
 				</li>
-				<li>
+				<li class="has-sub">
 					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
 						<i class="fa fa-bookmark-o fa-fw"></i>
 						<span class="menu-text">岱山县政区图</span>
 					</a>
 				</li>
-				<li>
+				<li class="has-sub">
 					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
 						<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">岱山县政区影像图</span>
 					</a>
 				</li>
-				<li>
+				<li class="has-sub">
 					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
 						<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">岱山县综述</span>
 					</a>

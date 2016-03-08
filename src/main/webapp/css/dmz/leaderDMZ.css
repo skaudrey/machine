@@ -18,20 +18,34 @@ body{
 .open >a{
 	outline: 0;
 }
-
-
+.sidebar-menu{
+    overflow: auto;
+}
+.scroller{
+    overflow: auto;
+}
+#sidebar{
+    position: fixed;
+}
+#right_option{
+    position: fixed;
+}
 .title-logo{
 	color: white;
 	margin-left: 45px;
 }
 
-
+/*#right_option{*/
+	/*position: fixed;*/
+    /*display: block;*/
+/*}*/
 /*左侧导航栏列表*/
 ul#leftcontent{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	margin-top: 15px;
+	overflow: auto;
 }
 /*左侧导航栏列表项*/
 ul#leftcontent >li{

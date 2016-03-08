@@ -229,7 +229,7 @@ var App=function(){
 	var handleThemeSkins = function () {
 		// Handle theme colors
 		var setSkin = function (color) {
-			$('#skin-switcher').attr("href", "css/theme/" + color + ".css");
+			$('#skin-switcher').attr("href", "/css/theme/" + color + ".css");
 			$.cookie('skin_color', color);
 		}
 		$('#skin-switch > li> a').click(function () {

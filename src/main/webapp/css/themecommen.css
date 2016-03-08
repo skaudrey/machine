@@ -46,9 +46,7 @@ body{
 #main-content{
 	margin-left: 250px;
 }
-.iframeContainer{
-	
-}
+
 .open >a{
 	outline: 0;
 }
@@ -227,7 +225,6 @@ li[class^="has-sub"]>a i.arrow.open:before,{
 	right: 22px;
 	top:35px;
 }
-
 /*小的以及菜单链接字体*/
 li.has-sub.mini-menu>a>.menu-text{
 	display: none;

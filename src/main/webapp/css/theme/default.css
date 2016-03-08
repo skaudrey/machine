@@ -2,7 +2,7 @@ body{
 	background: none repeat scroll 0 0 #f4f4f4;
 	/*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 	color: #555555;
-	
+
 }
 .page{
 	background:none repeat scroll 0 0 #f4f4f4;
@@ -46,7 +46,7 @@ ul#leftcontent >li >a{
 }
 /*左侧导航栏列表项icon*/
 ul#leftcontent >li >a i{
-	
+
 	color: #555555 ;
 }
 
