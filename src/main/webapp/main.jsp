@@ -72,7 +72,7 @@
 				</li>
 				<li class="dropdown" >
 					<a  class="dropdown-toggle" href="#" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-						<img src="img/style.png">
+						<i class="fa fa-user"></i>
 						岱山县地名办<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                        <a href="javascript:void(0);" class="" onclick=setIframe("_privilegeAndDepartment/index.html")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">用户部门权限管理</span>
 

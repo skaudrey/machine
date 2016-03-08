@@ -251,7 +251,7 @@ ul.sub.mini-menu{
 	z-index: 120;/*属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
 }
 .mini-menu#sidebar{
-	width: 50px;
+	width: 80px;
 }
 .mini-menu .sidebar-menu #search-bar{
 	display: block;
