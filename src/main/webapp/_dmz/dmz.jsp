@@ -170,7 +170,7 @@
 	</div>
 	<div id="main-content">
 		<div class="ifameContainer">
-			<iframe id="iframe" marginwidth="0" marginheight="0"  frameborder="0" width="100%" scrolling="no" height="100%">
+			<iframe id="iframe" marginwidth="0" marginheight="0"  frameborder="0" width="100%" scrolling="no" >
 			</iframe>
 		</div>
 

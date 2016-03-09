@@ -109,9 +109,9 @@ var App=function(){
 		});
 	}
 	var collapseSidebar=function(){
-		var iconElem=document.getElementById("sidebar-collapse").querySelector("[class*='fa-']");
-		var iconLeft=iconElem.getAttribute("data-icon1");
-		var iconRight=iconElem.getAttribute("data-icon2");
+		var iconElem=$(".sidebar-collapse").children("[class*='fa-']");
+		var iconLeft=iconElem.attr("data-icon1");
+		var iconRight=iconElem.attr("data-icon2");
 		var ifCollapaseSidebar= $.cookie("mini_sidebar");
 		if(ifCollapaseSidebar=="1"){
 			/* For Navbar */
