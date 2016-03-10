@@ -71,4 +71,5 @@
     <bean id="taskService" factory-bean="processEngineFactory" factory-method="getTaskService"/>
     <bean id="historyService" factory-bean="processEngineFactory" factory-method="getHistoryService"/>
     <bean id="managementService" factory-bean="processEngineFactory" factory-method="getManagementService"/>
+    <import resource="classpath:/applicationFTP.xml"/>
 </beans>

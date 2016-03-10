@@ -200,6 +200,12 @@
       <classifier>jdk15</classifier>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.struts</groupId>
+      <artifactId>struts2-json-plugin</artifactId>
+      <version>2.2.3</version>
+    </dependency>
+
     <!-- fastjson -->
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -248,6 +254,29 @@
       <groupId>org.activiti</groupId>
       <artifactId>activiti-spring</artifactId>
       <version>${activiti.version}</version>
+    </dependency>
+    <!--配置Rest组件依赖，使用Diagram Viewer 追踪流程图-->
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-rest</artifactId>
+      <version>${activiti.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-diagram-rest</artifactId>
+      <version>${activiti.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.activiti</groupId>
+      <artifactId>activiti-modeler</artifactId>
+      <version>${activiti.version}</version>
+    </dependency>
+
+    <!--测试FTP Server-->
+    <dependency>
+      <groupId>org.apache.ftpserver</groupId>
+      <artifactId>ftpserver-core</artifactId>
+      <version>1.0.6</version>
     </dependency>
   </dependencies>
   <build>

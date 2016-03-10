@@ -19,6 +19,8 @@
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
     </listener>
 
+    <!--<listener>
+        <listener-class>app.common.utilclasses.MyServletContextListener</listener-class>  </listener>-->
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -61,4 +63,7 @@
             org.springframework.web.context.ContextLoaderListener
         </listener-class>
     </listener>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 </web-app>
