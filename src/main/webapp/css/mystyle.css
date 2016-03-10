@@ -1,0 +1,268 @@
+label,
+form {
+	font-family: "宋体";
+	font-size: small;
+	font-weight: normal;
+	/*覆盖bootstrap自带label字体加粗效果*/
+	word-spacing: -0.1em;
+	/*字距缩小*/
+	letter-spacing: -0.1em;
+	/*字距缩小*/
+}
+
+button {
+	font-family: "宋体";
+	width: 70px;
+}
+
+a {
+	color: #000000;
+}
+
+/*左右各空15px*/
+
+.margin-general{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*右上角button-不带标题*/
+
+.btn-pull-left1{
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+/*右上角button-带标题*/
+
+.btn-pull-left2{
+	margin-left: 15px;
+}
+
+/*右上角标题*/
+
+.title-pull-left{
+	margin-left: 20px;
+}
+
+/*折叠框*/
+
+.panel-body {
+	line-height: 220%!important;
+}
+
+.panel-body input,
+.panel-body select {
+	height: 25px!important;
+	width: 100px!important;
+}
+
+/*地名初审-拟命名*/
+
+.myDiv{
+	position: relative;
+	margin-left: 15px;
+	padding: 15px;
+	line-height: 220%!important;
+	border: #dddddd 1px solid;
+	border-radius: 4px;
+}
+
+.myDiv input,
+.myDiv select{
+	height: 25px!important;
+	width: 145px!important;
+}
+
+.btn-switch{
+	position: absolute;
+	top: 250px;
+	right: -15px;
+	height: 27px;
+	width: 27px;
+	color: #dddddd;
+	border: none;
+	display: none;/*初始隐藏*/
+}
+
+/*表颜色*/
+
+thead {
+	background-color: #5bc0de;
+	/*和btn-info背景色同色*/
+	color: #ffffff;
+}
+
+.table th,
+.table td {
+	text-align: center;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: #d9edf7;
+	/*和panel-info背景色同色*/
+	/*隔行有一个浅蓝色的背景色*/
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+	background-color: #f5f5f5;
+	/*不知道为什么不写这里隔行浅蓝色行就是不变色哼*/
+}
+
+/*table圆角*/
+
+.table-bordered {
+	border: 1px solid #dddddd;
+	border-collapse: separate;
+	*border-collapse: collapse;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+	border: 1px solid #ddd!important;
+	/*每个单元格设置边框*/
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+	border-bottom-width: 1px;
+}
+
+.table-bordered thead:first-child tr:first-child > th:first-child,
+.table-bordered tbody:first-child tr:first-child > td:first-child,
+.table-bordered tbody:first-child tr:first-child > th:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+
+.table-bordered thead:first-child tr:first-child > th:last-child,
+.table-bordered tbody:first-child tr:first-child > td:last-child,
+.table-bordered tbody:first-child tr:first-child > th:last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+.table-bordered thead:last-child tr:last-child > th:first-child,
+.table-bordered tbody:last-child tr:last-child > td:first-child,
+.table-bordered tbody:last-child tr:last-child > th:first-child,
+.table-bordered tfoot:last-child tr:last-child > td:first-child,
+.table-bordered tfoot:last-child tr:last-child > th:first-child {
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+}
+
+.table-bordered thead:last-child tr:last-child > th:last-child,
+.table-bordered tbody:last-child tr:last-child > td:last-child,
+.table-bordered tbody:last-child tr:last-child > th:last-child,
+.table-bordered tfoot:last-child tr:last-child > td:last-child,
+.table-bordered tfoot:last-child tr:last-child > th:last-child {
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+}
+
+.table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+
+.table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+/*顶部切换*/
+
+.nav-top{
+	margin-top: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*顶部右上角控件绝对定位*/
+
+.position-fixed{
+	position:fixed!important;
+	top: 5px!important;
+	right: 15px!important;
+}
+
+/*右上角“在此输入搜索关键字”*/
+
+.caret-search {
+	color: #dddddd;
+	margin-right: 5px;
+}
+
+.dropdown-menu-search {
+	line-height: 220%!important;
+	width: 220px;
+	/*border: none;
+	border-radius: 0;*/
+	box-shadow: none;
+}
+
+/*.dropdown-menu-search label {
+	width: auto;
+}*/
+
+.dropdown-menu-container{
+	width: 100%;
+}
+
+.dropdown-menu-search input,
+select {
+	height: 27px!important;
+	width: 130px!important;
+}
+
+.divider-search {
+	width: 190px;
+	/*下拉框分割线长度*/
+}
+
+.btn-group-search {
+	margin-left: 49px;
+}
+
+.searchContainer {
+	border: #dddddd solid 1px;
+	border-radius: 4px;
+}
+
+.searchContainer input {
+	font-family: "宋体";
+	font-size: small;
+	height: 27px!important;
+	width: 170px!important;
+	border: none;
+}
+
+.searchContainer button {
+	border: none;
+	padding: 0px;
+	color: #555555;
+	height: 27px;
+	width: 27px;
+}
