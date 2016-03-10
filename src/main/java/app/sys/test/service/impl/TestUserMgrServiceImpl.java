@@ -26,5 +26,5 @@ public class TestUserMgrServiceImpl implements TestUserMgrService{
         String hql = "from TestUserEntity t where t.username = :USERNAME and t.password = :PASSWORD";
         Query query = testUserDao.createQuery(hql).setString("USERNAME",username).setString("PASSWORD",password);
         return (TestUserEntity)query.uniqueResult();
-    }
+}
 }
