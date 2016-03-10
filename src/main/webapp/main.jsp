@@ -136,17 +136,17 @@
                         </a>
                         <ul class="sub">
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placeNames.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名数据录入</span>
                                 </a>
                             </li>
-                            <li class="has-sub-sub">
+                            <%--<li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名数据查询</span>
                                 </a>
-                            </li>
+                            </li>--%>
                             <li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameRepair.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
@@ -174,17 +174,17 @@
                         </a>
                         <ul class="sub">
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placeNames.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placefirstCheck.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名预申报</span>
                                 </a>
                             </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placefirstCheck.html")>
+                            <%--<li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名初审</span>
                                 </a>
-                            </li>
+                            </li>--%>
                             <li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("_placename/businessAccepted.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
@@ -200,7 +200,7 @@
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.html")>
+                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">门牌业务管理</span>
                         </a>
@@ -210,7 +210,7 @@
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">门牌证录入</span>
                                 </a>
-                            </li>
+                            <%--</li>
                             <li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("")>
                                     <i class="fa fa-th-large fa-fw"></i>
@@ -228,7 +228,7 @@
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">门牌证注销</span>
                                 </a>
-                            </li>
+                            </li>--%>
                             <li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
@@ -243,7 +243,7 @@
                             <span class="menu-text">行政区划管理</span>
                         </a>
                         <ul class="sub">
-                            <li class="has-sub-sub">
+                            <%--<li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">行政区划设立</span>
@@ -254,12 +254,18 @@
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">行政区划查询</span>
                                 </a>
-                            </li>
+                            </li>--%>
                             <li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">行政区划调整</span>
                                 </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                 <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                                     <i class="fa fa-th-large fa-fw"></i>
+                                     <span class="sub-menu-text">扫描件管理</span>
+                                 </a>
                             </li>
                         </ul>
                     </li>
