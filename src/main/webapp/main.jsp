@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>JSP Page</title>
+	<title>地名系统</title>
 
 	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/theme/default.css"  id="skin-switcher"/>
@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="js/jquery/jquery.cookie.min.js" ></script>
 	<script type="text/javascript" src="js/control-left.js"></script>
     <!--滚动条插件  -->
-    <link rel="stylesheet" href="css/dmz/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" href="css/dmz/jquery.mCustomScrollbar_my.css" />
     <script src="js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
     <script src="js/mScrollBar/jquery.mousewheel.min.js"></script>
     <script src="js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
@@ -56,10 +56,10 @@
 			<ul class="nav navbar-nav navbar-right" >
 				<li class="dropdown">
 					<a  class="dropdown-toggle" href="#" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-						<i class="fa fa-edit"></i>样式<i class="fa fa-angle-down"></i>
+						<i class="fa fa-edit"></i>主题样式<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu " id="skin-switch">
-						<li><a href="#"><i class="fa fa-leaf"></i>主题样式</a></li>
+						<%--<li><a href="#"><i class="fa fa-leaf"></i>主题样式</a></li>--%>
 						<li><a href="#" data-skin="default">默认</a></li>
 						<li><a href="#" data-skin="night">夜间</a></li>
 						<li><a href="#" data-skin="earth">朴实</a></li>
@@ -75,7 +75,7 @@
 						岱山县地名办<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="fa fa-edit"></i>修改密码</a></li>
+						<li><a href="javascript:void(0);" class="" onclick=setIframe("_personalInfo/personalInfo.jsp")><i class="fa fa-edit"></i>个人中心</a></li>
 						<li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
 					</ul>
 				</li>
@@ -188,24 +188,24 @@
                                     <span class="sub-menu-text">门牌证录入</span>
                                 </a>
                             </li>
-                            <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
-                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
-                                    <%--<span class="sub-menu-text">门牌查询</span>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
-                            <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
-                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
-                                    <%--<span class="sub-menu-text">门牌证维护</span>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
-                            <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
-                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
-                                    <%--<span class="sub-menu-text">门牌证注销</span>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="sub-menu-text">门牌查询</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="sub-menu-text">门牌证维护</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="sub-menu-text">门牌证注销</span>
+                                </a>
+                            </li>
                             <li class="has-sub-sub">
                                 <a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.html")>
                                     <i class="fa fa-th-large fa-fw"></i>
@@ -232,24 +232,24 @@
                                     <span class="sub-menu-text">扫描件管理</span>
                                 </a>
                             </li>
-                            <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>--%>
-                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
-                                    <%--<span class="sub-menu-text">行政区划设立</span>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
-                            <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
-                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
-                                    <%--<span class="sub-menu-text">行政区划查询</span>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
-                            <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.html")>--%>
-                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
-                                    <%--<span class="sub-menu-text">行政区划调整</span>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="sub-menu-text">行政区划设立</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="sub-menu-text">行政区划查询</span>
+                                </a>
+                            </li>
+                            <li class="has-sub-sub">
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.html")>
+                                    <i class="fa fa-th-large fa-fw"></i>
+                                    <span class="sub-menu-text">行政区划调整</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="has-sub">
@@ -291,7 +291,7 @@
                         </a>
                     </li>
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
+                        <a href="#" class="">
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">地名成果应用</span>
                         </a>

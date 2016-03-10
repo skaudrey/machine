@@ -30,10 +30,14 @@ body{
     /*position: fixed;*/
     background: none;
 }
-
-#right_option{
-    /*position: fixed;*/
+.col-sm-2{
+	position: fixed;
+    float: right;
 }
+
+/*#right_option{*/
+    /*position: fixed;*/
+/*}*/
 .title-logo{
 	color: white;
 	margin-left: 45px;

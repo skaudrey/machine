@@ -29,6 +29,16 @@
 	<script src="/js/mScrollBar/jquery.mousewheel.min.js"></script>
 	<script src="/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
 	<script src="/js/dmz/setCustomScrollBar.js"></script>
+	<style>
+        #mCSB_3{ /* contains plugin's markup */
+            position: relative;
+            /*overflow: hidden;*/
+            height: 100%;
+            max-width: 100%;
+            outline: none;
+            direction: ltr;
+        }
+	</style>
 </head>
 <body>
 <div class="container-fluid">
@@ -201,18 +211,18 @@
 						位于高亭镇竹屿新区，东接竹屿港，南到江南大桥，西和东海村接壤，北至南峰村张家山嘴。因处竹屿港东南侧得名。2011年5月岱政函[2011]59号文件批复建立。辖区范围：西以衢山大道为界，南到恒丽府邸，北到行政中心，包括渔父乐园共计13个住宅小区。面积 4.5平方千米，2014年末有户籍居民 户，5825人。辖区内主要有 。社区居委会驻高亭镇鱼山大道351号，距镇政府驻地3千米。社区办公室电话：4967958
 						<div class="row">
 							<div class="col-sm-4">
-								<a href="../../img/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
-									<img src="../../img/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
+								<a href="/imgs/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
+									<img src="/imgs/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="../../img/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
-									<img src="../../img/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
+								<a href="/imgs/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
+									<img src="/imgs/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
 								</a>
 							</div>
 							<div class="col-sm-4">
-								<a href="../../img/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
-									<img src="../../img/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
+								<a href="/imgs/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
+									<img src="/imgs/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
 								</a>
 							</div>
 
@@ -257,7 +267,7 @@
 					<div class="scroller" data-height="120px">
 						位于高亭城区西北，东起沿港西路1号，南至滨港路，西到沿港西路双号428号水兵码头，北与育才社区相接，西北与闸口二村相邻。社区以驻地闸口得名。原属高亭镇二居委，1981年10月建立居委，称五居委；1982年更名为闸口居委会；1989年5月划出新村一带，另建育才居委会。面积0.135平方千米，有居民 户，4233人，常住居民10000多人，是县城主要工业区。社区居委会驻沿港西路209号，距镇政府驻地1.5千米。社区办公室电话：4060676
 						<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
-							<source src="../../img/dmz/video.mp4" type='video/mp4' />
+							<source src="/imgs/dmz/video.mp4" type='video/mp4' />
 						</video>
 					</div>
 				</div>
@@ -308,21 +318,21 @@
 							<!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox">
 								<div class="item active">
-									<img src="../../img/dmz/carousel/1.jpg" alt="">
+									<img src="/imgs/dmz/carousel/1.jpg" alt="">
 									<div class="carousel-caption">
 										<h3>First slide label</h3>
 										<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 									</div>
 								</div>
 								<div class="item">
-									<img src="../../img/dmz/carousel/2.jpg" alt="">
+									<img src="/imgs/dmz/carousel/2.jpg" alt="">
 									<div class="carousel-caption">
 										<h3>Second slide label</h3>
 										<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 									</div>
 								</div>
 								<div class="item">
-									<img src="../../img/dmz/carousel/3.jpg" alt="">
+									<img src="/imgs/dmz/carousel/3.jpg" alt="">
 									<div class="carousel-caption">
 										<h3>Third slide label</h3>
 										<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -418,9 +428,9 @@
 								</label>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">地名</label>
+								<label for="placename" class="col-sm-2 control-label">地名</label>
 								<div class="col-sm-5">
-									<input type="text" class="form-control" id="inputEmail3">
+									<input type="text" class="form-control" id="placename">
 								</div>
 								<label class="col-sm-1 control-label">状态 </label>
 								<div class="col-sm-4">
@@ -433,9 +443,9 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">拼音</label>
+								<label for="pinyin" class="col-sm-2 control-label">拼音</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="inputEmail3">
+									<input type="text" class="form-control" id="pinyin">
 								</div>
 								<button class="col-sm-1 btn btn-pink">转换</button>
 								<label class="col-sm-1 control-label">类别 </label>
@@ -455,9 +465,9 @@
 									<label class="radio-inline">
 										<input type="radio" class="uniform" name="optionsRadios3" value="option2">历史地名</label>
 								</div>
-								<label for="inputEmail3" class="col-sm-2  control-label">排序</label>
+								<label for="inputEmail" class="col-sm-2  control-label">排序</label>
 								<div class="col-sm-2">
-									<input type="text" class="form-control" id="inputEmail3">
+									<input type="text" class="form-control" id="inputEmail">
 								</div>
 							</div>
 							<div class="form-group">
@@ -476,22 +486,22 @@
 										<div class="col-sm-4">
 											图片1
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 										<div class="col-sm-4">
 											图片2
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 										<div class="col-sm-4">
 											图片3
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 									</div>
@@ -499,22 +509,22 @@
 										<div class="col-sm-4">
 											图片4
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 										<div class="col-sm-4">
 											图片5
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 										<div class="col-sm-4">
 											图片6
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 									</div>
@@ -522,22 +532,22 @@
 										<div class="col-sm-4">
 											图片7
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/1.png" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/1.png" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 										<div class="col-sm-4">
 											图片8
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/2.jpg" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/2.jpg" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 										<div class="col-sm-4">
 											图片9
 											<button type="button" class="close pull-right" aria-hidden="true">&times;</button>
-											<a href="../../img/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
-												<img src="../../img/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
+											<a href="/imgs/dmz/gallery/3.png" data-lightbox="image-1" data-title="My caption">
+												<img src="/imgs/dmz/gallery/3.png" style="width: 100%;,height: 100%;" />
 											</a>
 										</div>
 									</div>

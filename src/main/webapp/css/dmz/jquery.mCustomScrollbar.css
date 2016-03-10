@@ -34,6 +34,7 @@ CONTENTS:
 		max-width: 100%;
 		outline: none;
 		direction: ltr;
+		width: inherit;
 	}
 
 	.mCSB_container{ /* contains the original content */

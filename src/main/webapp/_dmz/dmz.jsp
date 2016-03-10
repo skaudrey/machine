@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>JSP Page</title>
+	<title>地名志编辑系统</title>
 
 	<link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css" />
 	<link rel="stylesheet" href="<%=basepath%>/css/theme/default.css"  id="skin-switcher"/>
@@ -19,7 +19,12 @@
 	<script type="text/javascript" src="<%=basepath%>/js/basic.js" ></script>
 	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery.cookie.min.js" ></script>
 	<script type="text/javascript" src="<%=basepath%>/js/control-left.js"></script>
-
+	<!--滚动条插件  -->
+	<link rel="stylesheet" href="<%=basepath%>/css/dmz/jquery.mCustomScrollbar_my.css" />
+	<script src="<%=basepath%>/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
+	<script src="<%=basepath%>/js/mScrollBar/jquery.mousewheel.min.js"></script>
+	<script src="<%=basepath%>/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
+	<script src="<%=basepath%>/js/dmz/setCustomScrollBar.js"></script>
 </head>
 <body>
 <nav class="nav navbar-default navbar-fixed-top" role="navigation" id="header" >
@@ -51,10 +56,10 @@
 			<ul class="nav navbar-nav navbar-right" >
 				<li class="dropdown">
 					<a  class="dropdown-toggle" href="#" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-						<i class="fa fa-edit"></i>样式<i class="fa fa-angle-down"></i>
+						<i class="fa fa-edit"></i>主题样式<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu " id="skin-switch">
-						<li><a href="#"><i class="fa fa-leaf"></i>主题样式</a></li>
+						<%--<li><a href="#"><i class="fa fa-leaf"></i>主题样式</a></li>--%>
 						<li><a href="#" data-skin="default">默认</a></li>
 						<li><a href="#" data-skin="night">夜间</a></li>
 						<li><a href="#" data-skin="earth">朴实</a></li>
@@ -70,7 +75,7 @@
 						岱山县地名办<i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#"><i class="fa fa-edit"></i>修改密码</a></li>
+						<li><a href="javascript:void(0);" class="" onclick=setIframe("/_personalInfo/personalInfo.jsp")><i class="fa fa-edit"></i>个人中心</a></li>
 						<li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
 					</ul>
 				</li>
@@ -80,7 +85,7 @@
 	</div>
 </nav>
 <div class="page">
-	<div id="sidebar" class="sidebar">
+	<div id="sidebar" class="sidebar" style="height: 600px">
 		<div class="sidebar-menu nav-collapse">
 			<div class="divide-20"></div>
 			<div id="search-bar">
@@ -111,13 +116,13 @@
 					</a>
 				</li>
 				<li class="has-sub">
-					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
+					<a href="#">
 						<i class="fa fa-th-large fa-fw"></i> <span class="menu-text">第一篇 行政区域组织</span>
 						<i class="fa fa-caret-left arrow"></i>
 					</a>
 					<ul class="sub">
 						<li class="has-sub-sub">
-							<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第一章 高亭镇</span>
+							<a href="#" ><span class="sub-menu-text">第一章 高亭镇</span>
 								<i class="fa fa-caret-left arrow"></i>
 							</a>
 							<ul class="sub-sub">
@@ -135,7 +140,7 @@
 							</ul>
 						</li>
 						<li class="has-sub-sub">
-							<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第三章 东沙镇</span>
+							<a href="#" ><span class="sub-menu-text">第三章 东沙镇</span>
 								<i class="fa fa-caret-left arrow"></i>
 							</a>
 							<ul class="sub-sub">
@@ -152,21 +157,23 @@
 					</a>
 					<ul class="sub">
 						<li class="has-sub-sub">
-							<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第一章 风景名胜</span>
+							<a href="#" ><span class="sub-menu-text">第一章 风景名胜</span>
 								<i class="fa fa-caret-left arrow"></i>
 							</a>
 							<ul class="sub-sub">
 								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 风景名胜区</span></a></li>
 								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 风景点</span></a></li>
+							</ul>
+							</li>
+							<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第二章 古迹、古建筑</span></a></li>
+							<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第三章 纪念地</span></a></li>
 					</ul>
 				</li>
-				<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第二章 古迹、古建筑</span></a></li>
-				<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第三章 纪念地</span></a></li>
-			</ul>
-			</li>
 			</ul>
 
 		</div>
+		<div class="divide-20"></div>
+        <div class="divide-20"></div>
 	</div>
 	<div id="main-content">
 		<div class="ifameContainer">
@@ -188,7 +195,7 @@
 </body>
 <script>
 
-
+	$(document).ready($("#sidebar").mCustomScrollbar({ theme:"dark-thin"}));
 
 //		var timer=window.setInterval("resetIframe($('#iframe'))",500);
 //	        function reinitIframeEND(){

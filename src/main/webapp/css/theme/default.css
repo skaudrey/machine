@@ -31,7 +31,7 @@ body{
 #sidebar{
 	background: none repeat scroll 0 0 #f4f4f4;
 	/*border-bottom: 1px solid #e7e7e7;*/
-	border-right: 1px solid #e7e7e7;
+	border-right: 1px solid #B1AAAA;
 }
 /*左侧导航栏列表*/
 ul#leftcontent{
@@ -61,9 +61,14 @@ ul[class^="sub"]:before{
 li[class^="has-sub-sub"]:before{
 	border-top: 1px dotted #3b3b3b;
 }
-
+ul[class^="sub"]>li:before{
+	border-top: 1px dotted #3b3b3b;
+}
 /*左侧导航栏二级菜单链接*/
 li[class^="has-sub-sub"]>a{
+	color: #555555;
+}
+ul[class^="sub"]>li>a{
 	color: #555555;
 }
 ul[class^="sub-sub"]{
