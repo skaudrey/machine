@@ -98,7 +98,7 @@ public class BaseProcessDefinitionDiagramLayoutResource extends GenericActionSup
         processInstanceJSON.put("superExecutionId", superExecutionId);
         processInstanceJSON.put("processDefinitionId", subDef.getId());
         processInstanceJSON.put("processDefinitionKey", subDef.getKey());
-        processInstanceJSON.put("processDefinitionName", subDef.getName());
+        processInstanceJSON.put("processDe=finitionName", subDef.getName());
 
         subProcessInstanceMap.put(superExecutionId, processInstanceJSON);
       }

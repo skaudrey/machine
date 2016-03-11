@@ -7,7 +7,7 @@
 <struts>
     <package name="app.sys.systemmgr.usermanager.action" extends="app" namespace="/test">
         <!--用户登录-->
-        <action name="userMgrAction"  class="app.sys.test.action.UserMgrAction">
+        <action name="userMgrAction"  class="app.sys.usermgr.action.UserMgrAction">
             <result name="success">/test/userLogin.jsp</result>
             <result name="input">/test/userLogin.jsp</result>
             <result name="loginSuccess">/test/home.jsp</result>

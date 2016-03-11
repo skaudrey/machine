@@ -105,7 +105,6 @@
                         <a href="javascript:void(0);" class="" onclick=setIframe("_privilegeAndDepartment/index.html")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">用户部门权限管理</span>
-
                         </a>
 						<ul class="sub">
 							<li class="has-sub-sub" id="deptMnmt">

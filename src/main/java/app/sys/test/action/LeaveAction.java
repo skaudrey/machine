@@ -3,7 +3,6 @@ package app.sys.test.action;
 import app.common.Constant;
 import app.common.action.GenericActionSupport;
 import app.sys.test.model.TestLeaveEntity;
-import app.sys.test.model.TestUserEntity;
 import app.sys.test.service.workflow.LeaveWorkflowService;
 import com.opensymphony.xwork2.ModelDriven;
 import org.activiti.engine.IdentityService;
