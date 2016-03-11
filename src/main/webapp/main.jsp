@@ -151,7 +151,7 @@
                         </a>
                         <ul class="sub">
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placeNames.jsp")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placenameApply.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名预申报</span>
                                 </a>
