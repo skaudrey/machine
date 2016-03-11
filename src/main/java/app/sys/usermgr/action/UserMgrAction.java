@@ -2,7 +2,7 @@ package app.sys.usermgr.action;
 
 import app.common.Constant;
 import app.common.action.GenericActionSupport;
-import app.sys.usermgr.model.TestUserEntity;
+import app.sys.usermgr.model.UserUserEntity;
 import app.sys.usermgr.service.UserMgrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserMgrAction extends GenericActionSupport{
-    private String username;
+    private String account;
     private String password;
     @Autowired
     private UserMgrService service;
@@ -23,24 +23,24 @@ public class UserMgrAction extends GenericActionSupport{
     }
 
     public String UserLogin() {
-        TestUserEntity user = service.getUserEntityByParam(username, password);
-        user.getUsername();
+        UserUserEntity user = service.getUserEntityByParam(account, password);
         if (user != null) {
-            mSessionMap.put(Constant.USER_ID, user.getUid());
-            mSessionMap.put(Constant.USER_NAME, user.getUsername());
-            return "loginSuccess";
+            mSessionMap.put(Constant.USER_ID, user.getUpId());
+            mSessionMap.put(Constant.USER_NAME, user.getName());
+            super.printForAjax("1");
         }else {
-            return INPUT;
+            super.printForAjax("0");
         }
+        return "";
     }
 
 
-    public String getUsername() {
-        return username;
+    public String getAccount() {
+        return account;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public String getPassword() {

@@ -6,12 +6,6 @@
 
 <struts>
     <package name="app.sys.systemmgr.usermanager.action" extends="app" namespace="/test">
-        <!--用户登录-->
-        <action name="userMgrAction"  class="app.sys.usermgr.action.UserMgrAction">
-            <result name="success">/test/userLogin.jsp</result>
-            <result name="input">/test/userLogin.jsp</result>
-            <result name="loginSuccess">/test/home.jsp</result>
-        </action>
         <action name="leaveMgrAction"  class="app.sys.test.action.LeaveAction">
             <result name="success">/test/home.jsp</result>
             <result name="task_show">/test/taskList.jsp</result>
