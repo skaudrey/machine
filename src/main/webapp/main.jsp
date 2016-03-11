@@ -95,7 +95,7 @@
 
                 <ul id="leftcontent">
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("_tianditu/tianditu.html")>
+                        <a href="javascript:void(0);" class="" onclick=setIframe("_tianditu/tianditu.jsp")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">空间信息基础平台管理</span>
                         </a>
@@ -107,7 +107,7 @@
                         </a>
                         <ul class="sub">
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameEntering.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameEntering.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名录入</span>
                                 </a>
@@ -119,25 +119,25 @@
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameRepair.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameRepair.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名维护</span>
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameInput.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameInput.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">导入/导出</span>
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameOutput.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameOutput.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">历史地名</span>
                                 </a>
                             </li>
                             <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameOutput.html")>--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_placename/placesnameOutput.jsp")>--%>
                                     <%--<i class="fa fa-th-large fa-fw"></i>--%>
                                     <%--<span class="sub-menu-text">地名数据导出</span>--%>
                                 <%--</a>--%>
@@ -157,19 +157,19 @@
                                 </a>
                             </li>
                             <%--<li class="has-sub-sub">--%>
-                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_placename/placefirstCheck.html")>--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_placename/placefirstCheck.jsp")>--%>
                                     <%--<i class="fa fa-th-large fa-fw"></i>--%>
                                     <%--<span class="sub-menu-text">地名初审</span>--%>
                                 <%--</a>--%>
                             <%--</li>--%>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_business/businessProcess.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_business/businessProcess.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名业务办理</span>
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placenamesLogout.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placenamesLogout.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名数据注销</span>
                                 </a>
@@ -207,7 +207,7 @@
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">门牌证管理</span>
                                 </a>
@@ -221,19 +221,19 @@
                         </a>
                         <ul class="sub">
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">行政区划管理</span>
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">扫描件管理</span>
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">行政区划设立</span>
                                 </a>
@@ -245,7 +245,7 @@
                                 </a>
                             </li>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.jsp")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">行政区划调整</span>
                                 </a>
@@ -306,7 +306,7 @@
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("_privilegeAndDepartment/index.html")>
+                        <a href="javascript:void(0);" class="" onclick=setIframe("_privilegeAndDepartment/index.jsp")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">系统维护</span>
                         </a>
