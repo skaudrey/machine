@@ -116,7 +116,7 @@
 </div>
 
 <div id="right" style="left: 0px;right: 0px;position: absolute;">
-	<h4 class="pull-left title-pull-left">地名初审</h4>
+	<h4 class="pull-left title-pull-left">已受理地名</h4>
 	<br />
 	<br />
 
