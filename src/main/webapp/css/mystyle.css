@@ -1,0 +1,272 @@
+label,
+form {
+	font-family: "����";
+	font-size: small;
+	font-weight: normal;
+	/*����bootstrap�Դ�label����Ӵ�Ч��*/
+	word-spacing: -0.1em;
+	/*�־���С*/
+	letter-spacing: -0.1em;
+	/*�־���С*/
+}
+
+button {
+	font-family: "����";
+	width: 70px;
+}
+
+a {
+	color: #000000;
+}
+
+/*���Ҹ���15px*/
+
+.margin-general{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*���Ͻ�button-��������*/
+
+.btn-pull-left1{
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+/*���Ͻ�button-������*/
+
+.btn-pull-left2{
+	margin-left: 15px;
+}
+
+/*���ϽǱ���*/
+
+.title-pull-left{
+	margin-left: 20px;
+}
+
+/*�۵���*/
+
+.panel-body {
+	line-height: 180%!important;
+}
+
+.panel-body input,
+.panel-body select {
+	height: 25px!important;
+	width: 100px!important;
+}
+
+.panel-body textarea{
+	height: 53px!important;
+}
+
+/*��������-������*/
+
+.myDiv{
+	position: relative;
+	margin-left: 15px;
+	padding: 15px;
+	line-height: 220%!important;
+	border: #dddddd 1px solid;
+	border-radius: 4px;
+}
+
+.myDiv input,
+.myDiv select{
+	height: 25px!important;
+	width: 145px!important;
+}
+
+.btn-switch{
+	position: absolute;
+	top: 250px;
+	right: -15px;
+	height: 27px;
+	width: 27px;
+	color: #dddddd;
+	border: none;
+	display: none;/*��ʼ����*/
+}
+
+/*����ɫ*/
+
+thead {
+	background-color: #5bc0de;
+	/*��btn-info����ɫͬɫ*/
+	color: #ffffff;
+}
+
+.table th,
+.table td {
+	text-align: center;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: #d9edf7;
+	/*��panel-info����ɫͬɫ*/
+	/*������һ��ǳ��ɫ�ı���ɫ*/
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+	background-color: #f5f5f5;
+	/*��֪��Ϊʲô��д�������ǳ��ɫ�о��ǲ���ɫ��*/
+}
+
+/*tableԲ��*/
+
+.table-bordered {
+	border: 1px solid #dddddd;
+	border-collapse: separate;
+	*border-collapse: collapse;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+	border: 1px solid #ddd!important;
+	/*ÿ����Ԫ�����ñ߿�*/
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+	border-bottom-width: 1px;
+}
+
+.table-bordered thead:first-child tr:first-child > th:first-child,
+.table-bordered tbody:first-child tr:first-child > td:first-child,
+.table-bordered tbody:first-child tr:first-child > th:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+
+.table-bordered thead:first-child tr:first-child > th:last-child,
+.table-bordered tbody:first-child tr:first-child > td:last-child,
+.table-bordered tbody:first-child tr:first-child > th:last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+.table-bordered thead:last-child tr:last-child > th:first-child,
+.table-bordered tbody:last-child tr:last-child > td:first-child,
+.table-bordered tbody:last-child tr:last-child > th:first-child,
+.table-bordered tfoot:last-child tr:last-child > td:first-child,
+.table-bordered tfoot:last-child tr:last-child > th:first-child {
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+}
+
+.table-bordered thead:last-child tr:last-child > th:last-child,
+.table-bordered tbody:last-child tr:last-child > td:last-child,
+.table-bordered tbody:last-child tr:last-child > th:last-child,
+.table-bordered tfoot:last-child tr:last-child > td:last-child,
+.table-bordered tfoot:last-child tr:last-child > th:last-child {
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+}
+
+.table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+
+.table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+}
+
+/*�����л�*/
+
+.nav-top{
+	margin-top: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*�������Ͻǿؼ����Զ�λ*/
+
+.position-fixed{
+	position:fixed!important;
+	top: 5px!important;
+	right: 15px!important;
+}
+
+/*���Ͻǡ��ڴ����������ؼ��֡�*/
+
+.caret-search {
+	color: #dddddd;
+	margin-right: 5px;
+}
+
+.dropdown-menu-search {
+	line-height: 220%!important;
+	width: 220px;
+	/*border: none;
+	border-radius: 0;*/
+	box-shadow: none;
+}
+
+/*.dropdown-menu-search label {
+	width: auto;
+}*/
+
+.dropdown-menu-container{
+	width: 100%;
+}
+
+.dropdown-menu-search input,
+select {
+	height: 27px!important;
+	width: 130px!important;
+}
+
+.divider-search {
+	width: 190px;
+	/*������ָ��߳���*/
+}
+
+.btn-group-search {
+	margin-left: 49px;
+}
+
+.searchContainer {
+	border: #dddddd solid 1px;
+	border-radius: 4px;
+}
+
+.searchContainer input {
+	font-family: "����";
+	font-size: small;
+	height: 27px!important;
+	width: 170px!important;
+	border: none;
+}
+
+.searchContainer button {
+	border: none;
+	padding: 0px;
+	color: #555555;
+	height: 27px;
+	width: 27px;
+}

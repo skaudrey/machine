@@ -1,0 +1,337 @@
+body{
+
+	border: 0 none;
+	font-size: 13px;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+
+}
+
+
+.divide-20{
+	height: 20px;
+	width: 100%;
+}
+
+.open >a{
+	outline: 0;
+}
+.sidebar-menu{
+    /*overflow: auto;*/
+	/*height: 600px;*/
+}
+.scroller{
+    overflow: auto;
+	/*height: 800px;*/
+}
+#sidebar{
+    /*position: fixed;*/
+    background: none;
+}
+.col-sm-2{
+	position: fixed;
+    float: right;
+}
+
+/*#right_option{*/
+    /*position: fixed;*/
+/*}*/
+.title-logo{
+	color: white;
+	margin-left: 45px;
+}
+
+/*#right_option{*/
+	/*position: fixed;*/
+    /*display: block;*/
+/*}*/
+/*左侧导航栏列表*/
+ul#leftcontent{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 15px;
+	overflow: auto;
+}
+/*左侧导航栏列表项*/
+ul#leftcontent >li{
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0px;
+}
+
+/*左侧导航栏列表项链接*/
+ul#leftcontent >li >a{
+	display: block;
+	position: relative;
+	margin: 0;
+	border: 0 none;
+	padding: 15px 15px 15px 20px;
+	text-decoration:none;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+/*左侧导航栏列表项icon*/
+ul#leftcontent >li >a i{
+	font-size: 16px;
+	margin-left: 5px;
+}
+/*左侧导航栏，有下级菜单的li*/
+ul#leftcontent >li.has-sub{
+	position: relative;
+}
+/*左侧导航栏，列表项的下级列表*/
+ul#leftcontent >li>ul.sub{
+	display: none;
+	list-style: none;
+	clear: both;
+	padding-left: 25px;
+}
+/*左侧导航栏，有下级菜单的li的ul*/
+ul#leftcontent >li.has-sub .sub{
+	position: relative;
+}
+/*左侧导航栏，二级菜单的before*/
+ul#leftcontent >li >ul.sub:before{
+	-moz-border-bottom-colors:none;
+	-moz-border-left-colors:none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-image: none;
+	border-style: dotted;
+	border-width: 0 0 0 1px;
+	bottom: 0;
+	content: "";
+	display: block;
+	position: absolute;
+	top:0;
+	z-index: 1;
+}
+/*左侧导航栏，二级菜单的选项的before*/
+ul#leftcontent >li >ul.sub>li:before{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 17px;
+	margin: 5% 0 0;
+}
+/*左侧导航栏，三级级菜单的before*/
+ul#leftcontent >li >ul.sub>li >ul.sub-sub:before{
+	-moz-border-bottom-colors:none;
+	-moz-border-left-colors:none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-image: none;
+	border-style: dotted;
+	border-width: 0 0 0 1px;
+	bottom: 0;
+	content: "";
+	display: block;
+	position: absolute;
+	top:0;
+	z-index: 1;
+}
+/*左侧导航栏，三级级菜单的选项的before*/
+ul#leftcontent >li >ul.sub>li>ul.sub-sub>li:before{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 17px;
+	margin: 5% 0 0;
+}
+/*左侧导航栏二级菜单链接*/
+ul#leftcontent >li >ul.sub>li >a{
+	display: block;
+	margin: 0px;
+	padding: 5px 0px;
+	padding-left: 30px !important;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 300;
+	background: none;
+
+}
+/*左侧导航栏二级菜单链接*/
+ul#leftcontent >li >ul.sub>li >a{
+	margin-left: 0px;
+	padding-left: 5px;
+	font-size: 13px;
+	font-weight: 400;
+}
+/*左侧导航栏的三级菜单*/
+ul#leftcontent>li.has-sub .sub .has-sub-sub .sub-sub{
+	position: relative;
+}
+/*左侧导航栏的三级菜单的选项的链接*/
+ul#leftcontent >li >ul.sub .has-sub-sub ul.sub-sub>li>a{
+	display: block;
+	margin: 0px;
+	padding: 5px 0px;
+	padding-left: 30px !important;
+	text-decoration: none;
+	font-size: 13px;
+	font-weight: 300;
+	background: none;
+}
+
+ul#leftcontent >li >ul.sub>li,
+ul#leftcontent >li >ul.sub .has-sub-sub ul.sub-sub>li{
+	background: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 1px !important;
+
+}
+
+ul#leftcontent >li >ul.sub>li>a{
+	height: 30px;
+}
+
+ul#leftcontent >li >ul.sub>li:first-child>a{
+	border-top:0px !important;
+}
+
+ul#leftcontent>li>ul.sub .has-sub-sub ul.sub-sub{
+	display: none;
+	list-style: none;
+	clear: both;/*在左右两侧均不允许浮动元素*/
+}
+li[class^="has-sub"]>a i.arrow:before,
+li[class^="has-sub"]>a i.arrow.open:before,{
+	float: right;
+	margin-top: 1px;
+	margin-right: 5px;
+	display: inline;
+	font-family: FontAwesome;
+	height: auto;
+	font-size: 16px;
+	font-weight: 300;
+	text-shadow: none;
+}
+ul#leftcontent>li>a i.arrow:before,
+ul#leftcontent>li>a i.arrow.open:before{
+	float: right;
+	margin-top: 1px;
+	margin-right: 5px;
+	display: inline;
+	font-family: FontAwesome;
+	height: auto;
+	font-size: 16px;
+	font-weight: 300;
+	text-shadow: none;
+}
+ul#leftcontent>li>a i.arrow,
+ul#leftcontent>li.has-sub >ul.sub>li >a i.arrow{
+	float: right;
+	margin-top: 1px;
+	margin-right: 5px;
+	display: inline;
+	font-size: 16px;
+	font-family: FontAwesome;
+	height: auto;
+	font-weight: 300;
+	text-shadow: none;
+}
+/*左侧导航栏收缩按钮*/
+/*.switcher>[class*="fa-"],*/
+.sidebar-collapse >[class*="fa-"]{/*包含fa*/
+	cursor: pointer;
+	display: inline-block;
+	padding: 0 5px;
+	position: relative;
+	float: right;
+}
+body{
+	background: none repeat scroll 0 0 #ffffff;
+	/*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+	color: #555555;
+
+}
+
+
+ul#leftcontent{
+	/*border-bottom: 1px solid #FFFFFF !important;*/
+	border: 1px solid #22262e !important;
+}
+/*左侧导航栏列表项*/
+ul#leftcontent >li >a{
+	border-bottom: 1px solid #ffffff !important;
+	border-top: 1px solid #e7e7e7 !important;
+	color: #555555 !important;
+}
+/*左侧导航栏列表项icon*/
+ul#leftcontent >li >a i{
+
+	color: #555555 ;
+}
+
+ul[class^="sub"]{
+	background: #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+ul[class^="sub"]:before{
+	border-color: #3B3B3B;
+}
+li[class^="has-sub-sub"]:before{
+	border-top: 1px dotted #3b3b3b;
+}
+
+/*左侧导航栏二级菜单链接*/
+li[class^="has-sub-sub"]>a{
+	color: #555555;
+}
+ul[class^="sub-sub"]{
+	background: #E7E7E7;
+	border-top: 1px solid #e7e7e7;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;/*insert将外部阴影改为内部阴影*/
+}
+
+/*左侧导航栏 一级菜单打开
+左侧导航栏一级菜单，鼠标滑过*/
+ul#leftcontent >li.has-sub.open>a,
+ul#leftcontent >li >a:hover,
+ul#leftcontent >li:hover >a{
+	background: #FFFFFF;
+}
+
+li[class^="has-sub-sub"]:hover{
+	background: #F6F6F6!important;
+}
+/*左侧导航栏一级菜单方向icon的before，以及打开时的before*/
+ul#leftcontent>li>a i.arrow:before,
+ul#leftcontent>li>a i.arrow.open:before{
+	color: #555555 !important;
+}
+
+/*处理左侧导航栏缩小*/
+
+/*左侧导航栏收缩按钮*/
+/*.switcher>[class*="fa-"],*/
+.sidebar-collapse >[class*="fa-"]{/*包含fa*/
+	color: #FFFFFF;
+}
+/*小的搜索icon*/
+.mini-menu .sidebar-menu #search-bar .search-icon{
+	color: #888888;
+}
+/*小的以及菜单链接字体*/
+li.has-sub.mini-menu>a>.menu-text{
+	background: #F4F4F4;
+	border: 1px solid #CECECE;
+}
+
+ul.sub.mini-menu{
+	background-color:#E7E7E7 ;
+	border: 1px solid #CECECE;
+	border-top: 1px solid #E7E7E7;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1) inset;
+}
+
+.selected{
+	background: #B486BD!important;
+}

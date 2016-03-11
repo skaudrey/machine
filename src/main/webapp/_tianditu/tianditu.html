@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="/css/tianditu/ol.css" type="text/css">
+	<script src="/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet" />
+	<script src="/js/tianditu/init.js"></script>
+	<script src="/js/tianditu/common.js"></script>
+	<script src="/js/tianditu/ol.js"></script>
+	<title></title>
+	<style>
+		html,
+		body {
+			height: 100%
+		}
+
+		.noPadding {
+			padding: 0px;
+		}
+
+		.container {
+			width: 100%;
+		}
+
+		.navbar {
+			margin-bottom: 0px;
+			background:white;
+		}
+		.popupBtn
+		{
+			position: absolute;
+			left: 10px;
+			bottom: 10px;
+		}
+		.popupTop
+		{
+			font-weight: bold;
+		}
+		/************************************************/
+
+		.dropdownList {
+			position: absolute;
+			background-color: white;
+			font-weight: normal;
+			border: 1px solid gainsboro;
+			padding: 10px 0px;
+			z-index: 100;
+			display: none;
+		}
+
+		#spatialSearch-list {
+			min-width: 200px;
+		}
+
+		#findFeature-confirm,#dataEdit-confirm {
+			margin-top: 10px;
+			width: 50%;
+			font-size: 12px;
+		}
+
+		#CivilianIns-list {
+			min-width: 120px;
+			padding: 10px;
+		}
+
+		#dataEdit-list {
+			min-width: 200px;
+		}
+		.rightBtn
+		{
+			padding: 11px 2px !important;
+		}
+		.navbar-right
+		{
+			margin-right: 5px;
+		}
+		/************************************************/
+
+		.bottomMenu {
+			position: fixed;
+			bottom: 0px;
+			max-height: 40%;
+			left: 0px;
+			right: 0px;
+			background: transparent;
+			display: none;
+		}
+
+		#spatialSearch-result {
+			margin-bottom: 0px;
+		}
+
+		#spatialSearch-result tbody {
+			background-color: white;
+		}
+
+		#spatialSearch-result caption {
+			padding-bottom: 0px;
+		}
+
+		#spatialSearch-resultDisplay {
+			font-size: 12px;
+			padding: 5px 25px;
+		}
+	</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+	<div>
+		<!--向左对齐-->
+		<ul class="nav navbar-nav navbar-left">
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" id="spatialSearch-showbtn" data-toggle="dropdown">
+					空间查询
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdownList" id="spatialSearch-list">
+					<div class="container">
+						<label for="findFeature" class="col-sm-5 noPadding">查找要素&nbsp;</label>
+						<select class="col-sm-7 noPaddings" id="findFeature">
+							<option value="0">点</option>
+							<option value="1">线</option>
+							<option value="2">面</option>
+						</select>
+					</div>
+					<div class="container">
+						<label for="findFeature-keyword" class="col-sm-5 noPadding">关键字&nbsp;</label>
+						<input type="text" class="col-sm-7 noPadding" id="findFeature-keyword" />
+						<button type="button" class="btn  btn-primary pull-right" id="findFeature-confirm">确定</button>
+					</div>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" id="CivilianIns-showbtn" data-toggle="dropdown"> 民政机构<b class="caret"></b></a>
+				<ul class="dropdownList" id="CivilianIns-list">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">社区服务</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">居家养老</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">慈善机构</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">福利企业</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">婚姻登记</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">福利彩票</label>
+					</div>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" id="dataEdit-showbtn" data-toggle="dropdown">数据编辑<b class="caret"></b></a>
+				<ul class="dropdownList" id="dataEdit-list">
+					<div class="container">
+						<label for="dataEdit-layer" class="col-sm-5 noPadding">编辑图层&nbsp;</label>
+						<select class="col-sm-7 noPaddings" id="dataEdit-layer">
+							<option value="0">天地图</option>
+							<option value="1">地名</option>
+							<option value="2">界桩</option>
+						</select>
+					</div>
+					<div class="container">
+						<label for="dataEdit-layer" class="col-sm-5 noPadding">要素编号&nbsp;</label>
+						<input type="text" class="col-sm-7 noPadding" id="dataEdit-featureIndex" />
+					</div>
+					<div class="container">
+						<label for="dataEdit-standard" class="col-sm-5 noPadding">标准名称&nbsp;</label>
+						<input type="text" class="col-sm-7 noPadding" id="dataEdit-standard" />
+					</div>
+					<div class="container">
+						<label for="dataEdit-picName" class="col-sm-5 noPadding">图上名称&nbsp;</label>
+						<input type="text" class="col-sm-7 noPadding" id="dataEdit-picName" />
+					</div>
+					<div class="container">
+						<label for="dataEdit-placeEncode" class="col-sm-5 noPadding">地名编码&nbsp;</label>
+						<input type="text" class="col-sm-7 noPadding" id="dataEdit-placeEncode" />
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" value="">关联属性录入</label>
+						</div>
+						<button type="button" class="btn  btn-primary pull-right" id="dataEdit-confirm">确定</button>
+					</div>
+
+				</ul>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"  class="rightBtn" onclick="setStatus(1)"><img src="/imgs/tianditu/point.png"></a></li>
+			<li><a href="#" class="rightBtn" onclick="setStatus(2)"><img src="/imgs/tianditu/line.png"></a></li>
+			<li> <a href="#" class="rightBtn" onclick="setStatus(3)"><img src="/imgs/tianditu/polygon.png"></a></li>
+			<li><a href="#" class="rightBtn" onclick="setStatus(0)"><img src="/imgs/tianditu/mousemove.png"></a></a></li>
+		</ul>
+	</div>
+</nav>
+<div id='map'></div>
+<div class="bottomMenu">
+	<table class="table table-bordered" id="spatialSearch-result">
+		<caption>
+			<button class="btn" id="spatialSearch-resultDisplay">查询结果<b class="caret"></b></button>
+		</caption>
+		<thead>
+		<tr class="success">
+			<th>序号</th>
+			<th>经度</th>
+			<th>纬度</th>
+			<th>标准名称</th>
+			<th>图上名称</th>
+			<th>地名类型</th>
+			<th>地名等级</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>1</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div id="popup"></div>
+</body>
+
+</html>
