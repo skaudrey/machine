@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="app.sys.UploadData.action" extends="struts-default" namespace="/">
+        <action name="txtfileupload" class ="app.sys.UploadData.action.TXTFileUpload">
+            <!-- Define the interceptor of file upload -->
+            <interceptor-ref name="fileUpload">
+                <!-- Initialize the parameter -->
+                <!-- 500M-->
+                <param name="maximumSize">524288000</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success" type="chain">
+                <param name="actionName">Insert2PlaceTable</param>
+                <param name="namespace">/</param>
+            </result>
+            <!-- <result name = "success">upload-success.jsp</result> -->
+        </action>
+        <action name="Insert2PlaceTable" class="app.sys.UploadData.action.Step1_Insert2PlaceTable" method="execute">
+            <result name="selectAct" type="chain">
+                <param name="actionName">FindIdentifies</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
+        <action name="FindIdentifies" class="app.sys.UploadData.action.Step2_FindIden" method="execute">
+            <result name="topage">/uploaddata/b.jsp</result>
+        </action>
+        <action name="GenerateSQL" class="app.sys.UploadData.action.Step3_GenerateSql" method="execute">
+
+        </action>
+
+    </package>
+</struts>

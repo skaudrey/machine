@@ -2,7 +2,7 @@
  * 添加左侧的内容
  * 左侧导航栏的内容：{level： ，priId:  ,name: ;action:    ;description:   ;upPriId:   ;}
  */
-
+var timer;
 function addLeftItem(){
     var levelList=$("input[name='level']");
     var priIdList=$("input[name='priId']");
@@ -109,10 +109,15 @@ function resetIframe(e){
         if(e.attr("src"))
         {
             var bodyHeight=$("body").height();
-            e.contents().find("body").css("min-height",bodyHeight-$("#header").outerHeight());
+           // e.contents().find("body").css("max-height",bodyHeight-$("#header").height());
             var height=e.contents().find("body").height();
             //alert(height)
+            //alert(e.css("height"));
+            //if(e.css("height")==height+"px"){
+            //    clearInterval(timer);
+            //}
             e.css("height",height);
+            //alert(e.css("height"));
         }
         else
         {e.css("height",0);}
@@ -120,7 +125,9 @@ function resetIframe(e){
 
 function setIframe(src){
     $("#iframe").attr("src",src);
-    setInterval("resetIframe($('#iframe'))",500);
+    $("#iframe").css("height","0");
+    timer=setInterval("resetIframe($('#iframe'))",500);
+
 
 
     //resetIframe($("#iframe"));

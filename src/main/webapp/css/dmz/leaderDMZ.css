@@ -19,18 +19,25 @@ body{
 	outline: 0;
 }
 .sidebar-menu{
-    overflow: auto;
-	height: 600px;
+    /*overflow: auto;*/
+	/*height: 600px;*/
 }
 .scroller{
     overflow: auto;
+	/*height: 800px;*/
 }
 #sidebar{
-    position: fixed;
+    /*position: fixed;*/
+    background: none;
 }
-#right_option{
-    position: fixed;
+.col-sm-2{
+	position: fixed;
+    float: right;
 }
+
+/*#right_option{*/
+    /*position: fixed;*/
+/*}*/
 .title-logo{
 	color: white;
 	margin-left: 45px;
@@ -239,7 +246,7 @@ ul#leftcontent>li.has-sub >ul.sub>li >a i.arrow{
 	float: right;
 }
 body{
-	background: none repeat scroll 0 0 #f4f4f4;
+	background: none repeat scroll 0 0 #ffffff;
 	/*font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 	color: #555555;
 
@@ -248,7 +255,7 @@ body{
 
 ul#leftcontent{
 	/*border-bottom: 1px solid #FFFFFF !important;*/
-	border-top: 1px solid #FFFFFF !important;
+	border: 1px solid #22262e !important;
 }
 /*左侧导航栏列表项*/
 ul#leftcontent >li >a{
