@@ -65,9 +65,34 @@
 <script>
 
 	$('#loginBtn').click(function (){
+		var account = $("#user").val();
+		var password = $("#password").val();
 		//window.location.href="/privilege!loginIn?userId="+$("#user").val()+"&password="+$("#password").val()+"";
-		if($("#user").val()=="admin" && $("#password").val()=="123"){
-			window.location.href="main.jsp";
+		if(account!= null && password != null){
+			$.ajax({
+				url: "/usermgr/userMgrAction!UserLogin",
+				dataType: "json",
+				async: true,
+				data: {
+					"account": account,
+					"password" : password
+				},
+				type: "post",
+				success: function(data) {
+					if(data == "1"){
+						window.location.href="main.jsp";
+					} else if (data == "0"){
+						alert("用户名或密码错误");
+					} else {
+						alert ("未知错误");
+					}
+				},
+				error: function() {
+					alert ("error");
+				}
+			});
+		}else{
+			alert("用户名 和 密码均不能为空");
 		}
 	});
 

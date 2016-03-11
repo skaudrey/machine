@@ -1,7 +1,7 @@
 package app.sys.usermgr.service.impl;
 
-import app.sys.usermgr.dao.TestUserDao;
-import app.sys.usermgr.model.TestUserEntity;
+import app.sys.usermgr.dao.UserUserDao;
+import app.sys.usermgr.model.UserUserEntity;
 import app.sys.usermgr.service.UserMgrService;
 import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +15,17 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserMgrServiceImpl implements UserMgrService {
     @Autowired
-    private TestUserDao testUserDao;
+    private UserUserDao userUserDao;
     @Override
-    public int saveUserEntity(TestUserEntity user) {
-        return testUserDao.save(user);
+    public boolean saveUserEntity(UserUserEntity user) {
+        userUserDao.save(user);
+        return true;
     }
 
     @Override
-    public TestUserEntity getUserEntityByParam(String username, String password) {
-        String hql = "from TestUserEntity t where t.username = :USERNAME and t.password = :PASSWORD";
-        Query query = testUserDao.createQuery(hql).setString("USERNAME",username).setString("PASSWORD",password);
-        return (TestUserEntity)query.uniqueResult();
+    public UserUserEntity getUserEntityByParam(String account, String password) {
+        String hql = "from UserUserEntity u where u.usrId = :ACCOUNT and u.password = :PASSWORD";
+        Query query = userUserDao.createQuery(hql).setString("ACCOUNT",account).setString("PASSWORD",password);
+        return (UserUserEntity)query.uniqueResult();
     }
 }

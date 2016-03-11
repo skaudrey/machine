@@ -1,6 +1,6 @@
 package app.sys.usermgr.service;
 
-import app.sys.usermgr.model.TestUserEntity;
+import app.sys.usermgr.model.UserUserEntity;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface UserMgrService {
     //保存用户实体
-    int saveUserEntity(TestUserEntity user);
+    boolean saveUserEntity(UserUserEntity user);
     //根据用户名密码获取用户实体
-    TestUserEntity getUserEntityByParam(String username,String password);
+    UserUserEntity getUserEntityByParam(String account,String password);
 }
