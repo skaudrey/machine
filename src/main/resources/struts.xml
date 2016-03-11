@@ -38,4 +38,5 @@
         </global-results>
     </package>
     <include file="struts/struts-test.xml"/>
+    <include file="struts/struts_scan.xml"/>
 </struts>

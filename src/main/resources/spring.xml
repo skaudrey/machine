@@ -15,7 +15,7 @@
         <property name="driverClass" value="${c3p0.driverClass}"/>
         <property name="jdbcUrl" value="${c3p0.jdbcUrl}"/>
         <property name="user" value="${c3p0.user}"/>
-        <property name="password" value="${c3p0.password}"/>
+        <property name="password" value="mysql"/>
         <!--其他配置-->
         <!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
         <property name="initialPoolSize" value="${c3p0.initialPoolSize}"/>
