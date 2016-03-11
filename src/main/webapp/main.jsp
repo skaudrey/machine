@@ -72,7 +72,7 @@
 				<li class="dropdown" >
 					<a  class="dropdown-toggle" href="#" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
 						<i class="fa fa-user"></i>
-						岱山县地名办<i class="fa fa-angle-down"></i>
+						<s:property value="#session.userName"/> <i class="fa fa-angle-down"></i>
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="javascript:void(0);" class="" onclick=setIframe("_personalInfo/personalInfo.jsp")><i class="fa fa-edit"></i>个人中心</a></li>

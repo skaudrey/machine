@@ -25,7 +25,7 @@ public class UserMgrAction extends GenericActionSupport{
     public String UserLogin() {
         UserUserEntity user = service.getUserEntityByParam(account, password);
         if (user != null) {
-            mSessionMap.put(Constant.USER_ID, user.getUpId());
+            mSessionMap.put(Constant.USER_ID, user.getUsrId());
             mSessionMap.put(Constant.USER_NAME, user.getName());
             super.printForAjax("1");
         }else {

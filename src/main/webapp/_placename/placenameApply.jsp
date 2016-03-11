@@ -251,8 +251,7 @@
             </div>
         </div>
     </div>
-
-     <div id="Applyed" style="display: none;">
+      <div id="Applyed" style="display: none;">
          <table class="table table-striped table-hover table-bordered table-condensed">
              <thead>
              <tr>
