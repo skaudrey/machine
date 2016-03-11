@@ -34,7 +34,7 @@
         <!--右上角button组-->
         <div class="btn-group position-fixed">
             <button type="button" class="btn btn-info btn-sm">确定</button>
-            <button type="button" class="btn btn-default btn-sm" onclick="window.location.href='placefirstCheck.html'">取消</button>
+            <button type="button" class="btn btn-default btn-sm" onclick="setTab(1)">取消</button>
         </div>
         <br />
         <br />
@@ -42,21 +42,48 @@
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#basicInformation">基本信息</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#planNameInformation">拟命名信息</a>
                     </h4>
                 </div>
-                <div id="basicInformation" class="panel-collapse collapse in">
+                <div id="planNameInformation" class="panel-collapse collapse in">
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="col-md-4">
-                                    <label for="administrativeDivision" class="control-label pull-right">行政区划</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <select class="form-control pull-left" id="administrativeDivision"></select>
-                                </div>
+                            <div class="col-md-10">
+                                <div class="col-md-6">
+                                    <label for="administrativeDivision" class="col-md-4 control-label">行政区划</label>
+                                    <select class="col-md-8 form-control" id="administrativeDivision"></select>
 
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="placesnameCode" class="col-sm-4 control-label">地名代码</label>
+                                    <input type="text" class="col-sm-8 form-control" id="placesnameCode" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="standardName" class="col-sm-4 control-label">标准名称</label>
+                                    <input type="text" class="col-sm-8 form-control" id="standardName" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="spelling" class="col-sm-4 control-label">罗马拼写</label>
+                                    <input type="text" class="col-sm-8 form-control" id="spelling" />
+                                </div>
                             </div>
+
+                            <div class="col-md-2">
+                                <button id="planName" type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#multinameModal">拟命名</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info ">
+                <div class="panel-heading ">
+                    <h4 class="panel-title ">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#information">信息</a>
+                    </h4>
+                </div>
+                <div id="information" class="panel-collapse collapse in">
+                    <div class="panel-body ">
+                        <div class="row">
                             <div class="col-md-4">
                                 <label for="languages" class="col-sm-4 control-label">语种</label>
                                 <select class="col-sm-8 form-control" id="languages"></select>
@@ -64,12 +91,6 @@
                             <div class="col-md-4">
                                 <label for="coordinates" class="col-sm-4 control-label">坐标系</label>
                                 <select class="col-sm-8 form-control" id="coordinates"></select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="placesnameCode" class="col-sm-4 control-label">地名代码</label>
-                                <input type="text" class="col-sm-8 form-control" id="placesnameCode" />
                             </div>
                             <div class="col-md-4">
                                 <label for="scale" class="col-sm-4 control-label">比例尺</label>
@@ -82,12 +103,7 @@
                                     <input type="text" class="form-control" id="longitudeMax" />
                                 </form>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="standardName" class="col-sm-4 control-label">标准名称</label>
-                                <input type="text" class="col-sm-8 form-control" id="standardName" />
-                            </div>
+
                             <div class="col-md-4">
                                 <label for="namingTime" class="col-sm-4 control-label">命名时间</label>
                                 <select class="col-sm-8 form-control" id="namingTime"></select>
@@ -99,12 +115,7 @@
                                     <input type="text" class="form-control" id="latitudeMax" />
                                 </form>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="spelling" class="col-sm-4 control-label">罗马拼写</label>
-                                <input type="text" class="col-sm-8 form-control" id="spelling" />
-                            </div>
+
                             <div class="col-md-4">
                                 <label for="usingTime" class="col-sm-4 control-label">使用时间</label>
                                 <select class="col-sm-8 form-control" id="usingTime"></select>
@@ -113,8 +124,6 @@
                                 <label for="standardJudge" class="col-sm-4 control-label">是否规范</label>
                                 <select class="col-sm-8 form-control" id="standardJudge"></select>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <label for="generalName" class="col-sm-4 control-label">标准名称通名</label>
                                 <input type="text" class="col-sm-8 form-control" id="generalName" />
@@ -127,8 +136,6 @@
                                 <label for="planningTime" class="col-sm-4 control-label">规划时间</label>
                                 <select class="col-sm-8 form-control" id="planningTime"></select>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <label for="generalnameSpelling" class="col-sm-4 control-label">通名罗马拼写</label>
                                 <input type="text" class="col-sm-8 form-control" id="generalnameSpelling" />
@@ -141,8 +148,6 @@
                                 <label for="pictureCode" class="col-sm-4 control-label">图片代码</label>
                                 <input type="text" class="col-sm-8 form-control" id="pictureCode" />
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <label for="properName" class="col-sm-4 control-label">标准名称专名</label>
                                 <input type="text" class="col-sm-8 form-control" id="properName" />
@@ -155,8 +160,6 @@
                                 <label for="pictureNumber" class="col-sm-4 control-label">图名图号</label>
                                 <input type="text" class="col-sm-8 form-control" id="pictureNumber" />
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <label for="propernameSpelling" class="col-sm-4 control-label">专名罗马拼写</label>
                                 <input type="text" class="col-sm-8 form-control" id="propernameSpelling" />
@@ -169,8 +172,6 @@
                                 <label for="recordDate" class="col-sm-4 control-label">登记日期</label>
                                 <select class="col-sm-8 form-control" id="recordDate"></select>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <%--<label for="abbreviation" class="col-sm-4 control-label">简称</label>
                                 <input type="text" class="col-sm-8 form-control" id="abbreviation" />--%>
@@ -185,8 +186,6 @@
                                 <label for="registrantName" class="col-sm-4 control-label">登记人姓名</label>
                                 <input type="text" class="col-sm-8 form-control" id="registrantName" />
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-4">
                                 <label for="alias" class="col-sm-4 control-label">别名</label>
                                 <input type="text" class="col-sm-8 form-control" id="alias" />
@@ -235,13 +234,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="panel panel-info ">
                 <div class="panel-heading ">
                     <h4 class="panel-title ">
                         <a data-toggle="collapse" data-parent="#accordion" href="#otherInformation">其他信息</a>
                     </h4>
                 </div>
-                <div id="otherInformation" class="panel-collapse collapse">
+                <div id="otherInformation" class="panel-collapse collapse in">
                     <div class="panel-body ">
                         <!--其他信息为上传各种扫描件-->
                         <div class="pull-right">
@@ -254,7 +254,7 @@
         </div>
     </div>
 
-     <div id="Applyed">
+     <div id="Applyed" style="display: none;">
          <table class="table table-striped table-hover table-bordered table-condensed">
              <thead>
              <tr>
@@ -304,8 +304,43 @@
              </tbody>
          </table>
      </div>
-  </div>
 
+
+  </div>
+  <div class="modal fade" id="multinameModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">重名信息</h4>
+              </div>
+              <div class="modal-body">
+                  <table class="table table-striped table-hover table-bordered table-condensed">
+                      <thead>
+                      <tr>
+                          <th>标准名称</th>
+                          <th>罗马拼写</th>
+                          <th>行政区划</th>
+                          <th>地名类型</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                      </tr>
+                      </tbody>
+                  </table>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">了解</button>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+  </div>
 <script>
     function setTab(index){
         if(index==0){

@@ -20,12 +20,6 @@
         <property name="connection.is-connection-validation-required">true</property>
         <property name="connection.url">jdbc:mysql://192.168.1.179:3306/toponymy</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <mapping class="app.sys.appmat.model.AppApplyEntity"/>
-        <mapping class="app.sys.appmat.model.AppAppmatEntity"/>
-        <mapping class="app.sys.appmat.model.DicBusinessmaterialEntity"/>
-        <mapping class="app.sys.appmat.model.DicBusinesstypeEntity"/>
-        <mapping class="app.sys.appmat.model.DicMaterialEntity"/>
-        <mapping class="app.sys.test.model.TestUserEntity"/>
         <mapping class="app.sys.usermgr.model.TestUserEntity"/>
         <mapping class="app.sys.test.model.TestLeaveEntity"/>
         <mapping class="app.sys.test.model.TestUserRoleEntity"/>
