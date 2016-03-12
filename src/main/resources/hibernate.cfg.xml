@@ -27,6 +27,10 @@
         <mapping class="app.sys.UploadData.model.MetaTxtfiled2TfieldTxtEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserEntity"/>
         <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudBuildingEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudFloorEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudHouseEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudUnitEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
