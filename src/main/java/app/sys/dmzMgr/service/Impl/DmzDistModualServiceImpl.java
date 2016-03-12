@@ -17,12 +17,12 @@ import java.util.List;
  */
 @Component
 @Transactional
-public class DmzDistModualServiceImpl extends GenericActionSupport implements DmzDistModualService {
+public class DmzDistModualServiceImpl  implements DmzDistModualService {
     @Autowired
     DmzDistmodualDao dmzDistmodualDao;
 
     @Override
-    public DmzDistmodualEntity establishDistModual(String distId){
+    public DmzDistmodualEntity establishDistModual(String distId,String userId){
         String hql="from DmzDistmodualEntity ddm where ddm.distCode='"+distId+"'";
         List<DmzDistmodualEntity> list=dmzDistmodualDao.createQuery(hql).list();
         DmzDistmodualEntity dmzDistmodualEntity=new DmzDistmodualEntity();
@@ -30,10 +30,13 @@ public class DmzDistModualServiceImpl extends GenericActionSupport implements Dm
             dmzDistmodualEntity.setDistCode(distId);
             dmzDistmodualEntity.setmId(1);
             dmzDistmodualEntity.setSetTime((new Date()).toString());
-            dmzDistmodualEntity.setUsrId(mSessionMap.get(Constant.USER_ID).toString());
-            dmzDistmodualDao.saveOrUpdate(dmzDistmodualEntity);
+            dmzDistmodualEntity.setUsrId(userId);
+            int id=dmzDistmodualDao.save(dmzDistmodualEntity);
+            dmzDistmodualEntity.setId(id);
             return dmzDistmodualEntity;
+        }else{
+            return list.get(0);
         }
-        return list.get(0);
+
     }
 }

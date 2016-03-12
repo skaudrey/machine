@@ -8,5 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface DmzDistModualService {
-    DmzDistmodualEntity establishDistModual(String distId);
+    DmzDistmodualEntity establishDistModual(String distId,String userId);
 }

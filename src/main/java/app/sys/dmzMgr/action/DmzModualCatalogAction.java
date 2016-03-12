@@ -25,7 +25,7 @@ public class DmzModualCatalogAction extends GenericActionSupport{
     public void getCatalogOrder(){
         String userId=mSessionMap.get(Constant.USER_ID).toString();
         String distID=orgDepartmentService.getDistrictOfDept(userId);
-        DmzDistmodualEntity dmzDistmodualEntity=dmzDistModualService.establishDistModual(distID);
+        DmzDistmodualEntity dmzDistmodualEntity=dmzDistModualService.establishDistModual(distID,userId);
         List<DmzCatalogOrder> list=dmzModualCatalogService.getCatalogOrder(dmzDistmodualEntity);
         super.writeJson(list);
 

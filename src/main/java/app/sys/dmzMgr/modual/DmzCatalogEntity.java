@@ -37,7 +37,7 @@ public class DmzCatalogEntity {
     }
 
     @Basic
-    @Column(name = "upcID", nullable = false, insertable = true, updatable = true, length = 20)
+    @Column(name = "upcID", nullable = true, insertable = true, updatable = true, length = 20)
     public String getUpcId() {
         return upcId;
     }

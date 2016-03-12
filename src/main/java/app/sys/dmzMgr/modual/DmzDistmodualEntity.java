@@ -45,6 +45,7 @@ public class DmzDistmodualEntity {
     }
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "ID", nullable = false, insertable = true, updatable = true)
     public int getId() {
         return id;

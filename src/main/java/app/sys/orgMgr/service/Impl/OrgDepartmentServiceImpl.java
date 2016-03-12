@@ -23,7 +23,7 @@ public class OrgDepartmentServiceImpl implements OrgDepartmentService {
     @Override
     public  String getDistrictOfDept(String userId){
         String hql="from OrgDistrictdepartmentEntity odd where odd.deptId in( " +
-                "select uud.deptId form UserUserdepartmentEntity uud where uud.usrId='"+userId+"') ";
+                "select uud.deptId from UserUserdepartmentEntity uud where uud.usrId='"+userId+"' ) ";
         List<OrgDistrictdepartmentEntity> list=orgDistrictDepartmentDao.createQuery(hql).list();
         return list.get(0).getDistCode();
     }
