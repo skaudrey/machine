@@ -31,6 +31,8 @@
         <mapping class="app.sys.UploadData.model.MetaTablenameEntity"/>
         <mapping class="app.sys.UploadData.model.TPlacecommonEntity"/>
         <mapping class="app.sys.UploadData.model.MetaTxtfiled2TfieldTxtEntity"/>
+        <mapping class="app.sys.appmat.model.UserUserdepartmentEntity"/>
+        <mapping class="app.sys.appmat.model.OrgDepartmentEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
