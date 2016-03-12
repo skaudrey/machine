@@ -100,17 +100,29 @@
 				</thead>
 				<tbody>
 				<s:iterator value="results" id="obj">
+					<s:url var="claimUrl" action="toponymyMgrAction!claimTask" namespace="/toponymy">
+						<s:param name="taskId" value="#obj.taskId"/>
+					</s:url>
+					<s:url var="getTaskViewUrl" action="toponymyMgrAction!showTaskView" namespace="/toponymy">
+						<s:param name="taskId" value="#obj.taskId"/>
+					</s:url>
 					<tr>
 						<td><s:property value="#obj.piid"/></td>
-						<td><s:property value="#obj.piid"/></td>
+						<td><s:property value="#obj.flowName"/></td>
 						<td><s:property value="#obj.userName"/></td>
 						<td><s:date name="#obj.applyTime" format="yyyy-MM-dd HH:mm"/></td>
 						<td><s:property value="#obj.placeName"/></td>
 						<td>
-							<a href="#" data-toggle="modal">附件</a> |
+							<%--<a href="#" data-toggle="modal">附件</a> |
 							<a href="/_business/businessAccepted.jsp" >受理</a> |
 							<a href="#" data-toggle="modal">更名</a> |
-							<a href="#" data-toggle="modal">删除</a>
+							<a href="#" data-toggle="modal">删除</a>--%>
+							<s:if test="#obj.assignee==#session.userID"> <%--如果任务的owner 等于 登录的用户的Id，说明用户已经签收了这个任务，显示办理按钮--%>
+								<s:a href="%{getTaskViewUrl}" cssClass="btn btn-primary">办理</s:a>
+							</s:if>
+							<s:else>
+								<s:a href="%{claimUrl}" cssClass="btn btn-primary">签收</s:a>
+							</s:else>
 						</td>
 					</tr>
 				</s:iterator>

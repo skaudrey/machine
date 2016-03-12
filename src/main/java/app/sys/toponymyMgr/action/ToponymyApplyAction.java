@@ -155,7 +155,7 @@ public class ToponymyApplyAction extends GenericActionSupport implements ModelDr
         identityService.createMembership("2","deptLeader");
         identityService.createMembership("4","deptLeader");*/
 
-        Group group = identityService.newGroup("countyLeader");//括号里面是主键，String类型的
+        /*Group group = identityService.newGroup("countyLeader");//括号里面是主键，String类型的
         group.setName("县领导");
         group.setType("assignment");
         identityService.saveGroup(group);
@@ -174,7 +174,7 @@ public class ToponymyApplyAction extends GenericActionSupport implements ModelDr
 
         //创建组与用户的关联  把他们两个都设为县领导
         identityService.createMembership("2012302580231","countyLeader");
-        identityService.createMembership("2012302802222","countyLeader");
+        identityService.createMembership("2012302802222","countyLeader");*/
     }
 
     @Override

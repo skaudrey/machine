@@ -88,10 +88,11 @@ public class PlaceNameWorkflowService {
             TestPlaceNameApplyEntity placeNameApplyEntity = placeNameApplyDao.get(Integer.parseInt(businessKey));
 
             //把task的相关的值获取出来，填到leaveEntity的临时属性里，方便在前台一次性显示所有属性
-            String what = processInstance.getActivityId();
-            System.out.print(what);
             placeNameApplyEntity.setTaskName(task.getName());
-            placeNameApplyEntity.setFlowName(processInstance.getName());
+            placeNameApplyEntity.setFlowName(processInstance.getProcessDefinitionName());
+            placeNameApplyEntity.setCurrentNode(taskService.createTaskQuery().taskDefinitionKey(processInstance.getActivityId()).list().get(0).getName());
+            placeNameApplyEntity.setAssignee(task.getAssignee());
+            placeNameApplyEntity.setTaskId(task.getId());
             results.add(placeNameApplyEntity);
         }
         return results;
