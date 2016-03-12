@@ -1,0 +1,27 @@
+<html>
+<head>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/loadsvg.js"></script>
+	<link rel="stylesheet" href="css/svg.css"/>
+</head>
+<body>
+</body>
+<script>
+	$(document).ready(function(){
+		loadsvg();
+		$(this).keydown(function(event){
+			if(event.which==17)
+				ctrlPressed=true;
+		});
+		$(this).keyup(function(event){
+			if(event.which==17)
+				ctrlPressed=false;
+		});
+		$(this).keydown(function(e)
+		{
+			if(e.which==27)
+				$('#background_wrap').remove();
+		});
+	});
+</script>
+</html>

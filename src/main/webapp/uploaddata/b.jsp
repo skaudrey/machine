@@ -29,7 +29,7 @@
   <th>中文名</th>
   <th>浙江省规范表</th>
   </thead>
-  <%for (int i = 0; i < chinese.size(); i++) { %>
+  <% for (int i = 0; i < chinese.size(); i++) { %>
   <tr name="listGroup">
     <td class="one" value="<%=i%>"><%=chinese.get(i).toString()%>
     </td>

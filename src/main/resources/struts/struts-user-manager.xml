@@ -10,5 +10,8 @@
                 <action name="userMgrAction"  class="app.sys.usermgr.action.UserMgrAction">
                         <result name="logout">/main.jsp</result>
                 </action>
+                <action name="userprivilege" class="app.sys.usermgr.action.UserPrivilegeAction">
+
+                </action>
         </package>
 </struts>
