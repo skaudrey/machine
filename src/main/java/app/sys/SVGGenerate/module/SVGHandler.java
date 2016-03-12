@@ -370,10 +370,10 @@ public class SVGHandler {
                 "xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 "+(marginLeft+roomNumOfFirstFloor()*getBaseWidth()+50)+" "+(marginTop+building.getMaxFloor()*baseHeight)+"\">");
         for(SvgItem item:items)
         {
-            sb.append("<polygon id=\"element" + items.indexOf(item) + "\"" + "class=\"svg_item\" points=\"" + item.getPointStr() + "\" width=\"120\" height=\"80\"\n" +
-                    "data-field=\"" + item.getRoomStr() + "\"" +
-                    "style=\"fill:rgba(94,193,240,1);stroke:rgb(155,155,155);stroke-width:5;\n" +
-                    "fill-opacity:0.1;stroke-opacity:0.9\" onmouseover=\"svgOn(this)\" onmouseout=\"svgOut(this)\" onclick=\"select(this)\"/>");
+            sb.append("<polygon id=\"element" + items.indexOf(item) + "\"" + " class=\"svg_item\" points=\"" + item.getPointStr() + "\" width=\"120\" height=\"80\"\n" +
+                    " data-field=\"" + item.getRoomStr() + "\"" +
+                    " style=\"fill:rgba(94,193,240,1);stroke:rgb(155,155,155);stroke-width:5;\n" +
+                    " fill-opacity:0.1;stroke-opacity:0.9\" onmouseover=\"svgOn(this)\" onmouseout=\"svgOut(this)\" onclick=\"select(this)\"/>");
 
         }
         for(int u=0;u<building.getUnitList().size();u++) {
