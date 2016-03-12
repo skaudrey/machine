@@ -52,6 +52,13 @@ function init() {
 				return layer;
 			});
 		if (feature && "Point" == feature.get('geometry').getType()) {
+			var element = popup.getElement();
+			var coordinate = evt.coordinate;
+			var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
+				coordinate, 'EPSG:4326', 'EPSG:900913'));
+			var newc = ol.proj.transform(coordinate, 'EPSG:900913', 'EPSG:4326');
+			$(element).popover('destroy');
+			popup.setPosition(coordinate);
 			var popupContent="";
 			if(layer.get("name")=="vectorLayer")
 			{
@@ -65,16 +72,8 @@ function init() {
 			}
 			else if(layer.get("name")=="houseLayer")
 			{
-				popupContent="<div style='width:200px;height:200px'><div class='popupTop'>房屋信息<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><img src='img/sign.jpg' style='width: 100%'/></div>";
+				popupContent="<div style='width:200px;height:100px'><div class='popupTop'>房屋信息<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><div>房屋编号：001</div><div>房屋名称:珞珈创意城</div><div>房屋地址:湖北省武汉市武汉大学</div><div><a data-toggle='modal'data-target='#houseModal' onclick='showModal()'>查看>></a></div></div>";
 			}
-
-			var element = popup.getElement();
-			var coordinate = evt.coordinate;
-			var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
-				coordinate, 'EPSG:4326', 'EPSG:900913'));
-			var newc = ol.proj.transform(coordinate, 'EPSG:900913', 'EPSG:4326');
-			$(element).popover('destroy');
-			popup.setPosition(coordinate);
 			// the keys are quoted to prevent renaming in ADVANCED mode.
 			$(element).popover({
 				'placement': 'top',

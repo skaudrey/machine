@@ -207,6 +207,31 @@
 		</table>
 	</div>
 </div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="houseModal" style="z-index: 1500" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close"
+						data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					房屋图示
+				</h4>
+			</div>
+			<div class="modal-body">
+				<iframe onload="setSvgWidth()"  id="srcIframe" src="../svg.html" style="width:100%;height: 70%"></iframe>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default"
+						data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
 <div id="popup"></div>
 </body>
 </html>
