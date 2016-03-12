@@ -1,6 +1,7 @@
 package app.sys.dmzMgr.modual;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 /**
  * Created by Administrator on 2016/3/12.
@@ -10,9 +11,9 @@ import javax.persistence.*;
 public class DmzDistmodualEntity {
     private Integer mId;
     private String distCode;
-    private String setTime;
     private int id;
     private String usrId;
+    private Timestamp setTime;
 
     @Basic
     @Column(name = "mID", nullable = true, insertable = true, updatable = true)
@@ -34,18 +35,7 @@ public class DmzDistmodualEntity {
         this.distCode = distCode;
     }
 
-    @Basic
-    @Column(name = "setTime", nullable = false, insertable = true, updatable = true, length = 20)
-    public String getSetTime() {
-        return setTime;
-    }
-
-    public void setSetTime(String setTime) {
-        this.setTime = setTime;
-    }
-
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "ID", nullable = false, insertable = true, updatable = true)
     public int getId() {
         return id;
@@ -65,6 +55,16 @@ public class DmzDistmodualEntity {
         this.usrId = usrId;
     }
 
+    @Basic
+    @Column(name = "setTime", nullable = false, insertable = true, updatable = true)
+    public Timestamp getSetTime() {
+        return setTime;
+    }
+
+    public void setSetTime(Timestamp setTime) {
+        this.setTime = setTime;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,8 +75,8 @@ public class DmzDistmodualEntity {
         if (id != that.id) return false;
         if (mId != null ? !mId.equals(that.mId) : that.mId != null) return false;
         if (distCode != null ? !distCode.equals(that.distCode) : that.distCode != null) return false;
-        if (setTime != null ? !setTime.equals(that.setTime) : that.setTime != null) return false;
         if (usrId != null ? !usrId.equals(that.usrId) : that.usrId != null) return false;
+        if (setTime != null ? !setTime.equals(that.setTime) : that.setTime != null) return false;
 
         return true;
     }
@@ -85,9 +85,9 @@ public class DmzDistmodualEntity {
     public int hashCode() {
         int result = mId != null ? mId.hashCode() : 0;
         result = 31 * result + (distCode != null ? distCode.hashCode() : 0);
-        result = 31 * result + (setTime != null ? setTime.hashCode() : 0);
         result = 31 * result + id;
         result = 31 * result + (usrId != null ? usrId.hashCode() : 0);
+        result = 31 * result + (setTime != null ? setTime.hashCode() : 0);
         return result;
     }
 }

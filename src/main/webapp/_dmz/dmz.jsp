@@ -94,81 +94,81 @@
 			</div>
 			<ul id="leftcontent">
 				<li class="has-sub">
-					<a href="javascript:void(0);" onclick=setIframe("leaderDmz.html")>
+					<a href="javascript:void(0);" onclick=setIframe("leaderDmz.jsp")>
 						<i class="fa fa-bookmark-o fa-fw"></i>
 						<span class="menu-text">目录管理</span>
 					</a>
 				</li>
-				<li class="has-sub">
-					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
-						<i class="fa fa-bookmark-o fa-fw"></i>
-						<span class="menu-text">岱山县政区图</span>
-					</a>
-				</li>
-				<li class="has-sub">
-					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
-						<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">岱山县政区影像图</span>
-					</a>
-				</li>
-				<li class="has-sub">
-					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
-						<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">岱山县综述</span>
-					</a>
-				</li>
-				<li class="has-sub">
-					<a href="#">
-						<i class="fa fa-th-large fa-fw"></i> <span class="menu-text">第一篇 行政区域组织</span>
-						<i class="fa fa-caret-left arrow"></i>
-					</a>
-					<ul class="sub">
-						<li class="has-sub-sub">
-							<a href="#" ><span class="sub-menu-text">第一章 高亭镇</span>
-								<i class="fa fa-caret-left arrow"></i>
-							</a>
-							<ul class="sub-sub">
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 概况</span></a></li>
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 城镇社区</span></a></li>
-							</ul>
-						</li>
-						<li class="has-sub-sub">
-							<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第二章 岱东镇</span>
-								<i class="fa fa-caret-left arrow"></i>
-							</a>
-							<ul class="sub-sub">
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 概况</span></a></li>
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 城镇社区</span></a></li>
-							</ul>
-						</li>
-						<li class="has-sub-sub">
-							<a href="#" ><span class="sub-menu-text">第三章 东沙镇</span>
-								<i class="fa fa-caret-left arrow"></i>
-							</a>
-							<ul class="sub-sub">
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 概况</span></a></li>
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 城镇社区</span></a></li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li class="has-sub">
-					<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>
-						<i class="fa fa-picture-o fa-fw"></i> <span class="menu-text">第二篇 名胜古迹</span>
-						<i class="fa fa-caret-left arrow"></i>
-					</a>
-					<ul class="sub">
-						<li class="has-sub-sub">
-							<a href="#" ><span class="sub-menu-text">第一章 风景名胜</span>
-								<i class="fa fa-caret-left arrow"></i>
-							</a>
-							<ul class="sub-sub">
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 风景名胜区</span></a></li>
-								<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 风景点</span></a></li>
-							</ul>
-							</li>
-							<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第二章 古迹、古建筑</span></a></li>
-							<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第三章 纪念地</span></a></li>
-					</ul>
-				</li>
+				<%--<li class="has-sub">--%>
+					<%--<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>--%>
+						<%--<i class="fa fa-bookmark-o fa-fw"></i>--%>
+						<%--<span class="menu-text">岱山县政区图</span>--%>
+					<%--</a>--%>
+				<%--</li>--%>
+				<%--<li class="has-sub">--%>
+					<%--<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>--%>
+						<%--<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">岱山县政区影像图</span>--%>
+					<%--</a>--%>
+				<%--</li>--%>
+				<%--<li class="has-sub">--%>
+					<%--<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>--%>
+						<%--<i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">岱山县综述</span>--%>
+					<%--</a>--%>
+				<%--</li>--%>
+				<%--<li class="has-sub">--%>
+					<%--<a href="#">--%>
+						<%--<i class="fa fa-th-large fa-fw"></i> <span class="menu-text">第一篇 行政区域组织</span>--%>
+						<%--<i class="fa fa-caret-left arrow"></i>--%>
+					<%--</a>--%>
+					<%--<ul class="sub">--%>
+						<%--<li class="has-sub-sub">--%>
+							<%--<a href="#" ><span class="sub-menu-text">第一章 高亭镇</span>--%>
+								<%--<i class="fa fa-caret-left arrow"></i>--%>
+							<%--</a>--%>
+							<%--<ul class="sub-sub">--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 概况</span></a></li>--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 城镇社区</span></a></li>--%>
+							<%--</ul>--%>
+						<%--</li>--%>
+						<%--<li class="has-sub-sub">--%>
+							<%--<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第二章 岱东镇</span>--%>
+								<%--<i class="fa fa-caret-left arrow"></i>--%>
+							<%--</a>--%>
+							<%--<ul class="sub-sub">--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 概况</span></a></li>--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 城镇社区</span></a></li>--%>
+							<%--</ul>--%>
+						<%--</li>--%>
+						<%--<li class="has-sub-sub">--%>
+							<%--<a href="#" ><span class="sub-menu-text">第三章 东沙镇</span>--%>
+								<%--<i class="fa fa-caret-left arrow"></i>--%>
+							<%--</a>--%>
+							<%--<ul class="sub-sub">--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 概况</span></a></li>--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 城镇社区</span></a></li>--%>
+							<%--</ul>--%>
+						<%--</li>--%>
+					<%--</ul>--%>
+				<%--</li>--%>
+				<%--<li class="has-sub">--%>
+					<%--<a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")>--%>
+						<%--<i class="fa fa-picture-o fa-fw"></i> <span class="menu-text">第二篇 名胜古迹</span>--%>
+						<%--<i class="fa fa-caret-left arrow"></i>--%>
+					<%--</a>--%>
+					<%--<ul class="sub">--%>
+						<%--<li class="has-sub-sub">--%>
+							<%--<a href="#" ><span class="sub-menu-text">第一章 风景名胜</span>--%>
+								<%--<i class="fa fa-caret-left arrow"></i>--%>
+							<%--</a>--%>
+							<%--<ul class="sub-sub">--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第一节 风景名胜区</span></a></li>--%>
+								<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-sub-menu-text">第二节 风景点</span></a></li>--%>
+							<%--</ul>--%>
+							<%--</li>--%>
+							<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第二章 古迹、古建筑</span></a></li>--%>
+							<%--<li><a href="javascript:void(0);" onclick=setIframe("exampleContent.jsp")><span class="sub-menu-text">第三章 纪念地</span></a></li>--%>
+					<%--</ul>--%>
+				<%--</li>--%>
 			</ul>
 
 		</div>

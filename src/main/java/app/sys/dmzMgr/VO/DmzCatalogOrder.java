@@ -15,11 +15,11 @@ public class DmzCatalogOrder {
     private String tableName;
     private String fieldName;
     private String claCode;
-    public DmzCatalogOrder(int id,int mId,String distCode,String mcorder,int cId,String name,
+    public DmzCatalogOrder(int id,int mId,int distCode,String mcorder,int cId,String name,
             String upcId,String type,String tableName,String fieldName,String claCode){
         this.id=id;
         this.mId=mId;
-        this.distCode=distCode;
+        this.distCode=distCode+"";
         this.mcorder=mcorder;
         this.cId=cId;
         this.name=name;

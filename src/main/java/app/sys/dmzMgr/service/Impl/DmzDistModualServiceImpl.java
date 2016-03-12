@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class DmzDistModualServiceImpl  implements DmzDistModualService {
         if(list.size()==0){
             dmzDistmodualEntity.setDistCode(distId);
             dmzDistmodualEntity.setmId(1);
-            dmzDistmodualEntity.setSetTime((new Date()).toString());
+            dmzDistmodualEntity.setSetTime(new Timestamp((new Date()).getTime()));
             dmzDistmodualEntity.setUsrId(userId);
             int id=dmzDistmodualDao.save(dmzDistmodualEntity);
             dmzDistmodualEntity.setId(id);
