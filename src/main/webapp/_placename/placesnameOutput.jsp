@@ -1,15 +1,21 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%
+	String path = request.getContextPath();
+	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="UTF-8">
-	<title>民政地理空间信息服务平台-地名维护</title>
+	<title>民政地理空间信息服务平台-地名导出</title>
 	<!-- Bootstrap -->
-	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="/js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="/js/bootstrap/bootstrap.min.js"></script>
-	<link href="/css/mystyle.css" rel="stylesheet">
+	<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../js/bootstrap/bootstrap.min.js"></script>
+	<link href="../css/mystyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -100,8 +106,7 @@
 			<td>
 				<a href="#" data-toggle="modal">附件</a> |
 				<a href="#" data-toggle="modal">地图</a> |
-				<a href="#" data-toggle="modal">查看</a> |
-				<a href="#" data-toggle="modal">修改</a>
+				<a href="#" data-toggle="modal">查看</a>
 			</td>
 		</tr>
 		</tbody>

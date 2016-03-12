@@ -5,4 +5,12 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+        <package name="app.sys.usermgr.action" extends="app" namespace="/usermgr">
+                <!--用户登录-->
+                <action name="userMgrAction"  class="app.sys.usermgr.action.UserMgrAction">
+                        <result name="success">/test/userLogin.jsp</result>
+                        <result name="input">/test/userLogin.jsp</result>
+                        <result name="loginSuccess">/test/home.jsp</result>
+                </action>
+        </package>
 </struts>

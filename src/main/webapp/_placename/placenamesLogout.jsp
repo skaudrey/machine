@@ -1,18 +1,25 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%
+	String path = request.getContextPath();
+	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="UTF-8">
-	<title>民政地理空间信息服务平台-行政区划调整</title>
+	<title>民政地理空间信息服务平台-地名注销</title>
 	<!-- Bootstrap -->
-	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="/js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="/js/bootstrap/bootstrap.min.js"></script>
-	<link href="/css/mystyle.css" rel="stylesheet">
+	<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="../js/bootstrap/bootstrap.min.js"></script>
+	<link href="../css/mystyle.css" rel="stylesheet">
 </head>
 
 <body>
+
 <!--右上角“在此输入搜索关键字”-->
 <form class="form-inline position-fixed" role="search">
 	<div class="input-group">
@@ -32,7 +39,8 @@
 					</li>
 					<li class="row">
 						<label for="vague" class="col-xs-8 col-xs-offset-4 control-label" style="padding: 0px;">
-							<input type="checkbox" id="vague" style="height: 10px!important;width: 10px!important;" /> 模糊音
+							<input type="checkbox" id="vague" style="height: 10px!important;width: 10px!important;"/>
+							模糊音
 						</label>
 					</li>
 					<li class="row">
@@ -74,23 +82,19 @@
 		</div>
 	</div>
 </form>
-<!--左上角button组-->
-<div class="btn-group pull-left btn-pull-left1">
-	<button type="button" class="btn btn-info btn-sm" style="width: auto;" onclick="window.location.href='divisionEstablishment.html'">行政区划设立</button>
-	<button type="button" class="btn btn-default btn-sm">导入</button>
-	<button type="button" class="btn btn-default btn-sm">导出</button>
-</div>
+
+<h4 class="pull-left title-pull-left">地名注销</h4>
 <br />
 <br />
-<div class="margin-general">
+<div style="margin-left: 15px;margin-right: 15px;">
 	<table class="table table-striped table-hover table-bordered table-condensed">
 		<thead>
 		<tr>
 			<th>行政区划</th>
 			<th>标准名称</th>
 			<th>罗马拼写</th>
-			<th>地名编码</th>
 			<th>地名类型</th>
+			<th>登记时间</th>
 			<th>操作</th>
 		</tr>
 		</thead>
@@ -104,8 +108,7 @@
 			<td>
 				<a href="#" data-toggle="modal">附件</a> |
 				<a href="#" data-toggle="modal">地图</a> |
-				<a href="#" data-toggle="modal">查看</a> |
-				<a href="#" data-toggle="modal">修改</a>
+				<a href="#" data-toggle="modal">注销</a>
 			</td>
 		</tr>
 		</tbody>
