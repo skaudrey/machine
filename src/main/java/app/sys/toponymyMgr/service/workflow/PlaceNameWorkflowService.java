@@ -53,18 +53,18 @@ public class PlaceNameWorkflowService {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            /*placeNameApplyEntity.setApplyTime(currentTimestamp);
-            placeNameApplyEntity.setUid(Integer.parseInt(userId));
-            placeNameApplyEntity.setApplyName(userName);*/
+            placeNameApplyEntity.setApplyTime(currentTimestamp);
+            placeNameApplyEntity.setUid(userId);
+            placeNameApplyEntity.setUserName(userName);
         }
         //保存请假的业务实体，获取其生成的id作为业务Id
         String businessKey = placeNameApplyDao.save(placeNameApplyEntity).toString();
         //把这个用户的id设置成为流程的发启人，也就是说，是这个人请假！数据会存进activiti自己的表里
-        identityService.setAuthenticatedUserId(userId+"");
+        identityService.setAuthenticatedUserId(userId);
         //启动流程实例
-        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("leave",businessKey,variables);
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("toponymyApplyProcess",businessKey,variables);
         String piid = processInstance.getId();
-        //建立双向关联,这里需要update吗？待会试试
+        //建立双向关联,这里需要update吗？待会试试,事实证明，不需要，估计是在一个事务里的关系
         placeNameApplyEntity.setPiid(piid);
         return processInstance;
     }
@@ -88,15 +88,25 @@ public class PlaceNameWorkflowService {
             TestPlaceNameApplyEntity placeNameApplyEntity = placeNameApplyDao.get(Integer.parseInt(businessKey));
 
             //把task的相关的值获取出来，填到leaveEntity的临时属性里，方便在前台一次性显示所有属性
-            /*placeNameApplyEntity.setTaskId(task.getId());
-            placeNameApplyEntity.setPdid(task.getProcessDefinitionId());
+            String what = processInstance.getActivityId();
+            System.out.print(what);
             placeNameApplyEntity.setTaskName(task.getName());
-            placeNameApplyEntity.setTaskCreateTime(task.getCreateTime());
-            placeNameApplyEntity.setAssignee(task.getAssignee());*/
+            placeNameApplyEntity.setFlowName(processInstance.getName());
             results.add(placeNameApplyEntity);
         }
         return results;
     }
+
+    public List<TestPlaceNameApplyEntity> findApplyResultByUid(String userId){
+        List<TestPlaceNameApplyEntity> list = getPlaceNameApplyListByUid(userId);
+        for (TestPlaceNameApplyEntity t : list){
+            //ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(t.getId()+"").singleResult();
+            ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceId(t.getPiid()).singleResult();
+            t.setFlowName(instance.getName());
+        }
+        return null;
+    }
+
 
     //完成任务，完成任务的同时设置
     public void complete(String taskId, Map<String, Object> variables){
@@ -104,7 +114,13 @@ public class PlaceNameWorkflowService {
     }
 
     //顾名思义
-    public TestPlaceNameApplyEntity getLeaveEntityById(int lid){
+    public TestPlaceNameApplyEntity getPlaceNameApplyEntityById(int lid){
         return placeNameApplyDao.get(lid);
     }
+
+    //根据用户id获取 地名申请业务list
+    public List<TestPlaceNameApplyEntity> getPlaceNameApplyListByUid(String userId){
+        return placeNameApplyDao.findByStringProperty("uid", userId);
+    }
+
 }
