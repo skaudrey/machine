@@ -11,9 +11,9 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-受理页面</title>
 	<!-- Bootstrap -->
-	<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-multiselect.css" rel="stylesheet"/>
+	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-multiselect.css" rel="stylesheet"/>
 	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
 	<script src="../js/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap/bootstrap-multiselect.js"></script>
@@ -67,134 +67,134 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <label for="administrativeDivision" class="col-md-4 control-label">行政区划</label>
-                                        <select class="col-md-8 form-control" id="administrativeDivision"></select>
+                                        <select class="col-md-8 form-control "  disabled="disabled" id="administrativeDivision"></select>
 
                                     </div>
                                     <div class="col-md-4">
                                         <label for="placesnameCode" class="col-sm-4 control-label">地名代码</label>
-                                        <input type="text" class="col-sm-8 form-control" id="placesnameCode" />
+                                        <input type="text" class="col-sm-8 form-control "  disabled="disabled" id="placesnameCode" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="standardName" class="col-sm-4 control-label">标准名称</label>
-                                        <input type="text" class="col-sm-8 form-control" id="standardName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"  disabled="disabled" id="standardName" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="spelling" class="col-sm-4 control-label">罗马拼写</label>
-                                        <input type="text" class="col-sm-8 form-control" id="spelling" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="spelling" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="languages" class="col-sm-4 control-label">语种</label>
-                                        <select class="col-sm-8 form-control" id="languages"></select>
+                                        <select class="col-sm-8 form-control disabled"  disabled="disabled"  id="languages"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="coordinates" class="col-sm-4 control-label">坐标系</label>
-                                        <select class="col-sm-8 form-control" id="coordinates"></select>
+                                        <select class="col-sm-8 form-control disabled"  disabled="disabled"  id="coordinates"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="scale" class="col-sm-4 control-label">比例尺</label>
-                                        <select class="col-sm-8 form-control" id="scale"></select>
+                                        <select class="col-sm-8 form-control disabled"  disabled="disabled"  id="scale"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="longitudeFrom" class="col-sm-4 control-label">经度</label>
-                                        <form id="longitudeFrom" class="col-sm-8 form-inline" role="form">
-                                            <input type="text" class="form-control form" id="longitudeMin" /> -
-                                            <input type="text" class="form-control" id="longitudeMax" />
+                                        <form id="longitudeFrom" class="col-sm-8 form-inline disabled" role="form">
+                                            <input type="text" class="form-control form"   disabled="disabled"  id="longitudeMin" /> -
+                                            <input type="text" class="form-control"    disabled="disabled" id="longitudeMax" />
                                         </form>
                                     </div>
 
                                     <div class="col-md-4">
                                         <label for="namingTime" class="col-sm-4 control-label">命名时间</label>
-                                        <select class="col-sm-8 form-control" id="namingTime"></select>
+                                        <select class="col-sm-8 form-control disabled"  disabled="disabled"  id="namingTime"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="latitudeForm" class="col-sm-4 control-label">纬度</label>
-                                        <form id="latitudeForm" class="col-sm-8 form-inline" role="form">
-                                            <input type="text" class="form-control" id="latitudeMin" /> -
-                                            <input type="text" class="form-control" id="latitudeMax" />
+                                        <form id="latitudeForm" class="col-sm-8 form-inline disabled" role="form">
+                                            <input type="text" class="form-control"  disabled="disabled"  id="latitudeMin" /> -
+                                            <input type="text" class="form-control"   disabled="disabled" id="latitudeMax" />
                                         </form>
                                     </div>
 
                                     <div class="col-md-4">
                                         <label for="usingTime" class="col-sm-4 control-label">使用时间</label>
-                                        <select class="col-sm-8 form-control" id="usingTime"></select>
+                                        <select class="col-sm-8 form-control disabled"  disabled="disabled"  id="usingTime"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="standardJudge" class="col-sm-4 control-label">是否规范</label>
-                                        <select class="col-sm-8 form-control" id="standardJudge"></select>
+                                        <select class="col-sm-8 form-control disabled"   disabled="disabled" id="standardJudge"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="generalName" class="col-sm-4 control-label">标准名称通名</label>
-                                        <input type="text" class="col-sm-8 form-control" id="generalName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="generalName" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="dense" class="col-sm-4 control-label">密级</label>
-                                        <select class="col-sm-8 form-control" id="dense"></select>
+                                        <select class="col-sm-8 form-control disabled"   disabled="disabled" id="dense"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="planningTime" class="col-sm-4 control-label">规划时间</label>
-                                        <select class="col-sm-8 form-control" id="planningTime"></select>
+                                        <select class="col-sm-8 form-control disabled"   disabled="disabled" id="planningTime"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="generalnameSpelling" class="col-sm-4 control-label">通名罗马拼写</label>
-                                        <input type="text" class="col-sm-8 form-control" id="generalnameSpelling" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="generalnameSpelling" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="establishedYear" class="col-sm-4 control-label">设立年份</label>
-                                        <input type="text" class="col-sm-8 form-control" id="establishedYear" />
+                                        <input type="text" class="col-sm-8 form-control disabled"  disabled="disabled"  id="establishedYear" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="pictureCode" class="col-sm-4 control-label">图片代码</label>
-                                        <input type="text" class="col-sm-8 form-control" id="pictureCode" />
+                                        <input type="text" class="col-sm-8 form-control disabled"  disabled="disabled"  id="pictureCode" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="properName" class="col-sm-4 control-label">标准名称专名</label>
-                                        <input type="text" class="col-sm-8 form-control" id="properName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"  disabled="disabled"  id="properName" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="abolishedYear" class="col-sm-4 control-label">废止年份</label>
-                                        <select class="col-sm-8 form-control" id="abolishedYear"></select>
+                                        <select class="col-sm-8 form-control disabled"  disabled="disabled"  id="abolishedYear"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="pictureNumber" class="col-sm-4 control-label">图名图号</label>
-                                        <input type="text" class="col-sm-8 form-control" id="pictureNumber" />
+                                        <input type="text" class="col-sm-8 form-control disabled"  disabled="disabled"  id="pictureNumber" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="propernameSpelling" class="col-sm-4 control-label">专名罗马拼写</label>
-                                        <input type="text" class="col-sm-8 form-control" id="propernameSpelling" />
+                                        <input type="text" class="col-sm-8 form-control disabled"  disabled="disabled"  id="propernameSpelling" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="pictureName" class="col-sm-4 control-label">图上名称</label>
-                                        <input type="text" class="col-sm-8 form-control" id="pictureName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="pictureName" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="recordDate" class="col-sm-4 control-label">登记日期</label>
-                                        <select class="col-sm-8 form-control" id="recordDate"></select>
+                                        <select class="col-sm-8 form-control disabled"   disabled="disabled" id="recordDate"></select>
                                     </div>
                                     <div class="col-md-4">
                                         <%--<label for="abbreviation" class="col-sm-4 control-label">简称</label>
                                         <input type="text" class="col-sm-8 form-control" id="abbreviation" />--%>
                                         <label for="placeName" class="col-sm-4 control-label">名称</label>
-                                        <input type="text" class="col-sm-8 form-control" id="placeName" name="placeName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="placeName" name="placeName" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="altitude" class="col-sm-4 control-label">高程(米)</label>
-                                        <input type="number" class="col-sm-8 form-control" id="altitude" />
+                                        <input type="number" class="col-sm-8 form-control disabled"  disabled="disabled"  id="altitude" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="registrantName" class="col-sm-4 control-label">登记人姓名</label>
-                                        <input type="text" class="col-sm-8 form-control" id="registrantName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="registrantName" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="alias" class="col-sm-4 control-label">别名</label>
-                                        <input type="text" class="col-sm-8 form-control" id="alias" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="alias" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="measuringMethod" class="col-sm-4 control-label">测量方法</label>
-                                        <input type="text" class="col-sm-8 form-control" id="measuringMethod" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="measuringMethod" />
                                     </div>
                                     <div class="col-md-4">
                                         <label for="unitName" class="col-sm-4 control-label">登记单位名称</label>
-                                        <input type="text" class="col-sm-8 form-control" id="unitName" />
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="unitName" />
                                     </div>
                                 </div>
                                 <div class="row">
@@ -205,13 +205,13 @@
                                         </div>--%>
                                         <label for="placesnameDescription" class="col-sm-4 control-label" style="padding-left:15px;width: 21%;">地名含义描述</label>
                                         <div class="col-sm-8" style="width: 79%;padding-right: 5px;">
-                                            <textarea class="form-control" id="placesnameDescription" name="description"></textarea>
+                                            <textarea class="form-control disabled" id="placesnameDescription"  disabled="disabled"  name="description"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="historyDescription" class="col-sm-4 control-label" style="padding-left:15px;width: 21%;">历史沿革描述</label>
                                         <div class="col-sm-8" style="width: 79%;padding-right: 5px;">
-                                            <textarea class="form-control " id="historyDescription"></textarea>
+                                            <textarea class="form-control  disabled"  disabled="disabled"  id="historyDescription"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -219,13 +219,13 @@
                                     <div class="col-md-6 ">
                                         <label for="geographicDescription" class="col-sm-4 control-label " style="padding-left:15px;width: 21%;margin-top: 10px; ">地理实体描述</label>
                                         <div class="col-sm-8 " style="width: 79%;padding-right: 5px; ">
-                                            <textarea class="form-control" id="geographicDescription" style="margin-top: 10px;"></textarea>
+                                            <textarea class="form-control disabled" id="geographicDescription"  disabled="disabled"  style="margin-top: 10px;"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="otherDescription" class="col-sm-4 control-label" style="padding-left:15px;width: 21%;margin-top: 10px;">其他信息描述</label>
                                         <div class="col-sm-8" style="width: 79%;padding-right: 5px;">
-                                            <textarea class="form-control " id="otherDescription" style="margin-top: 10px; "></textarea>
+                                            <textarea class="form-control  disabled" id="otherDescription"  disabled="disabled"  style="margin-top: 10px; "></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -242,9 +242,8 @@
                         <div id="otherInformation" class="panel-collapse collapse">
                             <div class="panel-body ">
                                 <!--其他信息为上传各种扫描件-->
-                                <div class="pull-right">
-                                    <input type="file" id="inputFile">
-                                    <button type="submit " class="btn btn-default btn-sm ">提交</button>
+                                <div >
+                                    这里是其他信息
                                 </div>
                             </div>
                         </div>
@@ -253,12 +252,17 @@
             </div>
             <div class="col-sm-2">
                 <div class="divid-40"></div>
-                <h3>审批意见</h3>
+                <h4>审批意见</h4>
                 <div>
                     <select class="multiselect position-fixed">
                         <option >通过</option>
                         <option >拒绝</option>
                     </select>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <button class="btn btn-info">确定</button>
                 </div>
             </div>
         </div>
