@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <package name="app.sys.scan.action" extends="struts-default" namespace="/material">
+
+
+        <!--根据部门名获取业务-->
+        <action name="getAppByDept" class="app.sys.appmat.action.MaterialManage" method="getAppByDept">
+
+        </action>
+        <!--根据业务类型获取材料-->
+        <action name="getMats" class="app.sys.appmat.action.MaterialManage" method="getMatsByAppId">
+
+        </action>
+
+        <!--添加业务类型-->
+        <action name="addWorkType" class="app.sys.appmat.action.MaterialManage" method="newBusinessType"></action>
+
+        <!--添加材料类型-->
+        <action name="addMatType" class="app.sys.appmat.action.MaterialManage" method="newMatType"></action>
+
+        <!--管理员管理扫描件元数据-->
+        <action name="preManageMat" class="app.sys.appmat.action.MaterialManage" method="getDept">
+            <result name="success">/editMat/editWorkMat.jsp</result>
+        </action>
+
+
+        <!--保存扫描文件到特定位置-->
+        <action name="save_file" class="app.sys.appmat.action.ScanFileDeal" method="saveFileIntoDir">
+            <result name="success">/scan/scan.jsp</result>
+        </action>
+
+
+    </package>
+</struts>
