@@ -24,7 +24,7 @@ public class DicBusinessmaterialImpl extends GenericEntityDao implements DicBusi
     }
 
     @Override
-    public boolean saveBusinessMat(DicBusinessmaterialEntity businessmaterialEntity) {
+    public boolean saveOrUpdateBusinessMat(DicBusinessmaterialEntity businessmaterialEntity) {
 
         businessmaterialDao.saveOrUpdate(businessmaterialEntity);
         return true;
