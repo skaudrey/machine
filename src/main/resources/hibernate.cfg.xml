@@ -27,6 +27,10 @@
         <mapping class="app.sys.UploadData.model.MetaTxtfiled2TfieldTxtEntity"/>
         <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserEntity"/>
+        <mapping class="app.sys.usermgr.model.UserPrivilegeEntity"/>
+        <mapping class="app.sys.usermgr.model.UserRoleEntity"/>
+        <mapping class="app.sys.usermgr.model.UserRoleprivEntity"/>
+        <mapping class="app.sys.usermgr.model.UserUserroleEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

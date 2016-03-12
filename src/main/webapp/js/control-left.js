@@ -3,6 +3,13 @@
  * 左侧导航栏的内容：{level： ，priId:  ,name: ;action:    ;description:   ;upPriId:   ;}
  */
 var timer;
+$(document).ready(function(){
+    var param={};
+    $.post("/usermgr/userprivilege!getUserPrivilegsByUserId", param,
+        function(data){
+            alert(data); // John
+        }, "json");
+});
 function addLeftItem(){
     var levelList=$("input[name='level']");
     var priIdList=$("input[name='priId']");

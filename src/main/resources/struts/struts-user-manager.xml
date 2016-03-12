@@ -12,5 +12,8 @@
                         <result name="input">/test/userLogin.jsp</result>
                         <result name="loginSuccess">/test/home.jsp</result>
                 </action>
+                <action name="userprivilege" class="app.sys.usermgr.action.UserPrivilegeAction">
+
+                </action>
         </package>
 </struts>
