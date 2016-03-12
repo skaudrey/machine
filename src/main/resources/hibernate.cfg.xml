@@ -20,12 +20,6 @@
         <property name="connection.is-connection-validation-required">true</property>
         <property name="connection.url">jdbc:mysql://192.168.1.179:3306/toponymy</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <mapping class="app.sys.appmat.model.AppApplyEntity"/>
-        <mapping class="app.sys.appmat.model.AppAppmatEntity"/>
-        <mapping class="app.sys.appmat.model.DicBusinessmaterialEntity"/>
-        <mapping class="app.sys.appmat.model.DicBusinesstypeEntity"/>
-        <mapping class="app.sys.appmat.model.DicMaterialEntity"/>
-        <mapping class="app.sys.test.model.TestUserEntity"/>
         <mapping class="app.sys.test.model.TestLeaveEntity"/>
         <mapping class="app.sys.test.model.TestUserRoleEntity"/>
         <mapping class="app.sys.UploadData.model.MetaTablenameEntity"/>
@@ -33,6 +27,26 @@
         <mapping class="app.sys.UploadData.model.MetaTxtfiled2TfieldTxtEntity"/>
         <mapping class="app.sys.appmat.model.UserUserdepartmentEntity"/>
         <mapping class="app.sys.appmat.model.OrgDepartmentEntity"/>
+        <mapping class="app.sys.usermgr.model.UserUserEntity"/>
+        <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
+        <mapping class="app.sys.usermgr.model.UserPrivilegeEntity"/>
+        <mapping class="app.sys.usermgr.model.UserRoleEntity"/>
+        <mapping class="app.sys.usermgr.model.UserRoleprivEntity"/>
+        <mapping class="app.sys.usermgr.model.UserUserroleEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzCatalogEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzContentEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzContentmediaEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzDistmodualEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzModualEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzModualcatalogEntity"/>
+        <mapping class="app.sys.orgMgr.modual.OrgDepartmentEntity"/>
+        <mapping class="app.sys.orgMgr.modual.OrgDistrictEntity"/>
+        <mapping class="app.sys.orgMgr.modual.OrgDistrictdepartmentEntity"/>
+        <mapping class="app.sys.usermgr.model.UserUserdepartmentEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudBuildingEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudFloorEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudHouseEntity"/>
+        <mapping class="app.sys.SVGGenerate.model.BudUnitEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

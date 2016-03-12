@@ -5,7 +5,6 @@ import app.common.dao.GenericEntityDao;
 import app.sys.UploadData.dao.MetaTablenameDao;
 import app.sys.UploadData.model.MetaTablenameEntity;
 import app.sys.UploadData.service.MetaTablenameService;
-import app.sys.test.model.TestUserEntity;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,5 +8,5 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface DicBusinessmaterialService {
-    boolean saveBusinessMat(DicBusinessmaterialEntity businessmaterialEntity);
+    boolean saveOrUpdateBusinessMat(DicBusinessmaterialEntity businessmaterialEntity);
 }

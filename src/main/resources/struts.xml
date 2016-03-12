@@ -29,7 +29,7 @@
     <!--Struts2默认临时文件存储位置-->
     <constant name="struts.multipart.saveDir" value="/tmp"/>
     <!--这里的name一定要写成app,因为前面struts.convention.default.parent.package 已经设置成了app，差点没把我坑死-->
-    <package name="app"  extends="struts-default">
+    <package name="app"  extends="json-default">
         <!--全局结果集-->
         <global-results>
             <result name="my">/errorPage/exception.jsp</result>
@@ -40,4 +40,8 @@
     <include file="struts/struts-test.xml"/>
     <include file="struts/struts_scan.xml"/>
     <include file="struts/struts-data-upload.xml"/>
+    <include file="struts/struts-user-manager.xml"/>
+    <include file="struts/struts-dmz-nanager.xml" />
+    <include file="struts/struts-toponymy-manager.xml"/>
+    <include file="struts/struts-svg.xml"/>
 </struts>

@@ -54,7 +54,7 @@ var App=function(){
 	 /*-----------------------------------------------------------------------------------*/
 	var handleSidebar=function(){
 		//解决一级菜单
-		jQuery(".sidebar-menu .has-sub >a").click(function(){
+		jQuery("ul  li.has-sub >a").click(function(){
 			var thisElement=$(this);
 			var slideOffest=-200;
 			var slideSpeed=200;
@@ -274,8 +274,7 @@ var App=function(){
 //		});
 	}
 
-
-	return {
+    return {
 
 		//Initialise theme pages
 		init: function () {
@@ -310,6 +309,10 @@ var App=function(){
 	}
 }();
 jQuery(document).ready(function() {
-	App.setPage("index");  //Set current page
-	App.init(); //Initialise plugins and elements
+
+    App.setPage("index");  //Set current page
+    App.init();
+
 });
+
+
