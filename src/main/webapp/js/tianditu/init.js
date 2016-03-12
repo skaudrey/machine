@@ -1,4 +1,4 @@
-var status='None';
+var status = 'None';
 var draw;
 $(document).ready(function() {
 	init();
@@ -57,13 +57,13 @@ $(document).ready(function() {
 				"properties": null
 			}]
 		}
-		source.addFeatures((new ol.format.GeoJSON()).readFeatures(testData));
+		vectorSource.addFeatures((new ol.format.GeoJSON()).readFeatures(testData));
 	});
 });
 
 function init() {
-	$("#map").css("max-height", document.body.clientHeight - 65);
-	//ÌìµØÍ¼ÍßÆ¬Êı¾İ
+	$("#map").css("height", document.documentElement.clientHeight - 65);
+	//å¤©åœ°å›¾ç“¦ç‰‡æ•°æ®
 	var projection = ol.proj.get('EPSG:900913');
 	var projectionExtent = projection.getExtent();
 	var size = ol.extent.getWidth(projectionExtent) / 256;
@@ -74,7 +74,6 @@ function init() {
 		resolutions[z] = size / Math.pow(2, z);
 		matrixIds[z] = z;
 	}
-
 	var attribution = new ol.Attribution({
 		html: '@copyright linyijun'
 	});
@@ -84,7 +83,7 @@ function init() {
 		zoom: 13,
 		minResolution: 1
 	});
-	//µ×Í¼
+	//åº•å›¾
 	baseLayer = new ol.layer.Tile({
 		source: new ol.source.WMTS({
 			attributions: [attribution],
@@ -102,7 +101,25 @@ function init() {
 			wrapX: true
 		})
 	});
-	//±ê¼ÇÍ¼²ã
+	terrianLayer= new ol.layer.Tile({
+		source: new ol.source.WMTS({
+			attributions: [attribution],
+			url: 'http://t0.tianditu.com/img_w/wmts',
+			layer: 'img',
+			matrixSet: 'w',
+			format: 'tiles',
+			projection: projection,
+			tileGrid: new ol.tilegrid.WMTS({
+				origin: ol.extent.getTopLeft(projectionExtent),
+				resolutions: resolutions,
+				matrixIds: matrixIds
+			}),
+			style: 'default',
+			wrapX: true
+		})
+	});
+	terrianLayer.setVisible(0);
+	//æ ‡è®°å›¾å±‚
 	baseMarkLayer = new ol.layer.Tile({
 		source: new ol.source.WMTS({
 			attributions: [attribution],
@@ -120,18 +137,22 @@ function init() {
 			wrapX: true
 		})
 	});
-	//Ê¸Á¿Êı¾İÍ¼²ã
-	//ÉèÖÃÒªËØÑùÊ½
+	//çŸ¢é‡æ•°æ®å›¾å±‚
+	//è®¾ç½®è¦ç´ æ ·å¼
 	styles = {
 		'Point': [new ol.style.Style({
-			image: new ol.style.Icon(
-				({
-					anchor: [0.5, 46],
-					anchorXUnits: 'fraction',
-					anchorYUnits: 'pixels',
-					opacity: 0.75,
-					src: 'img/icon.png'
-				}))
+			image: new ol.style.Circle({
+				radius: 6,
+				fill: new ol.style.Fill({
+					color: [0, 153, 255, 1]
+				}),
+				stroke: new ol.style.Stroke({
+					color: [255, 255, 255, 0.75],
+					width: 1.5
+				})
+			}),
+			zIndex: 100000
+
 		})],
 		'LineString': [new ol.style.Style({
 			stroke: new ol.style.Stroke({
@@ -142,7 +163,7 @@ function init() {
 		'Polygon': [new ol.style.Style({
 			stroke: new ol.style.Stroke({
 				color: 'blue',
-				width:2
+				width: 2
 			}),
 			fill: new ol.style.Fill({
 				color: "#ffffff"
@@ -161,27 +182,56 @@ function init() {
 	styleFunction = function(feature, resolution) {
 		return styles[feature.getGeometry().getType()];
 	};
-	source = new ol.source.Vector({
+	vectorSource = new ol.source.Vector({
 		wrapX: false
 	});
-	vector = new ol.layer.Vector({
-		source: source,
+	vectorLayer = new ol.layer.Vector({
+		source: vectorSource,
 		style: styleFunction
 	});
-	//µØÍ¼ÉèÖÃ
+	//æµ‹è·å›¾å±‚
+	measureSource = new ol.source.Vector({
+		wrapX: false
+	});
+	measureLayer = new ol.layer.Vector({
+		source: measureSource,
+		style: new ol.style.Style({
+			fill: new ol.style.Fill({
+				color: 'rgba(255, 255, 255, 0.4)'
+			}),
+			stroke: new ol.style.Stroke({
+				color: '#ffcc33',
+				width: 2
+			}),
+			image: new ol.style.Circle({
+				radius: 7,
+				fill: new ol.style.Fill({
+					color: '#ffcc33'
+				})
+			})
+		})
+	});
+	//åœ°å›¾è®¾ç½®
+	select = new ol.interaction.Select({
+		style: styleFunction
+	});
+	modify = new ol.interaction.Modify({
+		features: select.getFeatures(),
+		style: styleFunction
+	});
 	map = new ol.Map({
 		layers: [
-			baseLayer, vector
+			terrianLayer,baseLayer,baseMarkLayer,vectorLayer,measureLayer
 		],
 		target: 'map',
 		controls: ol.control.defaults().extend([
-			new ol.control.FullScreen(), //È«ÆÁ
+			new ol.control.FullScreen(), //å…¨å±
 			new ol.control.Zoom({
-				zoomInTipLabel: "·Å´ó",
-				zoomOutTipLabel: "ËõĞ¡"
-			}), //·Å´óËõĞ¡
-			new ol.control.ScaleLine(), //±ÈÀı³ß
-			new ol.control.OverviewMap(), //Ó¥ÑÛ
+				zoomInTipLabel: "æ”¾å¤§",
+				zoomOutTipLabel: "ç¼©å°"
+			}), //æ”¾å¤§ç¼©å°
+			new ol.control.ScaleLine(), //æ¯”ä¾‹å°º
+			new ol.control.OverviewMap(), //é¹°çœ¼
 			new ol.control.ZoomSlider()
 		]),
 		interactions: ol.interaction.defaults().extend([
@@ -190,16 +240,17 @@ function init() {
 		view: view
 	});
 	map.on('click', function(evt) {
-		if(status!="None")
-		{return;}
+		if (status != "None") {
+			return;
+		}
 		var feature = map.forEachFeatureAtPixel(evt.pixel,
 			function(feature, layer) {
 				return feature;
 			});
 		if (feature && "Point" == feature.get('geometry').getType()) {
-//			var coordinate = evt.coordinate;
-//          var newc = ol.proj.transform(coordinate, 'EPSG:900913', 'EPSG:4326');
-//			alert("µ±Ç°Ñ¡ÖĞµÄµã×ø±êÊÇ:"+newc[0] + " , " + newc[1]);
+			//			var coordinate = evt.coordinate;
+			//          var newc = ol.proj.transform(coordinate, 'EPSG:900913', 'EPSG:4326');
+			//			alert("å½“å‰é€‰ä¸­çš„ç‚¹åæ ‡æ˜¯:"+newc[0] + " , " + newc[1]);
 			var element = popup.getElement();
 			var coordinate = evt.coordinate;
 			var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
@@ -212,31 +263,44 @@ function init() {
 				'placement': 'top',
 				'animation': false,
 				'html': true,
-				'content': "<div style='width:200px;height:200px'><div class='popupTop'>ÊôĞÔĞÅÏ¢<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><div style='clear:both'><div>¾­¶È:"+newc[0]+"</div><div>Î³¶È:"+newc[1]+"</div>"+
-				"<div>±ê×¼Ãû³Æ:ÎÄ»Ô½ÖµÀ¾´ÀÏÔº</div><div>µØÃû´úÂë:</div><div>µØÃûÀàĞÍ:</div><div>µØÃûµÈ¼¶:</div>"+
-				"<button class='btn btn-primary popupBtn'>¸´ÖÆ×ø±ê</button></div>"
+				'content': "<div style='width:200px;height:200px'><div class='popupTop'>å±æ€§ä¿¡æ¯<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><div style='clear:both'><div>ç»åº¦:" + newc[0] + "</div><div>çº¬åº¦:" + newc[1] + "</div>" +
+				"<div>æ ‡å‡†åç§°:æ–‡è¾‰è¡—é“æ•¬è€é™¢</div><div>åœ°åä»£ç :</div><div>åœ°åç±»å‹:</div><div>åœ°åç­‰çº§:</div>" +
+				"<button class='btn btn-primary popupBtn'>å¤åˆ¶åæ ‡</button></div>"
 			});
 			$(element).popover('show');
 		}
-
 	});
-
-	//Êó±êÓÒ¼üµ¥»÷ÊÂ¼ş
+	$(map.getViewport()).on('mousemove', function(evt) {
+		mousePosition = map.getEventPixel(evt.originalEvent);
+		map.render();
+	})
+	//é¼ æ ‡å³é”®å•å‡»äº‹ä»¶
 	$('#map').mousedown(function(e) {
-		if (e.which== 3) // 1 = Êó±ê×ó¼ü left; 2 = Êó±êÖĞ¼ü; 3 = Êó±êÓÒs¼ü
+		if (e.which == 3) // 1 = é¼ æ ‡å·¦é”® left; 2 = é¼ æ ‡ä¸­é”®; 3 = é¼ æ ‡å³sé”®
 		{
 			setStatus(0);
 		}
-		//return false; //×èÖ¹Á´½ÓÌø×ª
+		//return false; //é˜»æ­¢é“¾æ¥è·³è½¬
 	})
 	popup = new ol.Overlay({
 		element: document.getElementById('popup')
 	});
 	map.addOverlay(popup);
 }
-//Ìí¼Óµã¡¢Ïß¡¢¶à±ßĞÎ¡¢Ô²ĞÎ¡¢¾ØĞÎ
+//æ·»åŠ ç‚¹ã€çº¿ã€å¤šè¾¹å½¢ã€åœ†å½¢ã€çŸ©å½¢
 function addInteraction() {
 	var value = status;
+	if(value=='Modify')
+	{
+		map.addInteraction(select);
+		map.addInteraction(modify);
+		return;
+	}
+	else if(value=='Measure')
+	{
+		addMeasureInteraction();
+		return;
+	}
 	if (value !== 'None') {
 		var geometryFunction, maxPoints;
 		if (value === 'Square') {
@@ -258,7 +322,7 @@ function addInteraction() {
 			};
 		}
 		draw = new ol.interaction.Draw({
-			source: source,
+			source: vectorSource,
 			type: /** @type {ol.geom.GeometryType} */ (value),
 			geometryFunction: geometryFunction,
 			maxPoints: maxPoints
@@ -266,5 +330,3 @@ function addInteraction() {
 		map.addInteraction(draw);
 	}
 }
-
-
