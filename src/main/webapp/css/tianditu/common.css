@@ -1,0 +1,158 @@
+
+			html,
+			body {
+				height: 100%
+			}
+			.navbar
+		{
+			margin-bottom: 0px !important;
+			height: 50px;
+		}
+		.leftMenu
+		{
+			float: left;
+			display: none;
+			min-width: 100px;
+			width: 15%;
+			padding: 0px 10px;
+			border-right: 1px solid gainsboro;
+		}
+		@media (min-width: 1100px){
+		.leftMenu .row .col-sm-4 
+		{
+			padding:  20px;
+		}
+		}
+		.rightContent
+		{
+			width: 100%;
+		}
+			.leftBtn
+			{
+				padding:9px 5px !important;
+			}
+			.layerIcon
+			{
+				width: 100%;
+			}
+  
+			.noPadding {
+				padding: 0px;
+			}
+						.container {
+				width: 100%;
+			}
+			
+			.navbar {
+				margin-bottom: 0px;
+			   background:white;
+			}
+			.popupBtn
+			{
+				position: absolute;
+				left: 10px;
+				bottom: 10px;
+			}
+			.popupTop
+			{
+              font-weight: bold;
+			}
+			/************************************************/
+			
+			.dropdownList {
+				position: absolute;
+				background-color: white;
+				font-weight: normal;
+				border: 1px solid gainsboro;
+				padding: 10px 0px;
+				z-index: 10000;
+				display: none;
+			}
+			
+			#spatialSearch-list {
+				min-width: 200px;
+			}
+			
+			#findFeature-confirm,#dataEdit-confirm {
+				margin-top: 10px;
+				width: 50%;
+				font-size: 12px;
+			}
+			
+			#CivilianIns-list {
+				min-width: 200px;
+				padding: 10px;
+			}
+			
+			#dataEdit-list {
+				min-width: 200px;
+			}
+			.rightBtn
+			{
+				padding: 11px 2px !important;
+			}
+			.navbar-right
+			{
+				margin-right: 5px;
+			}
+			/************************************************/
+			
+			.bottomMenu {
+				position: fixed;
+				bottom: 0px;
+				max-height: 40%;
+				left: 0px;
+				right: 0px;
+				background: transparent;
+				display: none;
+			}
+			
+			#spatialSearch-result {
+				margin-bottom: 0px;
+			}
+			
+			#spatialSearch-result tbody {
+				background-color: white;
+			}
+			
+			#spatialSearch-result caption {
+				padding-bottom: 0px;
+			}
+			
+			#spatialSearch-resultDisplay {
+				font-size: 12px;
+				padding: 5px 25px;
+			}
+			/**********************/
+			.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}

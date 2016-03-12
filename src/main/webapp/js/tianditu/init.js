@@ -1,187 +1,37 @@
-var status='None';
+var status = 'None';
 var draw;
 $(document).ready(function() {
 	init();
 	addInteraction();
-	$("#findFeature-confirm").click(function() {
-		var testData = {
-			"type": "FeatureCollection",
-			"features": [{
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12728341.723190226, 3572380.0631930684]
-				},
-				"properties": null
-			}, {
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12727252.495537164, 3571539.255881931]
-				},
-				"properties": null
-			}, {
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12726679.217825023, 3573163.5427329913]
-				},
-				"properties": null
-			}, {
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12727348.04182252, 3574061.677815342]
-				},
-				"properties": null
-			}, {
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12725933.956799243, 3574596.737013338]
-				},
-				"properties": null
-			}, {
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12725972.175313385, 3573087.105704706]
-				},
-				"properties": null
-			}, {
-				"type": "Feature",
-				"geometry": {
-					"type": "Point",
-					"coordinates": [12724519.871775968, 3572513.8279925673]
-				},
-				"properties": null
-			}]
-		}
-		source.addFeatures((new ol.format.GeoJSON()).readFeatures(testData));
-	});
 });
 
 function init() {
-	$("#map").css("max-height", document.body.clientHeight - 65);
-	//ÌìµØÍ¼ÍßÆ¬Êı¾İ
-	var projection = ol.proj.get('EPSG:900913');
-	var projectionExtent = projection.getExtent();
-	var size = ol.extent.getWidth(projectionExtent) / 256;
-	var resolutions = new Array(40);
-	var matrixIds = new Array(40);
-	for (var z = 0; z < 40; ++z) {
-		// generate resolutions and matrixIds arrays for this WMTS
-		resolutions[z] = size / Math.pow(2, z);
-		matrixIds[z] = z;
-	}
+	$("#map").css("height", document.documentElement.clientHeight - 65);
+	initLayer();
 
-	var attribution = new ol.Attribution({
-		html: '@copyright linyijun'
-	});
-	view = new ol.View({
-		center: ol.proj.transform(
-			[114.3704, 30.54907], 'EPSG:4326', 'EPSG:900913'),
-		zoom: 13,
-		minResolution: 1
-	});
-	//µ×Í¼
-	baseLayer = new ol.layer.Tile({
-		source: new ol.source.WMTS({
-			attributions: [attribution],
-			url: 'http://t0.tianditu.com/vec_w/wmts',
-			layer: 'vec',
-			matrixSet: 'w',
-			format: 'tiles',
-			projection: projection,
-			tileGrid: new ol.tilegrid.WMTS({
-				origin: ol.extent.getTopLeft(projectionExtent),
-				resolutions: resolutions,
-				matrixIds: matrixIds
-			}),
-			style: 'default',
-			wrapX: true
-		})
-	});
-	//±ê¼ÇÍ¼²ã
-	baseMarkLayer = new ol.layer.Tile({
-		source: new ol.source.WMTS({
-			attributions: [attribution],
-			url: 'http://t0.tianditu.com/cva_w/wmts',
-			layer: 'cva',
-			matrixSet: 'w',
-			format: 'tiles',
-			projection: projection,
-			tileGrid: new ol.tilegrid.WMTS({
-				origin: ol.extent.getTopLeft(projectionExtent),
-				resolutions: resolutions,
-				matrixIds: matrixIds
-			}),
-			style: 'default',
-			wrapX: true
-		})
-	});
-	//Ê¸Á¿Êı¾İÍ¼²ã
-	//ÉèÖÃÒªËØÑùÊ½
-	styles = {
-		'Point': [new ol.style.Style({
-			image: new ol.style.Icon(
-				({
-					anchor: [0.5, 46],
-					anchorXUnits: 'fraction',
-					anchorYUnits: 'pixels',
-					opacity: 0.75,
-					src: 'img/icon.png'
-				}))
-		})],
-		'LineString': [new ol.style.Style({
-			stroke: new ol.style.Stroke({
-				color: 'blue',
-				width: 4
-			})
-		})],
-		'Polygon': [new ol.style.Style({
-			stroke: new ol.style.Stroke({
-				color: 'blue',
-				width:2
-			}),
-			fill: new ol.style.Fill({
-				color: "#ffffff"
-			})
-		})],
-		'Circle': [new ol.style.Style({
-			stroke: new ol.style.Stroke({
-				color: 'black',
-				width: 2
-			}),
-			fill: new ol.style.Fill({
-				color: '#ff0000'
-			})
-		})]
-	};
-	styleFunction = function(feature, resolution) {
-		return styles[feature.getGeometry().getType()];
-	};
-	source = new ol.source.Vector({
-		wrapX: false
-	});
-	vector = new ol.layer.Vector({
-		source: source,
+
+
+	//åœ°å›¾è®¾ç½®
+	select = new ol.interaction.Select({
 		style: styleFunction
 	});
-	//µØÍ¼ÉèÖÃ
+	modify = new ol.interaction.Modify({
+		features: select.getFeatures(),
+		style: styleFunction
+	});
 	map = new ol.Map({
 		layers: [
-			baseLayer, vector
+			terrianLayer,baseLayer,baseMarkLayer,houseLayer,signLayer,vectorLayer,measureLayer
 		],
 		target: 'map',
 		controls: ol.control.defaults().extend([
-			new ol.control.FullScreen(), //È«ÆÁ
+			new ol.control.FullScreen(), //å…¨å±
 			new ol.control.Zoom({
-				zoomInTipLabel: "·Å´ó",
-				zoomOutTipLabel: "ËõĞ¡"
-			}), //·Å´óËõĞ¡
-			new ol.control.ScaleLine(), //±ÈÀı³ß
-			new ol.control.OverviewMap(), //Ó¥ÑÛ
+				zoomInTipLabel: "æ”¾å¤§",
+				zoomOutTipLabel: "ç¼©å°"
+			}), //æ”¾å¤§ç¼©å°
+			new ol.control.ScaleLine(), //æ¯”ä¾‹å°º
+			new ol.control.OverviewMap(), //é¹°çœ¼
 			new ol.control.ZoomSlider()
 		]),
 		interactions: ol.interaction.defaults().extend([
@@ -190,16 +40,34 @@ function init() {
 		view: view
 	});
 	map.on('click', function(evt) {
-		if(status!="None")
-		{return;}
+		if (status != "None") {
+			return;
+		}
 		var feature = map.forEachFeatureAtPixel(evt.pixel,
 			function(feature, layer) {
 				return feature;
 			});
+		var layer = map.forEachFeatureAtPixel(evt.pixel,
+			function(feature, layer) {
+				return layer;
+			});
 		if (feature && "Point" == feature.get('geometry').getType()) {
-//			var coordinate = evt.coordinate;
-//          var newc = ol.proj.transform(coordinate, 'EPSG:900913', 'EPSG:4326');
-//			alert("µ±Ç°Ñ¡ÖĞµÄµã×ø±êÊÇ:"+newc[0] + " , " + newc[1]);
+			var popupContent="";
+			if(layer.get("name")=="vectorLayer")
+			{
+			popupContent="<div style='width:200px;height:200px'><div class='popupTop'>å±æ€§ä¿¡æ¯<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><div style='clear:both'><div>ç»åº¦:" + newc[0] + "</div><div>çº¬åº¦:" + newc[1] + "</div>" +
+				"<div>æ ‡å‡†åç§°:æ–‡è¾‰è¡—é“æ•¬è€é™¢</div><div>åœ°åä»£ç :</div><div>åœ°åç±»å‹:</div><div>åœ°åç­‰çº§:</div>" +
+				"<button class='btn btn-primary popupBtn'>å¤åˆ¶åæ ‡</button></div>";
+			}
+			else if(layer.get("name")=="signLayer")
+			{
+				popupContent="<div style='width:200px;height:200px'><div class='popupTop'>æ ‡ç‰Œä¿¡æ¯<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><img src='img/sign.jpg' style='width: 100%'/></div>";
+			}
+			else if(layer.get("name")=="houseLayer")
+			{
+				popupContent="<div style='width:200px;height:200px'><div class='popupTop'>æˆ¿å±‹ä¿¡æ¯<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><img src='img/sign.jpg' style='width: 100%'/></div>";
+			}
+
 			var element = popup.getElement();
 			var coordinate = evt.coordinate;
 			var hdms = ol.coordinate.toStringHDMS(ol.proj.transform(
@@ -212,31 +80,38 @@ function init() {
 				'placement': 'top',
 				'animation': false,
 				'html': true,
-				'content': "<div style='width:200px;height:200px'><div class='popupTop'>ÊôĞÔĞÅÏ¢<a href='#' class='pull-right' onclick='closePopup()'>X</a></div><div style='clear:both'><div>¾­¶È:"+newc[0]+"</div><div>Î³¶È:"+newc[1]+"</div>"+
-				"<div>±ê×¼Ãû³Æ:ÎÄ»Ô½ÖµÀ¾´ÀÏÔº</div><div>µØÃû´úÂë:</div><div>µØÃûÀàĞÍ:</div><div>µØÃûµÈ¼¶:</div>"+
-				"<button class='btn btn-primary popupBtn'>¸´ÖÆ×ø±ê</button></div>"
+				'content': popupContent
 			});
 			$(element).popover('show');
 		}
-
 	});
-
-	//Êó±êÓÒ¼üµ¥»÷ÊÂ¼ş
+	//é¼ æ ‡å³é”®å•å‡»äº‹ä»¶
 	$('#map').mousedown(function(e) {
-		if (e.which== 3) // 1 = Êó±ê×ó¼ü left; 2 = Êó±êÖĞ¼ü; 3 = Êó±êÓÒs¼ü
+		if (e.which == 3) // 1 = é¼ æ ‡å·¦é”® left; 2 = é¼ æ ‡ä¸­é”®; 3 = é¼ æ ‡å³sé”®
 		{
 			setStatus(0);
 		}
-		//return false; //×èÖ¹Á´½ÓÌø×ª
+		//return false; //é˜»æ­¢é“¾æ¥è·³è½¬
 	})
 	popup = new ol.Overlay({
 		element: document.getElementById('popup')
 	});
 	map.addOverlay(popup);
 }
-//Ìí¼Óµã¡¢Ïß¡¢¶à±ßĞÎ¡¢Ô²ĞÎ¡¢¾ØĞÎ
+//æ·»åŠ ç‚¹ã€çº¿ã€å¤šè¾¹å½¢ã€åœ†å½¢ã€çŸ©å½¢
 function addInteraction() {
 	var value = status;
+	if(value=='Modify')
+	{
+		map.addInteraction(select);
+		map.addInteraction(modify);
+		return;
+	}
+	else if(value=='Measure')
+	{
+		addMeasureInteraction();
+		return;
+	}
 	if (value !== 'None') {
 		var geometryFunction, maxPoints;
 		if (value === 'Square') {
@@ -258,7 +133,7 @@ function addInteraction() {
 			};
 		}
 		draw = new ol.interaction.Draw({
-			source: source,
+			source: vectorSource,
 			type: /** @type {ol.geom.GeometryType} */ (value),
 			geometryFunction: geometryFunction,
 			maxPoints: maxPoints
@@ -266,5 +141,3 @@ function addInteraction() {
 		map.addInteraction(draw);
 	}
 }
-
-
