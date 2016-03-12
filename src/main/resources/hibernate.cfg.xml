@@ -25,8 +25,8 @@
         <mapping class="app.sys.UploadData.model.MetaTablenameEntity"/>
         <mapping class="app.sys.UploadData.model.TPlacecommonEntity"/>
         <mapping class="app.sys.UploadData.model.MetaTxtfiled2TfieldTxtEntity"/>
-        <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserEntity"/>
+        <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

@@ -7,6 +7,8 @@ import app.sys.usermgr.service.UserMgrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * Created by Administrator on 2016/2/25 0025.
  */
@@ -32,6 +34,13 @@ public class UserMgrAction extends GenericActionSupport{
             super.printForAjax("0");
         }
         return "";
+    }
+
+    //用户退出
+    public String UserLogout(){
+        HttpSession session = getHttpSession();
+        session.invalidate();
+        return "logout";
     }
 
 

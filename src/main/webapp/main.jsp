@@ -76,7 +76,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="javascript:void(0);" class="" onclick=setIframe("_personalInfo/personalInfo.jsp")><i class="fa fa-edit"></i>个人中心</a></li>
-						<li><a href="#"><i class="fa fa-power-off"></i>退出</a></li>
+						<li><a href="/usermgr/userMgrAction!UserLogout"><i class="fa fa-power-off"></i>退出</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -163,7 +163,7 @@
                                 <%--</a>--%>
                             <%--</li>--%>
                             <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_business/businessProcess.html")>
+                                <a href="javascript:void(0);" class="" onclick=setIframe("/toponymy/toponymyMgrAction!getTaskList")>
                                     <i class="fa fa-th-large fa-fw"></i>
                                     <span class="sub-menu-text">地名业务办理</span>
                                 </a>
