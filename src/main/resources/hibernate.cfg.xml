@@ -31,6 +31,16 @@
         <mapping class="app.sys.usermgr.model.UserRoleEntity"/>
         <mapping class="app.sys.usermgr.model.UserRoleprivEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserroleEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzCatalogEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzContentEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzContentmediaEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzDistmodualEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzModualEntity"/>
+        <mapping class="app.sys.dmzMgr.modual.DmzModualcatalogEntity"/>
+        <mapping class="app.sys.orgMgr.modual.OrgDepartmentEntity"/>
+        <mapping class="app.sys.orgMgr.modual.OrgDistrictEntity"/>
+        <mapping class="app.sys.orgMgr.modual.OrgDistrictdepartmentEntity"/>
+        <mapping class="app.sys.usermgr.model.UserUserdepartmentEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
