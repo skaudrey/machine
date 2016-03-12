@@ -2,35 +2,48 @@
  * 添加左侧的内容
  * 左侧导航栏的内容：{level： ，priId:  ,name: ;action:    ;description:   ;upPriId:   ;}
  */
+
 var timer;
-function addLeftItem(){
-    var levelList=$("input[name='level']");
-    var priIdList=$("input[name='priId']");
-    var nameList=$("input[name='name']");
-    var actionList=$("input[name='action']");
-    var descriptionList=$("input[name='description']");
-    var upPriIdList=$("input[name='upPriId']");
+$(document).ready(function(){
+    var param={};
+    $.post("/usermgr/userprivilege!getUserPrivilegsByUserId", param,
+        function(data){
+           addLeftItem(data);
+        }, "json");
+
+    handleSidebar2();
+
+
+});
+function addLeftItem(data){
+    //var levelList=$("input[name='level']");
+    //var priIdList=$("input[name='priId']");
+    //var nameList=$("input[name='name']");
+    //var actionList=$("input[name='action']");
+    //var descriptionList=$("input[name='description']");
+    //var upPriIdList=$("input[name='upPriId']");
     var totalLevel=1;
     var levelContent=new Map();
     var removeList=new Array();
     levelContent.put("leftcontent","");
-    addFirstItem(levelList,priIdList,nameList,actionList
-        ,descriptionList,upPriIdList,levelContent,totalLevel,removeList);
+    //addFirstItem(levelList,priIdList,nameList,actionList
+    //    ,descriptionList,upPriIdList,levelContent,totalLevel,removeList);
+    addFirstItem(data,levelContent,totalLevel,removeList);
 }
-function addFirstItem(levelList,priIdList,nameList,actionList,
-                      descriptionList,upPriIdList,levelContent,totalLevel,removeList){
-    var size=priIdList.length;
-
+function addFirstItem(data,levelContent,totalLevel,removeList){
+    //var size=priIdList.length;
+    var size=data.length;
     if(size==removeList.length){
         appendStr(levelContent);
-        configClass(totalLevel);
+        configClass();
         return ;
     }
 
     for(var i=0;i<size;i++){
-        var level=levelList[i].value;
+        var datai=data[i];
+        var level=datai.level;
         if(level==totalLevel){
-            var key="priId"+priIdList[i].value;
+            var key="priId"+datai.priId;
 
             //根据层次设置样式：
             var levelClass="has";
@@ -38,21 +51,31 @@ function addFirstItem(levelList,priIdList,nameList,actionList,
                 levelClass+="-sub";
             }
             //在levelcontent里添加内容
-            if(totalLevel==1){
+            if(totalLevel==1){///和其他层处理的不同：添加了左边的样式图标按钮
+                if(datai.action!="-1"){
+                    var str="<li id='priId"+datai.priId+"' class='"+levelClass+"'><a href='javascript:void(0)' class='' onclick=setIframe('"+datai.action+"')>"+
+                        "<i class='fa fa-th-large fa-fw'></i><span class='menu-text'>"+datai.name+"</span></a></li>";
+                }else{
+                    var str="<li id='priId"+datai.priId+"' class='"+levelClass+"'><a href='#' class='' >"+
+                        "<i class='fa fa-th-large fa-fw'></i><span class='menu-text'>"+datai.name+"</span></a></li>";
+                }
 
-                ///和其他层处理的不同：添加了左边的样式图标按钮
-                var str="<li id='priId"+priIdList[i].value+"' class='"+levelClass+"'><a href='#' class='' onclick=setIframe('/index.jsp')>"+
-                    "<i class='fa fa-th-large fa-fw'></i><span class='menu-text'>"+nameList[i].value+"</span></a></li>";
                 var content=levelContent.get("leftcontent");
                 levelContent.put("leftcontent",content+str);
             }else{
-                var str="<li id='priId"+priIdList[i].value+"' class='"+levelClass+"'><a href='#'>"+
-                    "<span class='menu-text'>"+nameList[i].value+"</span></a></li>";
-                var content=levelContent.get("priId"+upPriIdList[i].value);
-                levelContent.put("priId"+upPriIdList[i].value,content+str);
+                var str="<li id='priId"+datai.priId+"' class='"+levelClass+"'><a href='javascript:void(0)' class='' onclick=setIframe('"+datai.action+"')>"+
+                    "<span class='menu-text'>"+datai.name+"</span></a></li>";
+
+                if(datai.priId=="31"){
+                    str="<li id='priId"+datai.priId+"' class='"+levelClass+"'><a href='"+datai.action+"' class=''>"+
+                        "<span class='menu-text'>"+datai.name+"</span></a></li>";
+                }
+                var content=levelContent.get("priId"+datai.upPriId);
+                levelContent.put("priId"+datai.upPriId,content+str);
+
             }
-            levelContent.put(key,"<ul>");
-            removeList.push(priIdList[i].value);
+            levelContent.put(key,"");
+            removeList.push(datai.priId);
         }
     }
     //for(var j=0;j<removeList.length;j++){
@@ -65,28 +88,19 @@ function addFirstItem(levelList,priIdList,nameList,actionList,
     //    upPriIdList.splice(remove,1);
     //}
     totalLevel=1+totalLevel*1;
-    addFirstItem(levelList,priIdList,nameList,actionList,descriptionList,upPriIdList,levelContent,totalLevel,removeList)
+    addFirstItem(data,levelContent,totalLevel,removeList)
 }
 
-function configClass(totalLevel){
-    var str="has";
-    var sub="sub";
-    for(var i=0;i<totalLevel;i++){
-        str+="-sub";
-        if(i!=0){
-            sub+="-sub";
-        }
-        if($("."+str).children("ul").children("li").length>0){
-            if(i==totalLevel*1-1){
-                $("."+str).children("ul").addClass(sub);
-            }else{
-                $("."+str).children("a").append("<i  class='fa fa-caret-left arrow'></i>");
-                $("."+str).children("ul").addClass(sub);
+function configClass(){
+        $("li[class^='has-sub']").each(function(){
+            if($(this).children("ul").length>0){
+                $(this).children("a").append("<i  class='fa fa-caret-left arrow'></i>");
+                var subclass=$(this).attr("class").substring(4);
+                $(this).children("ul").addClass(subclass);
             }
 
-        }
+        });
 
-    }
 
 }
 function appendStr(levelContent){
@@ -98,13 +112,69 @@ function appendStr(levelContent){
             if (key == "leftcontent") {
                 $("#" + key).append(value);
             } else {
-                var sttt = value + "</ul>";
+                var sttt = "<ul>"+value + "</ul>";
                 $("#" + key).append(sttt);
             }
         }
     }
 }
+function handleSidebar2(){
+    //解决一级菜单
+    $(document).on('click',"ul .has-sub a",function() {
+        var thisElement=$(this);
+        var slideOffest=-200;
+        var slideSpeed=200;
 
+        var sub=jQuery(this).next();
+        if(sub.is(":visible")){//如果可见：则折叠
+            jQuery(".arrow",jQuery(this)).removeClass("open");
+            jQuery(".arrow",jQuery(this)).removeClass("fa-caret-down");
+            jQuery(".arrow",jQuery(this)).addClass("fa-caret-left");
+            jQuery(this).parent().removeClass("open");
+            sub.slideUp(slideSpeed);
+            //sub.slideUp(slideSpeed,function(){
+            //	if($("#sidebar").hasClass(".sidebar-fixed")==false){
+            //		App.scrollTo(thisElement,slideOffest);
+            //	}
+            //	//handleSidebarAndContentHeight();
+            //})
+
+        }else{
+            jQuery(".arrow",jQuery(this)).addClass("open");
+            jQuery(".arrow",jQuery(this)).removeClass("fa-caret-left");
+            jQuery(".arrow",jQuery(this)).addClass("fa-caret-down");
+            jQuery("this").parent().addClass("open");
+            sub.slideDown(slideSpeed);
+            //sub.slideDown(slideSpeed,function(){
+            //	if($("#sidebar").hasClass(".sidebar-fixed")==false){
+            //		App.scrollTo(thisElement,slideOffest);
+            //	}
+            //	//handleSidebarAndContentHeight();
+            //})
+        }
+    });
+    $(document).on('click',"li[class^='has-sub-sub']>a",function() {
+        //讲一个展开的同时，折叠上一个
+//			var last=jQuery(".has-sub-sub.open",$(".sidebar-menu"));
+//			last.removeClass("open");
+//			jQuery(".arrow",last).removeClass("open");
+//			jQuery(".sub-sub",last).slideUp(200);//这一句话应该出错了“.sub-sub”
+        var sub=jQuery(this).next();
+        if(sub.is(":visible")){
+            jQuery(".arrow",jQuery(this)).removeClass("open");
+            jQuery(".arrow",jQuery(this)).removeClass("fa-caret-down");
+            jQuery(".arrow",jQuery(this)).addClass("fa-caret-left");
+            jQuery(this).parent().removeClass("open");
+            sub.slideUp(200);
+        }else{
+            jQuery(".arrow",jQuery(this)).addClass("open");
+            jQuery(".arrow",jQuery(this)).removeClass("fa-caret-left");
+            jQuery(".arrow",jQuery(this)).addClass("fa-caret-down");
+            jQuery(this).parent().addClass("open");
+            sub.slideDown(200);
+        }
+    });
+}
 function resetIframe(e){
         if(e.attr("src"))
         {

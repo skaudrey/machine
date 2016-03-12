@@ -2,12 +2,18 @@ package app.sys.usermgr.action;
 
 import app.common.Constant;
 import app.common.action.GenericActionSupport;
+import app.sys.usermgr.VO.UserPrivilegeLevel;
+import app.sys.usermgr.model.UserPrivilegeEntity;
 import app.sys.usermgr.model.UserUserEntity;
 import app.sys.usermgr.service.UserMgrService;
+import app.sys.usermgr.service.UserPrivilegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpSession;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/2/25 0025.
@@ -19,6 +25,8 @@ public class UserMgrAction extends GenericActionSupport{
     @Autowired
     private UserMgrService service;
 
+    @Autowired
+    private UserPrivilegeService userPrivilegeService;
     @Override
     public String execute() throws Exception {
         return super.execute();
