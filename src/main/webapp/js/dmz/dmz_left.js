@@ -6,9 +6,9 @@
 var timer;
 $(document).ready(function(){
     var param={};
-    $.post("/usermgr/userprivilege!getUserPrivilegsByUserId", param,
+    $.post("/catalogOrder!getCatalogOrder", param,
         function(data){
-            addLeftItem(data);
+            alert(data);
         }, "json");
 
     handleSidebar2();

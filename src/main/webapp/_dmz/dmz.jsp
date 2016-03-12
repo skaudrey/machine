@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap.min.js" ></script>
 	<script type="text/javascript" src="<%=basepath%>/js/basic.js" ></script>
 	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery.cookie.min.js" ></script>
-	<script type="text/javascript" src="<%=basepath%>/js/control-left.js"></script>
+	<script type="text/javascript" src="<%=basepath%>/js/dmz/dmz_left.js"></script>
 	<!--滚动条插件  -->
 	<link rel="stylesheet" href="<%=basepath%>/css/dmz/jquery.mCustomScrollbar_my.css" />
 	<script src="<%=basepath%>/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>

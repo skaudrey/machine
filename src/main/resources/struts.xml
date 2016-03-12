@@ -41,4 +41,5 @@
     <include file="struts/struts_scan.xml"/>
     <include file="struts/struts-data-upload.xml"/>
     <include file="struts/struts-user-manager.xml"/>
+    <include file="struts/struts-dmz-nanager.xml" />
 </struts>
