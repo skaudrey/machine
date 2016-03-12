@@ -57,7 +57,7 @@
         <property name="transactionManager" ref="transactionManager"/>
         <property name="databaseSchemaUpdate" value="true"/> <!--是否自动生成Activiti数据表-->
         <property name="jobExecutorActivate" value="false"/><!--开启JOB引擎,这个必须开启，如果没有开启的话，定时任务是启动不了-->
-        <property name="deploymentResources" value="classpath*:diagrams/leave/leave.bpmn"/>
+        <property name="deploymentResources" value="classpath*:diagrams/toponymy/ToponymyApply.bpmn"/>
     </bean>
     <!--配置引擎工厂Bean-->
     <bean id="processEngineFactory" class="org.activiti.spring.ProcessEngineFactoryBean">

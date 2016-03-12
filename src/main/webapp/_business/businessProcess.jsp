@@ -82,6 +82,7 @@
 </form>
 
 <div id="businessTabContent" class="tab-content">
+	<a class="btn btn-primary" href="/toponymy/toponymyMgrAction!initUserData">初始化用户数据</a>
 	<!--在办业务列表-->
 	<div class="tab-pane fade in active" id="unfinishedList">
 		<br />
@@ -91,26 +92,28 @@
 				<tr>
 					<th>项目编号</th>
 					<th>项目名称</th>
-					<th>项目状态</th>
-					<th>受理人员</th>
-					<th>受理时间</th>
+					<th>申请人</th>
+					<th>申请时间</th>
+					<th>申请地名</th>
 					<th>操作</th>
 				</tr>
 				</thead>
 				<tbody>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>
-						<a href="#" data-toggle="modal">附件</a> |
-						<a href="businessAccepted.html" >受理</a> |
-						<a href="#" data-toggle="modal">更名</a> |
-						<a href="#" data-toggle="modal">删除</a>
-					</td>
-				</tr>
+				<s:iterator value="results" id="obj">
+					<tr>
+						<td><s:property value="#obj.piid"/></td>
+						<td><s:property value="#obj.piid"/></td>
+						<td><s:property value="#obj.userName"/></td>
+						<td><s:date name="#obj.applyTime" format="yyyy-MM-dd HH:mm"/></td>
+						<td><s:property value="#obj.placeName"/></td>
+						<td>
+							<a href="#" data-toggle="modal">附件</a> |
+							<a href="/_business/businessAccepted.jsp" >受理</a> |
+							<a href="#" data-toggle="modal">更名</a> |
+							<a href="#" data-toggle="modal">删除</a>
+						</td>
+					</tr>
+				</s:iterator>
 				</tbody>
 			</table>
 		</div>

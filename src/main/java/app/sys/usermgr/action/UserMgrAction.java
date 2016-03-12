@@ -10,6 +10,8 @@ import app.sys.usermgr.service.UserPrivilegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpSession;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +42,13 @@ public class UserMgrAction extends GenericActionSupport{
             super.printForAjax("0");
         }
         return "";
+    }
+
+    //用户退出
+    public String UserLogout(){
+        HttpSession session = getHttpSession();
+        session.invalidate();
+        return "logout";
     }
 
 

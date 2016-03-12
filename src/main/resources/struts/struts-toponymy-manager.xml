@@ -7,8 +7,8 @@
 <struts>
         <package name="app.sys.toponymyMgr.action" extends="app" namespace="/toponymy">
                 <action name="toponymyMgrAction"  class="app.sys.toponymyMgr.action.ToponymyApplyAction">
-                        <result name="success">/test/home.jsp</result>
-                        <result name="task_show">/test/taskList.jsp</result>
+                        <result name="success">/_placename/placenameApply.jsp</result>
+                        <result name="task_show">/_business/businessProcess.jsp</result>
                         <result name="task-deptLeaderVerify">/test/taskHandlePage/task-deptLeaderVerify.jsp</result>
                         <result name="task-hrVerify">/test/taskHandlePage/task-hrVerify.jsp</result>
                         <result name="task-modifyApply">/test/taskHandlePage/task-modifyApply.jsp</result>

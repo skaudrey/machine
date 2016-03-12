@@ -8,9 +8,7 @@
         <package name="app.sys.usermgr.action" extends="app" namespace="/usermgr">
                 <!--用户登录-->
                 <action name="userMgrAction"  class="app.sys.usermgr.action.UserMgrAction">
-                        <result name="success">/test/userLogin.jsp</result>
-                        <result name="input">/test/userLogin.jsp</result>
-                        <result name="loginSuccess">/test/home.jsp</result>
+                        <result name="logout">/main.jsp</result>
                 </action>
                 <action name="userprivilege" class="app.sys.usermgr.action.UserPrivilegeAction">
 
