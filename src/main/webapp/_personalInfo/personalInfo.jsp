@@ -14,11 +14,11 @@
 <html>
 <head>
     <title>个人中心</title>
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <script type="text/javascript" src="/js/jquery/jquery-2.0.3.min.js" ></script>
-    <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="/js/basic.js"></script>
+    <link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="<%=basepath%>/css/font-awesome.min.css">
+    <script type="text/javascript" src="<%=basepath%>/js/jquery/jquery-2.0.3.min.js" ></script>
+    <script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="<%=basepath%>/js/basic.js"></script>
     <style>
         ul.nav-tabs{
             margin-top: 25px;

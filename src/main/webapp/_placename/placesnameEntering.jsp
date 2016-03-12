@@ -11,11 +11,11 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-地名录入</title>
 	<!-- Bootstrap -->
-	<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="../js/bootstrap/bootstrap.min.js"></script>
-	<link href="../css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 	<style type="text/css">
 		.col-md-6 {
 			padding-right: 0px;
@@ -30,7 +30,7 @@
 <body>
 <!--右上角button组-->
 <div class="btn-group position-fixed">
-	<button type="button" class="btn btn-info btn-sm">确定</button>
+	<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">确定</button>
 	<button type="button" class="btn btn-default btn-sm">取消</button>
 </div>
 <ul id="enteringTab" class="nav nav-tabs nav-top">
@@ -249,7 +249,22 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">导入结果</h4>
+			</div>
+			<div class="modal-body">
+				导入成功！
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 </body>
 </html>

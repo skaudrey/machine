@@ -9,30 +9,30 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>JSP Page</title>
-	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" href="/css/dmz/dmz.css" />
-	<link rel="stylesheet" href="/css/font-awesome.min.css" />
-	<script type="text/javascript" src="/js/jquery/jquery-2.0.3.min.js" ></script>
-	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="/js/dmz/dmz-common.js" ></script>
+	<link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="<%=basepath%>/css/dmz/dmz.css" />
+	<link rel="stylesheet" href="<%=basepath%>/css/font-awesome.min.css" />
+	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery-2.0.3.min.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>/js/dmz/dmz-common.js" ></script>
 	<!--<script type="text/javascript" src="../../js/basic.js"></script>
     <script type="text/javascript" src="../../js/jquery/jquery.cookie.min.js"></script>-->
 	<!--加载视频插件-->
-	<link href="/css/dmz/video-js.css" rel="stylesheet">
-	<script src="/js/video.js"></script>
+	<link href="<%=basepath%>/css/dmz/video-js.css" rel="stylesheet">
+	<script src="<%=basepath%>/js/video.js"></script>
 	<!--table插件，一次显示10行-->
-	<script type="text/javascript" src="/js/jquery/jquery.dataTables.min.js"></script>
-	<script type="text/javascript" src="/js/jquery/datatables.min.js"></script>
+	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="<%=basepath%>/js/jquery/datatables.min.js"></script>
 	<!--  树形treeview      -->
-	<link rel="stylesheet" href="/css/dmz/jquery.tree-multiselect.min.css" />
-	<script type="text/javascript" src="/js/jquery/jquery.tree-multiselect.min.js"></script>
-	<script src="/js/dmz/treeview.js"></script>
+	<link rel="stylesheet" href="<%=basepath%>/css/dmz/jquery.tree-multiselect.min.css" />
+	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery.tree-multiselect.min.js"></script>
+	<script src="<%=basepath%>/js/dmz/treeview.js"></script>
 	<!--滚动条插件  -->
-	<link rel="stylesheet" href="/css/dmz/jquery.mCustomScrollbar.css" />
-	<script src="/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
-	<script src="/js/mScrollBar/jquery.mousewheel.min.js"></script>
-	<script src="/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
-	<script src="/js/dmz/setCustomScrollBar.js"></script>
+	<link rel="stylesheet" href="<%=basepath%>/css/dmz/jquery.mCustomScrollbar.css" />
+	<script src="<%=basepath%>/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
+	<script src="<%=basepath%>/js/mScrollBar/jquery.mousewheel.min.js"></script>
+	<script src="<%=basepath%>/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
+	<script src="<%=basepath%>/js/dmz/setCustomScrollBar.js"></script>
 	<style>
         #mCSB_3{ /* contains plugin's markup */
             position: relative;

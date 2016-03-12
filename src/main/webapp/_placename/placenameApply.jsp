@@ -7,10 +7,10 @@
 <html>
 <head>
     <title>地名申请</title>
-  <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script src="../js/jquery/jquery-1.10.2.min.js"></script>
-  <script src="../js/bootstrap/bootstrap.min.js"></script>
-  <link href="../css/mystyle.css" rel="stylesheet">
+  <link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+  <script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+  <link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 
   <style type="text/css">
     .col-md-6{

@@ -18,9 +18,9 @@
   <!--
   <link rel="stylesheet" type="text/css" href="styles.css">
   -->
-  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
-  <script src="/js/jquery/jquery-1.10.2.min.js"></script>
-  <script src="/js/bootstrap/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css">
+  <script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+  <script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
 </head>
 
 <body>
