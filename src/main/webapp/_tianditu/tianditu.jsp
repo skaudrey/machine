@@ -9,16 +9,17 @@
 
 <head>
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="../css/tianditu/ol.css" type="text/css">
+	<link rel="stylesheet" href="<%=basepath%>css/tianditu/ol.css" type="text/css">
 
-	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<link href="../css/bootstrap.min.css" rel="stylesheet" />
-	<script src="../js/tianditu/ol.js"></script>
-	<script src="../js/tianditu/init.js"></script>
-	<script src="../js/tianditu/measure.js"></script>
-	<script src="../js/tianditu/common.js"></script>
-	<link rel="stylesheet" href="../css/tianditu/common.css" type="text/css">
+	<script src="<%=basepath%>js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>js/bootstrap.min.js"></script>
+	<link href="<%=basepath%>css/bootstrap.min.css" rel="stylesheet" />
+	<script src="<%=basepath%>js/tianditu/ol.js"></script>
+	<script src="<%=basepath%>js/tianditu/init.js"></script>
+	<script src="<%=basepath%>js/tianditu/loadLayer.js"></script>
+	<script src="<%=basepath%>js/tianditu/measure.js"></script>
+	<script src="<%=basepath%>js/tianditu/common.js"></script>
+	<link rel="stylesheet" href="<%=basepath%>css/tianditu/common.css" type="text/css">
 
 	<title></title>
 
@@ -84,7 +85,11 @@
 					<label>专题图层</label>
 					<div class="checkbox">
 						<label>
-							<input type="checkbox" autocomplete="off" value="">房屋</label>
+							<input type="checkbox" autocomplete="off" id='houseLayer' checked="checked" value="">房屋</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" autocomplete="off" id='signLayer' checked="checked" value="">标牌</label>
 					</div>
 				</ul>
 			</li>

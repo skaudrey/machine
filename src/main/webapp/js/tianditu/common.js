@@ -13,6 +13,7 @@ $(document).ready(function(){
 		}
 	});
 	$("#findFeature-confirm").click(function(){
+		$("#spatialSearch-showbtn").trigger('click');
 		$(".bottomMenu").css("display","block");
 	});
 	$("#spatialSearch-resultDisplay").click(function(){
@@ -41,9 +42,72 @@ $(document).ready(function(){
 		$("#measureLayer").prop("checked")?measureLayer.setVisible(1):measureLayer.setVisible(0);
 		$("#measureLayer").prop("checked")?$(".tooltip-static").removeClass('hidden'):$(".tooltip-static").addClass('hidden');
 	});
+	$("#houseLayer").change(function() {
+		$("#houseLayer").prop("checked")?houseLayer.setVisible(1):houseLayer.setVisible(0);
+		$("#houseLayer").prop("checked")?$(".tooltip-static").removeClass('hidden'):$(".tooltip-static").addClass('hidden');
+	});
+	$("#signLayer").change(function() {
+		$("#signLayer").prop("checked")?signLayer.setVisible(1):signLayer.setVisible(0);
+		$("#signLayer").prop("checked")?$(".tooltip-static").removeClass('hidden'):$(".tooltip-static").addClass('hidden');
+	});
 
-
-
+	//模拟要素添加
+	$("#findFeature-confirm").click(function() {
+		var testData = {
+			"type": "FeatureCollection",
+			"features": [{
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12728341.723190226, 3572380.0631930684]
+				},
+				"properties": null
+			}, {
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12727252.495537164, 3571539.255881931]
+				},
+				"properties": null
+			}, {
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12726679.217825023, 3573163.5427329913]
+				},
+				"properties": null
+			}, {
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12727348.04182252, 3574061.677815342]
+				},
+				"properties": null
+			}, {
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12725933.956799243, 3574596.737013338]
+				},
+				"properties": null
+			}, {
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12725972.175313385, 3573087.105704706]
+				},
+				"properties": null
+			}, {
+				"type": "Feature",
+				"geometry": {
+					"type": "Point",
+					"coordinates": [12724519.871775968, 3572513.8279925673]
+				},
+				"properties": null
+			}]
+		}
+		vectorSource.addFeatures((new ol.format.GeoJSON()).readFeatures(testData));
+	});
 });
 function closePopup()
 {

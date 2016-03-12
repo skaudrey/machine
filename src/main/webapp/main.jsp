@@ -95,7 +95,7 @@
 
                 <ul id="leftcontent">
                     <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("_tianditu/tianditu.html")>
+                        <a href="javascript:void(0);" class="" onclick=setIframe("_tianditu/tianditu.jsp")>
                             <i class="fa fa-th-large fa-fw"></i>
                             <span class="menu-text">空间信息基础平台管理</span>
                         </a>
