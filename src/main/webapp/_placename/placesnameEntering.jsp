@@ -31,7 +31,7 @@
 <body>
 <!--右上角button组-->
 <div class="btn-group position-fixed">
-	<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">确定</button>
+	<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#confirm">确定</button>
 	<button type="button" class="btn btn-default btn-sm">取消</button>
 </div>
 <ul id="enteringTab" class="nav nav-tabs nav-top">
@@ -234,9 +234,9 @@
                         <a data-toggle="collapse" data-parent="#accordion" href="#otherInformation">其他信息</a>
                     </h4>
                 </div>
-	            <div id="otherInformation" class="panel-collapse collapse">
+	            <div id="otherInformation" class="panel-collapse collapse in">
                      <div class="panel-body ">
-						 <iframe id="materialIfame" src="/editMat/material.jsp" marginwidth="0" marginheight="0"   frameborder="0"  scrolling="no">
+						 <iframe id="materialIfame" src="/editMat/material.jsp" marginwidth="0" marginheight="0"   frameborder="0"  scrolling="no" width="100%" height="100%">
 
 						 </iframe>
                     </div>
@@ -264,8 +264,35 @@
 		</div>
 	</div>
 </div>
+<div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="">选择地名类型</h4>
+            </div>
+            <div class="modal-body">
+                <select>
+                    <option>单位</option>
+                    <option>建筑物</option>
+                    <option>公园</option>
+                    <option>风景名胜</option>
+                    <option>河流</option>
+                    <option>矿区</option>
+                    <option>湖泊</option>
+                    <option>山峰</option>
+                    <option>道路</option>
+                    <option>发电站</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" onclick="window.location.href='danwei.jsp'">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
-    $(document).ready(resetIframe($("#materialIfame")));
+    $(document).ready(setInterval("resetIframe($('#materialIfame'))",500));
 </script>
 </body>
 
