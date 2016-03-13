@@ -38,7 +38,8 @@ public class MetaTablenameServiceImpl extends GenericEntityDao implements MetaTa
         String sql = "select tableName from meta_tablename where txtFileName = "+"\""+filename+"\"";
         Session session = super.getCurrentSession();
         List as=session.createSQLQuery(sql).list();
-        String tablename="meta_"+as.get(0).toString();
+//        String tablename="meta_"+as.get(0).toString();
+        String tablename=as.get(0).toString();
         Session session1 = super.getCurrentSession();
         String sql1="select inner_identifier FROM "+tablename;
         List<Object> aa=(List<Object>)session1.createSQLQuery(sql1).list();

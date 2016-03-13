@@ -5,10 +5,9 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="app.sys.test.SvgShow.action" extends="struts-default" namespace="/svg">
-        <!--用户登录-->
+    <package name="app.sys.test.SvgShow.action" extends="json-default" namespace="/svg">
         <action name="generateSvg"  class="app.sys.SVGGenerate.action.SVGShowAction" method="generateSvg">
-            <result name="success" type="plainText"></result>
+            <result name="success" type="plainText"/>
         </action>
     </package>
 </struts>

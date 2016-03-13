@@ -11,13 +11,13 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-受理页面</title>
 	<!-- Bootstrap -->
-	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap/bootstrap-multiselect.css" rel="stylesheet"/>
-	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="../js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap/bootstrap-multiselect.js"></script>
-	<link href="../css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=basepath%>/css/bootstrap/bootstrap-multiselect.css" rel="stylesheet"/>
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap-multiselect.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 	<style type="text/css">
 		.col-md-6 {
 			padding-right: 0px;

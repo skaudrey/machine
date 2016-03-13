@@ -5,7 +5,6 @@ function loadsvg()
 		url:'svg/generateSvg.action',
 		data:{},
 		type:'get',
-		datatype:'xml',
 		success:function(datar)
 		{
 			$('body').html(datar);

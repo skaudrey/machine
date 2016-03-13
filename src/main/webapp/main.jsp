@@ -10,22 +10,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>地名系统</title>
 
-	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/theme/default.css"  id="skin-switcher"/>
-	<link rel="stylesheet" href="css/themecommen.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css" />
-	<script type="text/javascript" src="js/jquery/jquery-2.0.3.min.js" ></script>
-	<script type="text/javascript" src="js/bootstrap/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="js/jquery/jquery.cookie.min.js" ></script>
-    <script type="text/javascript" src="js/basic.js" ></script>
-	<script type="text/javascript" src="js/control-left.js"></script>
+	<link rel="stylesheet" href="<%=basepath%>css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="<%=basepath%>css/theme/default.css"  id="skin-switcher"/>
+	<link rel="stylesheet" href="<%=basepath%>css/themecommen.css" />
+	<link rel="stylesheet" href="<%=basepath%>css/font-awesome.min.css" />
+	<script type="text/javascript" src="<%=basepath%>js/jquery/jquery-2.0.3.min.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>js/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>js/jquery/jquery.cookie.min.js" ></script>
+    <script type="text/javascript" src="<%=basepath%>js/basic.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>js/control-left.js"></script>
 
     <!--滚动条插件  -->
-    <link rel="stylesheet" href="css/dmz/jquery.mCustomScrollbar_my.css" />
-    <script src="js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
-    <script src="js/mScrollBar/jquery.mousewheel.min.js"></script>
-    <script src="js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
-    <script src="js/dmz/setCustomScrollBar.js"></script>
+    <link rel="stylesheet" href="<%=basepath%>css/dmz/jquery.mCustomScrollbar_my.css" />
+    <script src="<%=basepath%>js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
+    <script src="<%=basepath%>js/mScrollBar/jquery.mousewheel.min.js"></script>
+    <script src="<%=basepath%>js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="<%=basepath%>js/dmz/setCustomScrollBar.js"></script>
 </head>
 <body>
 <nav class="nav navbar-default navbar-fixed-top" role="navigation" id="header" >
@@ -301,144 +301,144 @@
                                 <%--<a href="_dmz/dmz.jsp" class="">--%>
                                     <%--<i class="fa fa-th-large fa-fw"></i>--%>
                                     <%--<span class="menu-text">地名志系统</span>--%>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("/toponymy/toponymyMgrAction!getTaskList")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">地名业务办理</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_placename/placenamesLogout.html")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">地名数据注销</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="#" class="">
-                            <i class="fa fa-th-large fa-fw"></i>
-                            <span class="menu-text">门牌业务管理</span>
-                        </a>
-                        <ul class="sub">
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">门牌证录入</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">门牌查询</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">门牌证维护</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">门牌证注销</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.html")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">门牌证管理</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="#" class="" >
-                            <i class="fa fa-th-large fa-fw"></i>
-                            <span class="menu-text">行政区划管理</span>
-                        </a>
-                        <ul class="sub">
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">行政区划管理</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">扫描件管理</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">行政区划设立</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">行政区划查询</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.html")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="sub-menu-text">行政区划调整</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="#" class="" >
-                            <i class="fa fa-th-large fa-fw"></i>
-                            <span class="menu-text">界桩界限管理</span>
-                        </a>
-                        <ul class="sub">
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/tabletRegister.jsp")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="menu-text">界桩登记</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/tabletMaintain.jsp")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="menu-text">界桩维护</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/lineRegister.jsp")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="menu-text">界线登记</span>
-                                </a>
-                            </li>
-                            <li class="has-sub-sub">
-                                <a href="javascript:void(0);" class="" onclick=setIframe("_boundary/lineMaintain.jsp")>
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="menu-text">界线维护</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="javascript:void(0);" class="" onclick=setIframe("")>
-                            <i class="fa fa-th-large fa-fw"></i>
-                            <span class="menu-text">统计与分析</span>
-                        </a>
-                    </li>
-                    <li class="has-sub">
-                        <a href="#" class="">
-                            <i class="fa fa-th-large fa-fw"></i>
-                            <span class="menu-text">地名成果应用</span>
-                        </a>
-                        <ul class="sub">
-                            <li class="has-sub-sub">
-                                <a href="_dmz/dmz.jsp" class="">
-                                    <i class="fa fa-th-large fa-fw"></i>
-                                    <span class="menu-text">地名志系统</span>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("/toponymy/toponymyMgrAction!getTaskList")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">地名业务办理</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_placename/placenamesLogout.html")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">地名数据注销</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li class="has-sub">--%>
+                        <%--<a href="#" class="">--%>
+                            <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                            <%--<span class="menu-text">门牌业务管理</span>--%>
+                        <%--</a>--%>
+                        <%--<ul class="sub">--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">门牌证录入</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">门牌查询</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">门牌证维护</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">门牌证注销</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_doorplate/batchManagement.html")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">门牌证管理</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li class="has-sub">--%>
+                        <%--<a href="#" class="" >--%>
+                            <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                            <%--<span class="menu-text">行政区划管理</span>--%>
+                        <%--</a>--%>
+                        <%--<ul class="sub">--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">行政区划管理</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">扫描件管理</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionEstablishment.html")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">行政区划设立</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">行政区划查询</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_xzqh/divisionAdjustment.html")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="sub-menu-text">行政区划调整</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li class="has-sub">--%>
+                        <%--<a href="#" class="" >--%>
+                            <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                            <%--<span class="menu-text">界桩界限管理</span>--%>
+                        <%--</a>--%>
+                        <%--<ul class="sub">--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_boundary/tabletRegister.jsp")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="menu-text">界桩登记</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_boundary/tabletMaintain.jsp")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="menu-text">界桩维护</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_boundary/lineRegister.jsp")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="menu-text">界线登记</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="javascript:void(0);" class="" onclick=setIframe("_boundary/lineMaintain.jsp")>--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="menu-text">界线维护</span>--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
+                        <%--</ul>--%>
+                    <%--</li>--%>
+                    <%--<li class="has-sub">--%>
+                        <%--<a href="javascript:void(0);" class="" onclick=setIframe("")>--%>
+                            <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                            <%--<span class="menu-text">统计与分析</span>--%>
+                        <%--</a>--%>
+                    <%--</li>--%>
+                    <%--<li class="has-sub">--%>
+                        <%--<a href="#" class="">--%>
+                            <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                            <%--<span class="menu-text">地名成果应用</span>--%>
+                        <%--</a>--%>
+                        <%--<ul class="sub">--%>
+                            <%--<li class="has-sub-sub">--%>
+                                <%--<a href="_dmz/dmz.jsp" class="">--%>
+                                    <%--<i class="fa fa-th-large fa-fw"></i>--%>
+                                    <%--<span class="menu-text">地名志系统</span>--%>
 
                                 <%--</a>--%>
                             <%--</li>--%>

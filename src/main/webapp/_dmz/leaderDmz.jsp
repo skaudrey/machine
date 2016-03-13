@@ -12,24 +12,24 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>JSP Page</title>
 
-	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
-	<link rel="stylesheet" href="/css/theme/default.css"  id="skin-switcher"/>
+	<link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="<%=basepath%>/css/theme/default.css"  id="skin-switcher"/>
 	<!--<link rel="stylesheet" href="../css/themecommen_.css" />-->
-	<link rel="stylesheet" href="/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="/css/dmz/leaderDMZ.css" />
-	<script type="text/javascript" src="/js/jquery/jquery-2.0.3.min.js" ></script>
+	<link rel="stylesheet" href="<%=basepath%>/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="<%=basepath%>/css/dmz/leaderDMZ.css" />
+	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery-2.0.3.min.js" ></script>
 
-	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js" ></script>
-	<script type="text/javascript" src="/js/basic.js" ></script>
-	<script type="text/javascript" src="/js/jquery/jquery.cookie.min.js" ></script>
-	<script type="text/javascript" src="/js/control-left.js"></script>
+	<script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>/js/basic.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>/js/jquery/jquery.cookie.min.js" ></script>
+	<script type="text/javascript" src="<%=basepath%>/js/control-left.js"></script>
 	<!--滚动条插件  -->
-	<link rel="stylesheet" href="/css/dmz/jquery.mCustomScrollbar_my.css" />
-	<script src="/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
-	<script src="/js/mScrollBar/jquery.mousewheel.min.js"></script>
-	<script src="/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
-	<script src="/js/dmz/setCustomScrollBar.js"></script>
-	<script type="text/javascript" src="/js/dmz/leaderDmz.js" ></script>
+	<link rel="stylesheet" href="<%=basepath%>/css/dmz/jquery.mCustomScrollbar_my.css" />
+	<script src="<%=basepath%>/js/mScrollBar/jquery-ui-1.10.4.min.js"></script>
+	<script src="<%=basepath%>/js/mScrollBar/jquery.mousewheel.min.js"></script>
+	<script src="<%=basepath%>/js/mScrollBar/jquery.mCustomScrollbar.min.js"></script>
+	<script src="<%=basepath%>/js/dmz/setCustomScrollBar.js"></script>
+	<script type="text/javascript" src="<%=basepath%>/js/dmz/leaderDmz.js" ></script>
 	<style>
 		#sidebar{
 			padding: 0!important;

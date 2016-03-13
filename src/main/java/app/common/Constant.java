@@ -1,5 +1,8 @@
 package app.common;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 常量
  */
@@ -53,4 +56,11 @@ public class Constant {
 	//Boolean
 	public final static String TRUE= "1";//正确
 	public final static String FALSE= "0";//错误
+
+
+	//表示成功与否的list
+	/*
+	* -1：fail
+	* */
+	public final static List<Integer> PROCESS_RESULT=new ArrayList<Integer>(1);
 }

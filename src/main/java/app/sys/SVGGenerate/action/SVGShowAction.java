@@ -20,6 +20,8 @@ public class SVGShowAction extends GenericActionSupport {
     public String generateSvg() throws IOException
     {
         SVGHandler handler=new SVGHandler(houseService.getBuildingByID(1));
+        super.getResponse().setCharacterEncoding("UTF-8");
+        super.getResponse().setContentType("text/html;charset=utf-8");
         PrintWriter writer=super.getResponse().getWriter();
         writer.write(handler.makeSVG());
         writer.flush();
