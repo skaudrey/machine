@@ -15,6 +15,7 @@ public class DicBusinessmaterialEntity {
     private int amount;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "btID", nullable = false, insertable = true, updatable = true)
     public int getBtId() {
         return btId;

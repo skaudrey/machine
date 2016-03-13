@@ -6,7 +6,7 @@ import app.sys.usermgr.VO.UserPrivilegeLevel;
 import app.sys.usermgr.model.UserPrivilegeEntity;
 import app.sys.usermgr.service.UserPrivilegeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
+//import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 
 import java.util.ArrayList;
 import java.util.List;

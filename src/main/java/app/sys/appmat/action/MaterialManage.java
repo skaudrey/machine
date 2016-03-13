@@ -118,8 +118,8 @@ public class MaterialManage extends GenericActionSupport {
         DicMaterialEntity materialEntity=new DicMaterialEntity();
         materialEntity.setMatName(matName);
 
-        int nId=-1;
-        nId=appApplyService.saveMatType(materialEntity);
+        int nId=appApplyService.saveMatType(materialEntity);
+        System.out.println("材料ID"+nId);
 
         if(nId>0)
             writeJsonArray(Constant.PROCESS_RESULT.add(nId));
@@ -156,6 +156,7 @@ public class MaterialManage extends GenericActionSupport {
         materialEntity.setIsCopy(isCopy);
 
         dicBusinessmaterialEntities.add(materialEntity);
+
 
         if(businessmaterialService.saveOrUpdateBusinessMat(dicBusinessmaterialEntities))
             writeJsonArray(Constant.PROCESS_RESULT.add(0));

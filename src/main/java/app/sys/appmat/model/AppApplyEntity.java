@@ -1,8 +1,6 @@
 package app.sys.appmat.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Skaudrey on 2016/3/12.
@@ -13,6 +11,7 @@ public class AppApplyEntity {
     private int appId;
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @javax.persistence.Column(name = "app_ID", nullable = false, insertable = true, updatable = true)
     public int getAppId() {
         return appId;

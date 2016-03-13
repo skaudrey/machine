@@ -12,6 +12,7 @@ public class DicMaterialEntity {
     private String matName;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name = "matID", nullable = false, insertable = true, updatable = true)
     public int getMatId() {
         return matId;

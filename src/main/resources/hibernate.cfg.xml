@@ -44,6 +44,12 @@
         <mapping class="app.sys.SVGGenerate.model.BudFloorEntity"/>
         <mapping class="app.sys.SVGGenerate.model.BudHouseEntity"/>
         <mapping class="app.sys.SVGGenerate.model.BudUnitEntity"/>
+        <mapping class="app.sys.appmat.model.DicBusinesstypeEntity"/>
+        <mapping class="app.sys.appmat.model.DicBusinessmaterialEntity"/>
+        <mapping class="app.sys.appmat.model.DicMaterialEntity"/>
+        <mapping class="app.sys.appmat.model.AppApplyEntity"/>
+        <mapping class="app.sys.appmat.model.AppAppmatEntity"/>
+
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>
