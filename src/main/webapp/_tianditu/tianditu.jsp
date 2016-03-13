@@ -13,7 +13,7 @@
 
 	<script src="<%=basepath%>js/jquery/jquery-1.10.2.min.js"></script>
 	<script src="<%=basepath%>js/bootstrap.min.js"></script>
-	<link href="<%=basepath%>css/bootstrap.min.css" rel="stylesheet" />
+	<link href="<%=basepath%>css/tianditu/bootstrap.css" rel="stylesheet" />
 	<script src="<%=basepath%>js/tianditu/ol.js"></script>
 	<script src="<%=basepath%>js/tianditu/init.js"></script>
 	<script src="<%=basepath%>js/tianditu/loadLayer.js"></script>
@@ -38,7 +38,7 @@
 	</div>
 </div>
 <div class="rightContent">
-	<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar navbar-default" role="navigation">
 		<!--向左对齐-->
 		<ul class="nav navbar-nav navbar-left">
 			<li style="padding-top: 5px;"><a href="#" class="leftBtn" onclick="showLayers(1)">专题栏<<</a></li>
@@ -139,7 +139,7 @@
 			<li><a href="#" class="rightBtn" onclick="setStatus(6)"><img src="img/modify.png"></a></a></li>
 			<li><a href="#" class="rightBtn" onclick="exportImg()"><img src="img/export.png"></a></li>
 		</ul>
-	</nav>
+	</div>
 	<div id='map'></div>
 	<div class="bottomMenu">
 		<table class="table table-bordered text-center" id="spatialSearch-result">
