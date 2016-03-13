@@ -23,6 +23,12 @@
         <!--添加材料类型-->
         <action name="addMatType" class="app.sys.appmat.action.MaterialManage" method="newMatType"></action>
 
+
+        <!--对于特定业务添加所需材料-->
+        <action name="addMaterial" class="app.sys.appmat.action.MaterialManage" method="addMaterials">
+
+        </action>
+
         <!--管理员管理扫描件元数据-->
         <action name="preManageMat" class="app.sys.appmat.action.MaterialManage" method="getDept">
             <result name="success">/editMat/editWorkMat.jsp</result>

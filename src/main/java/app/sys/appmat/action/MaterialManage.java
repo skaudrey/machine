@@ -2,11 +2,14 @@ package app.sys.appmat.action;
 
 import app.common.Constant;
 import app.common.action.GenericActionSupport;
+import app.sys.appmat.model.DicBusinessmaterialEntity;
 import app.sys.appmat.model.DicBusinesstypeEntity;
 import app.sys.appmat.model.DicMaterialEntity;
 import app.sys.appmat.service.AppApplyService;
+import app.sys.appmat.service.DicBusinessmaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,11 +22,40 @@ public class MaterialManage extends GenericActionSupport {
 
     @Autowired
     AppApplyService appApplyService;
+    @Autowired
+    DicBusinessmaterialService businessmaterialService;
 
     private int deptId;
     private int appId;
     private String matName;
     private String btName;
+    private int amount;
+    private int matId;
+    private String isCopy;
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public int getMatId() {
+        return matId;
+    }
+
+    public void setMatId(int matId) {
+        this.matId = matId;
+    }
+
+    public String getIsCopy() {
+        return isCopy;
+    }
+
+    public void setIsCopy(String isCopy) {
+        this.isCopy = isCopy;
+    }
 
     public String getBtName() {
         return btName;
@@ -111,4 +143,23 @@ public class MaterialManage extends GenericActionSupport {
         return "";
     }
 
+    /*添加业务所需的材料*/
+    public String addMaterials(){
+
+        List<DicBusinessmaterialEntity> dicBusinessmaterialEntities=new ArrayList<DicBusinessmaterialEntity>();
+
+        DicBusinessmaterialEntity materialEntity=new DicBusinessmaterialEntity();
+
+        materialEntity.setBtId(appId);
+        materialEntity.setMatId(matId);
+        materialEntity.setAmount(amount);
+        materialEntity.setIsCopy(isCopy);
+
+        dicBusinessmaterialEntities.add(materialEntity);
+
+        if(businessmaterialService.saveOrUpdateBusinessMat(dicBusinessmaterialEntities))
+            writeJsonArray(Constant.PROCESS_RESULT.add(0));
+
+        return "";
+    }
 }
