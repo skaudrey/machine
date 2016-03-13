@@ -28,7 +28,6 @@
         <mapping class="app.sys.usermgr.model.UserUserEntity"/>
         <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
         <mapping class="app.sys.usermgr.model.UserPrivilegeEntity"/>
-        <mapping class="app.sys.usermgr.model.UserRoleEntity"/>
         <mapping class="app.sys.usermgr.model.UserRoleprivEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserroleEntity"/>
         <mapping class="app.sys.dmzMgr.modual.DmzCatalogEntity"/>
