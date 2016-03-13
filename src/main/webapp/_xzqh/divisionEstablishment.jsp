@@ -33,7 +33,7 @@
 <!--右上角button组-->
 <div class="btn-group position-fixed">
 	<button type="button" class="btn btn-info btn-sm">确定</button>
-	<button type="button" class="btn btn-default btn-sm" onclick="window.location.href='divisionAdjustment.html'">取消</button>
+	<button type="button" class="btn btn-default btn-sm" onclick="window.location.href='divisionAdjustment.jsp'">取消</button>
 </div>
 <br />
 <br />

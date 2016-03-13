@@ -16,6 +16,7 @@
 	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
 	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
 	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
+    <script src="<%=basepath%>/js/control-left.js" ></script>
 	<style type="text/css">
 		.col-md-6 {
 			padding-right: 0px;
@@ -235,11 +236,9 @@
                 </div>
 	            <div id="otherInformation" class="panel-collapse collapse">
                      <div class="panel-body ">
-                        <!--其他信息为上传各种扫描件-->
-                        <div class="pull-right">
-                            <input type="file" id="inputFile">
-                            <button type="submit " class="btn btn-default btn-sm ">提交</button>
-                        </div>
+						 <iframe id="materialIfame" src="/editMat/material.jsp" marginwidth="0" marginheight="0"   frameborder="0"  scrolling="no">
+
+						 </iframe>
                     </div>
                 </div>
             </div>
@@ -265,6 +264,9 @@
 		</div>
 	</div>
 </div>
-
+<script>
+    $(document).ready(resetIframe($("#materialIfame")));
+</script>
 </body>
+
 </html>

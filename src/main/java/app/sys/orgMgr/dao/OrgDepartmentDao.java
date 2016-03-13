@@ -1,7 +1,8 @@
 package app.sys.orgMgr.dao;
 
 import app.common.dao.GenericEntityDao;
-import app.sys.orgMgr.modual.OrgDepartmentEntity;
+import app.sys.appmat.model.OrgDepartmentEntity;
+
 
 import javax.inject.Named;
 

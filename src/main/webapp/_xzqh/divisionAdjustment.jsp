@@ -82,7 +82,7 @@
 </form>
 <!--左上角button组-->
 <div class="btn-group pull-left btn-pull-left1">
-	<button type="button" class="btn btn-info btn-sm" style="width: auto;" onclick="window.location.href='divisionEstablishment.html'">行政区划设立</button>
+	<button type="button" class="btn btn-info btn-sm" style="width: auto;" onclick="window.location.href='/_xzqh/divisionEstablishment.jsp'">行政区划设立</button>
 	<button type="button" class="btn btn-default btn-sm">导入</button>
 	<button type="button" class="btn btn-default btn-sm">导出</button>
 </div>

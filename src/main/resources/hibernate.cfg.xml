@@ -25,7 +25,6 @@
         <mapping class="app.sys.UploadData.model.MetaTablenameEntity"/>
         <mapping class="app.sys.UploadData.model.TPlacecommonEntity"/>
         <mapping class="app.sys.UploadData.model.MetaTxtfiled2TfieldTxtEntity"/>
-        <mapping class="app.sys.appmat.model.UserUserdepartmentEntity"/>
         <mapping class="app.sys.appmat.model.OrgDepartmentEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserEntity"/>
         <mapping class="app.sys.toponymyMgr.model.TestPlaceNameApplyEntity"/>
@@ -39,7 +38,6 @@
         <mapping class="app.sys.dmzMgr.modual.DmzDistmodualEntity"/>
         <mapping class="app.sys.dmzMgr.modual.DmzModualEntity"/>
         <mapping class="app.sys.dmzMgr.modual.DmzModualcatalogEntity"/>
-        <mapping class="app.sys.orgMgr.modual.OrgDepartmentEntity"/>
         <mapping class="app.sys.orgMgr.modual.OrgDistrictEntity"/>
         <mapping class="app.sys.orgMgr.modual.OrgDistrictdepartmentEntity"/>
         <mapping class="app.sys.usermgr.model.UserUserdepartmentEntity"/>
