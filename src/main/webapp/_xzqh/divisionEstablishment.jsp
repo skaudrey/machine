@@ -11,11 +11,11 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-设立行政区划</title>
 	<!-- Bootstrap -->
-	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="/js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="/js/bootstrap/bootstrap.min.js"></script>
-	<link href="/css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 
 	<style type="text/css">
 		.col-md-6 {
@@ -33,7 +33,7 @@
 <!--右上角button组-->
 <div class="btn-group position-fixed">
 	<button type="button" class="btn btn-info btn-sm">确定</button>
-	<button type="button" class="btn btn-default btn-sm" onclick="window.location.href='divisionAdjustment.html'">取消</button>
+	<button type="button" class="btn btn-default btn-sm" onclick="window.location.href='divisionAdjustment.jsp'">取消</button>
 </div>
 <br />
 <br />
@@ -209,36 +209,39 @@
 							</div>
 							<div class="col-md-6">
 								<label for="historyDescription" class="col-sm-3 control-label" style="padding-left:15px;width: 16%;">历史沿革描述</label>
-								<div class="col-sm-9" style="width: 84%;padding-right: 5px;" ">
-								<textarea class="form-control " id="historyDescription "></textarea>
+								<div class="col-sm-9" style="width: 84%;padding-right: 5px;">
+									<textarea class="form-control " id="historyDescription"></textarea>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row ">
-						<div class="col-md-6 ">
-							<label for="entityDescription " class="col-sm-3 control-label " style="padding-left:15px;width: 16%;margin-top: 10px; ">实体描述</label>
-							<div class="col-sm-9 " style="width: 84%;padding-right: 5px; "">
-							<textarea class="form-control" id="entityDescription" style="margin-top: 10px;"></textarea>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<label for="higherState" class="col-sm-3 control-label" style="padding-left:15px;width: 16%;margin-top: 10px;">上级政区</label>
-						<div class="col-sm-9" style="width: 84%;padding-right: 5px;" ">
-						<textarea class="form-control " id="higherState " style="margin-top: 10px; "></textarea>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--行政区划-->
-		<div class="tab-pane fade" id="administrativeRegionalism">
-			<br />
-			行政区划-没写要求
-		</div>
-		<!--经济指标-->
-		<div class="tab-pane fade" id="economicIndicator">
-			<br />
-			经济指标-没写要求
-		</div>
+						<div class="row ">
+							<div class="col-md-6 ">
+								<label for="entityDescription" class="col-sm-3 control-label " style="padding-left:15px;width: 16%;margin-top: 10px; ">实体描述</label>
+								<div class="col-sm-9 " style="width: 84%;padding-right: 5px; ">
+								    <textarea class="form-control" id="entityDescription" style="margin-top: 10px;"></textarea>
+							    </div>
+                            </div>
+							<div class="col-md-6">
+								<label for="higherState" class="col-sm-3 control-label" style="padding-left:15px;width: 16%;margin-top: 10px;">上级政区</label>
+								<div class="col-sm-9" style="width: 84%;padding-right: 5px;">
+								    <textarea class="form-control " id="higherState" style="margin-top: 10px; "></textarea>
+							    </div>
+						    </div>
+                        </div>
+			        </div>
+
+                    <!--行政区划-->
+                    <div class="tab-pane fade" id="administrativeRegionalism">
+                        <br />
+                        行政区划-没写要求
+                    </div>
+                    <!--经济指标-->
+                    <div class="tab-pane fade" id="economicIndicator">
+                        <br />
+                        经济指标-没写要求
+                    </div>
+		        </div>
+
 	</div>
 </div>
 </div>

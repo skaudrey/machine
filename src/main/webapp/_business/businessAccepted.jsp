@@ -11,13 +11,13 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-受理页面</title>
 	<!-- Bootstrap -->
-	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap/bootstrap-multiselect.css" rel="stylesheet"/>
-	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="../js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap/bootstrap-multiselect.js"></script>
-	<link href="../css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="<%=basepath%>/css/bootstrap/bootstrap-multiselect.css" rel="stylesheet"/>
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap-multiselect.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 	<style type="text/css">
 		.col-md-6 {
 			padding-right: 0px;
@@ -185,8 +185,10 @@
                                         <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="registrantName" />
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="alias" class="col-sm-4 control-label">别名</label>
-                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="alias" />
+                                        <%--<label for="alias" class="col-sm-4 control-label">别名</label>
+                                        <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="alias" />--%>
+                                            <label for="alias" class="col-sm-4 control-label">名称</label>
+                                            <input type="text" class="col-sm-8 form-control disabled"   disabled="disabled" id="alias" value="<s:property value='testPlaceNameApplyEntity.placeName'/>"/>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="measuringMethod" class="col-sm-4 control-label">测量方法</label>
@@ -205,7 +207,7 @@
                                         </div>--%>
                                         <label for="placesnameDescription" class="col-sm-4 control-label" style="padding-left:15px;width: 21%;">地名含义描述</label>
                                         <div class="col-sm-8" style="width: 79%;padding-right: 5px;">
-                                            <textarea class="form-control disabled" id="placesnameDescription"  disabled="disabled"  name="description"></textarea>
+                                            <textarea class="form-control disabled" id="placesnameDescription"  disabled="disabled"  name="description"><s:property value="testPlaceNameApplyEntity.description" /></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -251,19 +253,23 @@
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="divid-40"></div>
-                <h4>审批意见</h4>
-                <div>
-                    <select class="multiselect position-fixed">
-                        <option >通过</option>
-                        <option >拒绝</option>
-                    </select>
-                </div>
-                <br>
-                <br>
-                <div>
-                    <button class="btn btn-info">确定</button>
-                </div>
+                <form action="/toponymy/toponymyMgrAction!finishTask" method="post">
+                    <input type="hidden" name="taskId" value="<s:property value='testPlaceNameApplyEntity.taskId'/>"/>
+                    <div class="divid-40"></div>
+                    <h4>审批意见</h4>
+                    <div>
+                        <select  name="p_b_countyLeaderApproved" class="multiselect position-fixed">
+                            <option  value="1">通过</option>
+                            <option  value="0">拒绝</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <button class="btn btn-info" type="submit">确定</button>
+                    </div>
+                </form>
+
             </div>
         </div>
 
@@ -273,7 +279,7 @@
 		<div class="btn-group position-fixed">
 			<button type="button" class="btn btn-default btn-sm">预览<span class="glyphicon glyphicon-triangle-right" style="color:#dddddd;"></span></button>
 			<button type="button" class="btn btn-info btn-sm">发送</button>
-			<a href="businessProcess.html" class="btn btn-default btn-sm">取消</a>
+			<a href="businessProcess.jsp" class="btn btn-default btn-sm">取消</a>
 		</div>
 		<div class="container">
 			<div class="row">

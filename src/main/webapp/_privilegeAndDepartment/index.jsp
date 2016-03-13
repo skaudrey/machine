@@ -47,30 +47,30 @@
 
 <section id="page">
 	<div id="sidebar" class="sidebar">
-		<div class="sidebar-menu nav-collapse">
-			<div class="divide-20"></div>
-			<ul>
-				<li class="" id="deptMnmt">
-					<a href="#">
-						<i class="fa fa-users"></i><span class="menu-text" >部门管理</span>
-						<span class="arrow" id="toggleDeptTree"></span>
-					</a>
+		<%--<div class="sidebar-menu nav-collapse">--%>
+			<%--<div class="divide-20"></div>--%>
+			<%--<ul>--%>
+				<%--<li class="" id="deptMnmt">--%>
+					<%--<a href="#">--%>
+						<%--<i class="fa fa-users"></i><span class="menu-text" >部门管理</span>--%>
+						<%--<span class="arrow" id="toggleDeptTree"></span>--%>
+					<%--</a>--%>
 
-				</li>
-				<li>
-					<div>
-						<ul id="treeDemo" class="ztree" style="display:none">
-						</ul>
-					</div>
-				</li>
-				<li id="actionMnmt">
-					<a href="#">
-						<i class="fa fa-users"></i><span class="menu-text">权限管理</span>
+				<%--</li>--%>
+				<%--<li>--%>
+					<%--<div>--%>
+						<%--<ul id="treeDemo" class="ztree" style="display:none">--%>
+						<%--</ul>--%>
+					<%--</div>--%>
+				<%--</li>--%>
+				<%--<li id="actionMnmt">--%>
+					<%--<a href="#">--%>
+						<%--<i class="fa fa-users"></i><span class="menu-text">权限管理</span>--%>
 
-					</a>
-				</li>
-			</ul>
-		</div>
+					<%--</a>--%>
+				<%--</li>--%>
+			<%--</ul>--%>
+		<%--</div>--%>
 	</div>
 	<!--导入modal-->
 	<div class="modal fade" id="inputModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -109,7 +109,7 @@
 		</div>
 	</div>
 	<!--导出modal--END-->
-	<div id="main-content"  >
+	<div id="main-content" style="margin-left: 0px" >
 		<!--部门管理部分-->
 		<div id="dept-content" style="display:block">
 			<div class="container">
@@ -453,7 +453,27 @@
 						</div>
 						<!--用户列表modal--end-->
 						<div class="row">
-							<div class="col-md-12 box-container ui-sortable">
+							<div class="col-md-3">
+								<div class="sidebar-menu nav-collapse">
+									<ul style="margin-top: 0px">
+										<li class="" id="deptMnmt">
+											<a href="#">
+												<i class="fa fa-users"></i><span class="menu-text" >部门管理</span>
+												<span class="arrow" id="toggleDeptTree"></span>
+											</a>
+
+										</li>
+										<li>
+											<div>
+												<ul id="treeDemo" class="ztree" style="display:none">
+												</ul>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-9 box-container ui-sortable">
 								<div class="box border blue">
 									<div class="box-title">
 										<h4>

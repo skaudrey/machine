@@ -88,23 +88,27 @@ public class PlaceNameWorkflowService {
             TestPlaceNameApplyEntity placeNameApplyEntity = placeNameApplyDao.get(Integer.parseInt(businessKey));
 
             //把task的相关的值获取出来，填到leaveEntity的临时属性里，方便在前台一次性显示所有属性
-            String what = processInstance.getActivityId();
-            System.out.print(what);
             placeNameApplyEntity.setTaskName(task.getName());
-            placeNameApplyEntity.setFlowName(processInstance.getName());
+            placeNameApplyEntity.setFlowName(processInstance.getProcessDefinitionName());
+            placeNameApplyEntity.setCurrentNode(taskService.createTaskQuery().taskDefinitionKey(processInstance.getActivityId()).list().get(0).getName());
+            placeNameApplyEntity.setAssignee(task.getAssignee());
+            placeNameApplyEntity.setTaskId(task.getId());
             results.add(placeNameApplyEntity);
         }
         return results;
     }
 
+    //获取用户申请流程信息，便于用户追踪流程进度
     public List<TestPlaceNameApplyEntity> findApplyResultByUid(String userId){
         List<TestPlaceNameApplyEntity> list = getPlaceNameApplyListByUid(userId);
         for (TestPlaceNameApplyEntity t : list){
             //ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(t.getId()+"").singleResult();
-            ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceId(t.getPiid()).singleResult();
-            t.setFlowName(instance.getName());
+            ProcessInstance processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(t.getPiid()).singleResult();
+            t.setFlowName(processInstance.getProcessDefinitionName());
+            t.setCurrentNode(taskService.createTaskQuery().taskDefinitionKey(processInstance.getActivityId()).list().get(0).getName());
+            t.setPdid(processInstance.getProcessDefinitionId());
         }
-        return null;
+        return list;
     }
 
 

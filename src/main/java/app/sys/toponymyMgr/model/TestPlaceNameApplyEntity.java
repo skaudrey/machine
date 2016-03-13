@@ -121,7 +121,9 @@ public class TestPlaceNameApplyEntity {
     private String flowName; //流程名称
     private String currentNode;//当前节点
     private String taskName;//任务名称
-
+    private String assignee;//任务所属人
+    private String taskId;//任务Id
+    private String pdid;//流程定义Id
 
     @Transient
     public String getFlowName() {
@@ -148,5 +150,31 @@ public class TestPlaceNameApplyEntity {
 
     public void setTaskName(String taskName) {
         this.taskName = taskName;
+    }
+
+    @Transient
+    public String getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
+    }
+    @Transient
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    @Transient
+    public String getPdid() {
+        return pdid;
+    }
+
+    public void setPdid(String pdid) {
+        this.pdid = pdid;
     }
 }

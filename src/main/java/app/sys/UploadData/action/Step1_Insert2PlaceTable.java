@@ -35,7 +35,7 @@ public class Step1_Insert2PlaceTable extends GenericActionSupport {
         try {
             String encoding = "UTF-8";
             File file = new File(txtFilePath);
-            InputStreamReader read = new InputStreamReader(new FileInputStream(file), encoding);
+            InputStreamReader read = new InputStreamReader(new FileInputStream(file));
             BufferedReader br = new BufferedReader(read);//建立BufferedReader对象，并实例化为br
 
             String s = br.readLine();

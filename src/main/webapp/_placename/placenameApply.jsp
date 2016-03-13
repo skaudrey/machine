@@ -7,10 +7,10 @@
 <html>
 <head>
     <title>地名申请</title>
-  <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-  <script src="../js/jquery/jquery-1.10.2.min.js"></script>
-  <script src="../js/bootstrap/bootstrap.min.js"></script>
-  <link href="../css/mystyle.css" rel="stylesheet">
+  <link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+  <script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+  <link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 
   <style type="text/css">
     .col-md-6{
@@ -254,52 +254,32 @@
         </form>
     </div>
       <div id="Applyed" style="display: none;">
-         <table class="table table-striped table-hover table-bordered table-condensed">
+         <%--<table class="table table-striped table-hover table-bordered table-condensed">--%>
+         <table class="table table-hover table-bordered">
              <thead>
              <tr>
                  <th>项目编号</th>
                  <th>项目名称</th>
-                 <th>项目状态</th>
-                 <th>受理人员</th>
-                 <th>受理时间</th>
+                 <th>当前节点</th>
+                 <th>申请时间</th>
+                 <th>流程追踪</th>
              </tr>
              </thead>
              <tbody>
-             <tr>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-             </tr>
-             <tr>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-             </tr>
-             <tr>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-             </tr>
-             <tr>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-             </tr>
-             <tr>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-                 <td>表格单元格</td>
-             </tr>
+             <s:iterator value="results" id="obj">
+                 <s:url var="flowPicUrl" action="diagram-view.jsp" namespace="/diagram-viewer">
+                     <s:param name="processDefinitionId" value="#obj.pdid"/>
+                     <%--<s:param name="processInstanceId" value="#obj.piid"/>--%>
+                 </s:url>
+                 <tr>
+                     <td><s:property value="#obj.piid"/></td>
+                     <td><s:property value="#obj.flowName"/></td>
+                     <td><span class="label label-primary"><s:property value="#obj.currentNode"/></span></td>
+                     <td><s:date name="#obj.applyTime" format="yyyy-MM-dd HH:mm"/></td>
+                     <td><a href="/diagram-viewer/diagram-view.jsp?processDefinitionId=<s:property value='#obj.pdid'/>&processInstanceId=<s:property value='#obj.piid'/>"><span class="label label-primary">查看</span></a> </td>
+                 </tr>
+             </s:iterator>
+
              </tbody>
          </table>
      </div>

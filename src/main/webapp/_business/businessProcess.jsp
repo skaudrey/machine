@@ -11,11 +11,11 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-业务办理</title>
 	<!-- Bootstrap -->
-	<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="../js/bootstrap/bootstrap.min.js"></script>
-	<link href="../css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -100,17 +100,29 @@
 				</thead>
 				<tbody>
 				<s:iterator value="results" id="obj">
+					<s:url var="claimUrl" action="toponymyMgrAction!claimTask" namespace="/toponymy">
+						<s:param name="taskId" value="#obj.taskId"/>
+					</s:url>
+					<s:url var="getTaskViewUrl" action="toponymyMgrAction!showTaskView" namespace="/toponymy">
+						<s:param name="taskId" value="#obj.taskId"/>
+					</s:url>
 					<tr>
 						<td><s:property value="#obj.piid"/></td>
-						<td><s:property value="#obj.piid"/></td>
+						<td><s:property value="#obj.flowName"/></td>
 						<td><s:property value="#obj.userName"/></td>
 						<td><s:date name="#obj.applyTime" format="yyyy-MM-dd HH:mm"/></td>
 						<td><s:property value="#obj.placeName"/></td>
 						<td>
-							<a href="#" data-toggle="modal">附件</a> |
+							<%--<a href="#" data-toggle="modal">附件</a> |
 							<a href="/_business/businessAccepted.jsp" >受理</a> |
 							<a href="#" data-toggle="modal">更名</a> |
-							<a href="#" data-toggle="modal">删除</a>
+							<a href="#" data-toggle="modal">删除</a>--%>
+							<s:if test="#obj.assignee==#session.userID"> <%--如果任务的owner 等于 登录的用户的Id，说明用户已经签收了这个任务，显示办理按钮--%>
+								<s:a href="%{getTaskViewUrl}" cssClass="btn btn-primary">办理</s:a>
+							</s:if>
+							<s:else>
+								<s:a href="%{claimUrl}" cssClass="btn btn-primary">签收</s:a>
+							</s:else>
 						</td>
 					</tr>
 				</s:iterator>
