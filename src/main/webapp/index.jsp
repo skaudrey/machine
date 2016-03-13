@@ -84,7 +84,7 @@
 				type: "post",
 				success: function(data) {
 					if(data == "1"){
-						window.location.href="main.jsp";
+						window.location.href="/main.jsp";
 					} else if (data == "0"){
 						alert("用户名或密码错误");
 					} else {

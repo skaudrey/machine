@@ -54,7 +54,7 @@ public class ToponymyApplyAction extends GenericActionSupport implements ModelDr
         String userName = mSessionMap.get(Constant.USER_NAME).toString();
         Map<String,Object> variables = new HashMap<String, Object>(); //这个叫作流程变量，存在于整个流程过程中，你可以把一些东西丢进去，需要的时候用API取出来
         ProcessInstance processInstance = placeNameWorkflowService.startWorkflow(testPlaceNameApplyEntity, userId, userName, variables);
-        return SUCCESS;
+        return getUserApplyFlows();
     }
 
     //查看待办任务
