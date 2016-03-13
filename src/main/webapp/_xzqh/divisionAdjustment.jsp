@@ -11,11 +11,11 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-行政区划调整</title>
 	<!-- Bootstrap -->
-	<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="/js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="/js/bootstrap/bootstrap.min.js"></script>
-	<link href="/css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -82,7 +82,7 @@
 </form>
 <!--左上角button组-->
 <div class="btn-group pull-left btn-pull-left1">
-	<button type="button" class="btn btn-info btn-sm" style="width: auto;" onclick="window.location.href='divisionEstablishment.html'">行政区划设立</button>
+	<button type="button" class="btn btn-info btn-sm" style="width: auto;" onclick="window.location.href='/_xzqh/divisionEstablishment.jsp'">行政区划设立</button>
 	<button type="button" class="btn btn-default btn-sm">导入</button>
 	<button type="button" class="btn btn-default btn-sm">导出</button>
 </div>

@@ -11,11 +11,11 @@
 	<meta charset="UTF-8">
 	<title>民政地理空间信息服务平台-地名导出</title>
 	<!-- Bootstrap -->
-	<link href="../css/bootstrap/bootstrap.css" rel="stylesheet">
-	<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<script src="../js/jquery/jquery-1.10.2.min.js"></script>
-	<script src="../js/bootstrap/bootstrap.min.js"></script>
-	<link href="../css/mystyle.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.css" rel="stylesheet">
+	<link href="<%=basepath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+	<script src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
+	<link href="<%=basepath%>/css/mystyle.css" rel="stylesheet">
 </head>
 
 <body>
@@ -105,8 +105,8 @@
 			<td></td>
 			<td>
 				<a href="#" data-toggle="modal">附件</a> |
-				<a href="#" data-toggle="modal">地图</a> |
-				<a href="#" data-toggle="modal">查看</a>
+				<a href="/_tianditu/tianditu.jsp" data-toggle="modal">地图</a> |
+				<a href="/_placename/placesnameEntering.jsp" data-toggle="modal">查看</a>
 			</td>
 		</tr>
 		</tbody>

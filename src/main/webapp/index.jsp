@@ -1,14 +1,18 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+	String path = request.getContextPath();
+	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>地名志编辑系统</title>
-	<script type="text/javascript" src="js/jquery/jquery-2.0.3.min.js"></script>
-	<link rel="stylesheet" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script type="text/javascript" src="<%=basepath%>js/jquery/jquery-2.0.3.min.js"></script>
+	<link rel="stylesheet" href="<%=basepath%>css/bootstrap.min.css" />
+	<link rel="stylesheet" href="<%=basepath%>css/index.css" />
+	<link rel="stylesheet" href="<%=basepath%>css/font-awesome.min.css">
 	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 <body class="loginbody">

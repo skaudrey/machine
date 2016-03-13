@@ -1,13 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
   String path = request.getContextPath();
-  String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+  String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <base href="<%=basePath%>">
+  <base href="<%=basepath%>">
 
   <title>界桩登记</title>
 
@@ -19,10 +19,10 @@
   <!--
   <link rel="stylesheet" type="text/css" href="styles.css">
    -->
-  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/boundary/mystyle.css">
-    <script type="text/javascript" src="/js/jquery/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="<%=basepath%>/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="<%=basepath%>/css/boundary/mystyle.css">
+    <script type="text/javascript" src="<%=basepath%>/js/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="<%=basepath%>/js/bootstrap/bootstrap.min.js"></script>
 
 </head>
 
