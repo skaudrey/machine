@@ -10,7 +10,6 @@
 <head>
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="<%=basepath%>css/tianditu/ol.css" type="text/css">
-
 	<script src="<%=basepath%>js/jquery/jquery-1.10.2.min.js"></script>
 	<script src="<%=basepath%>js/bootstrap.min.js"></script>
 	<link href="<%=basepath%>css/tianditu/bootstrap.css" rel="stylesheet" />
@@ -225,6 +224,9 @@
 				<iframe onload="setSvgWidth()"  id="srcIframe" src="../svg.html" style="width:100%;height: 70%"></iframe>
 			</div>
 			<div class="modal-footer">
+				<button type="button" class="btn btn-success" onclick="openSvg()"
+						data-dismiss="modal">在新页面中打开
+				</button>
 				<button type="button" class="btn btn-default"
 						data-dismiss="modal">关闭
 				</button>

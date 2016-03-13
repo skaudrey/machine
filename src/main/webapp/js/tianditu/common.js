@@ -186,3 +186,7 @@ function showModal()
 	//$("#srcIframe").contents().find("#svgImg").css("max-width","600px").css("max-height","600px");
 //	alert($("#srcIframe").contents().find("#svgImg").css("width"));
 }
+function openSvg()
+{
+	window.open("/svg.jsp");
+}
