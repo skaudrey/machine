@@ -98,14 +98,17 @@ public class PlaceNameWorkflowService {
         return results;
     }
 
+    //获取用户申请流程信息，便于用户追踪流程进度
     public List<TestPlaceNameApplyEntity> findApplyResultByUid(String userId){
         List<TestPlaceNameApplyEntity> list = getPlaceNameApplyListByUid(userId);
         for (TestPlaceNameApplyEntity t : list){
             //ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceBusinessKey(t.getId()+"").singleResult();
-            ProcessInstance instance = runtimeService.createProcessInstanceQuery().processInstanceId(t.getPiid()).singleResult();
-            t.setFlowName(instance.getName());
+            ProcessInstance processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(t.getPiid()).singleResult();
+            t.setFlowName(processInstance.getProcessDefinitionName());
+            t.setCurrentNode(taskService.createTaskQuery().taskDefinitionKey(processInstance.getActivityId()).list().get(0).getName());
+            t.setPdid(processInstance.getProcessDefinitionId());
         }
-        return null;
+        return list;
     }
 
 

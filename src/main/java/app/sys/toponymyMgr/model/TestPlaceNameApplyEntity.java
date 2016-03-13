@@ -123,6 +123,7 @@ public class TestPlaceNameApplyEntity {
     private String taskName;//任务名称
     private String assignee;//任务所属人
     private String taskId;//任务Id
+    private String pdid;//流程定义Id
 
     @Transient
     public String getFlowName() {
@@ -155,6 +156,7 @@ public class TestPlaceNameApplyEntity {
     public String getAssignee() {
         return assignee;
     }
+
     public void setAssignee(String assignee) {
         this.assignee = assignee;
     }
@@ -165,5 +167,14 @@ public class TestPlaceNameApplyEntity {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
+    }
+
+    @Transient
+    public String getPdid() {
+        return pdid;
+    }
+
+    public void setPdid(String pdid) {
+        this.pdid = pdid;
     }
 }

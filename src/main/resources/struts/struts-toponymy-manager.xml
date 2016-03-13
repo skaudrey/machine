@@ -9,11 +9,12 @@
                 <action name="toponymyMgrAction"  class="app.sys.toponymyMgr.action.ToponymyApplyAction">
                         <result name="success">/_placename/placenameApply.jsp</result>
                         <result name="task_show">/_business/businessProcess.jsp</result>
-                        <result name="task-deptLeaderVerify">/test/taskHandlePage/task-deptLeaderVerify.jsp</result>
+                        <result name="task-countyLeaderVerify">/_business/businessAccepted.jsp</result>
                         <result name="task-hrVerify">/test/taskHandlePage/task-hrVerify.jsp</result>
                         <result name="task-modifyApply">/test/taskHandlePage/task-modifyApply.jsp</result>
                         <result name="task-reportBack">/test/taskHandlePage/task-reportBack.jsp</result>
                         <result name="claimed" type="redirect">toponymyMgrAction!getTaskList</result>
+                        <result name="userApplyList">/_placename/placenameApply.jsp</result>
                 </action>
         </package>
 </struts>

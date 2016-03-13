@@ -28,10 +28,12 @@ import java.util.Map;
 @Component
 public class ToponymyApplyAction extends GenericActionSupport implements ModelDriven<TestPlaceNameApplyEntity> {
     private TestPlaceNameApplyEntity testPlaceNameApplyEntity;
+
     private List<TestPlaceNameApplyEntity> results;
 
     @Autowired
     private RepositoryService repositoryService; //Activiti 的服务
+
     @Autowired
     private TaskService taskService; //Activiti 的服务
     @Autowired
@@ -77,9 +79,9 @@ public class ToponymyApplyAction extends GenericActionSupport implements ModelDr
         Task task = taskService.createTaskQuery().taskId(taskId).singleResult(); //跟uniqueResult()是同一个意思
         ProcessInstance processInstance = runtimeService.createProcessInstanceQuery()
                 .processInstanceId(task.getProcessInstanceId()).singleResult();
-        int leaveId = Integer.parseInt(processInstance.getBusinessKey());
-        //testPlaceNameApplyEntity = placeNameWorkflowService.getLeaveEntityById(leaveId);
-       // testLeaveEntity.setTaskId(taskId);//不要忘记把taskId设置回去，在前台的时候还要用来放在<input hidden 里面暂时存着，方便后面屎用。
+        int placeNameApplyId = Integer.parseInt(processInstance.getBusinessKey());
+        testPlaceNameApplyEntity = placeNameWorkflowService.getPlaceNameApplyEntityById(placeNameApplyId);
+        testPlaceNameApplyEntity.setTaskId(taskId);//不要忘记把taskId设置回去，在前台的时候还要用来放在<input hidden 里面暂时存着，方便后面屎用。
         return "task-" + task.getTaskDefinitionKey(); // taskId 和 taskDefinitionId 是不一样的, 例如， taskid=30021,是这个任务在数据库表里的主键
                                                       // taskDefinitonId=“deptLeaderVerify”,是写在Bpmn里面，在定时userTask的时候，设置的一个Id
     }
@@ -112,8 +114,14 @@ public class ToponymyApplyAction extends GenericActionSupport implements ModelDr
             }
 
         }
-        placeNameWorkflowService.complete(mServletRequest.getParameter("taskId"),variables);
+        placeNameWorkflowService.complete(mServletRequest.getParameter("taskId"), variables);
         return SUCCESS;
+    }
+
+    //获取用户的申请流程信息
+    public String getUserApplyFlows(){
+        results = placeNameWorkflowService.findApplyResultByUid(mSessionMap.get(Constant.USER_ID).toString());
+        return "userApplyList";
     }
 
     //手动部署（写着玩，一般都是在spring里面配置好，让spring自动部署所有流程文件，或者是上传流程文件进行部署）
@@ -185,12 +193,20 @@ public class ToponymyApplyAction extends GenericActionSupport implements ModelDr
         return testPlaceNameApplyEntity;
     }
 
-
     public List<TestPlaceNameApplyEntity> getResults() {
         return results;
     }
 
+
     public void setResults(List<TestPlaceNameApplyEntity> results) {
         this.results = results;
+    }
+
+    public TestPlaceNameApplyEntity getTestPlaceNameApplyEntity() {
+        return testPlaceNameApplyEntity;
+    }
+
+    public void setTestPlaceNameApplyEntity(TestPlaceNameApplyEntity testPlaceNameApplyEntity) {
+        this.testPlaceNameApplyEntity = testPlaceNameApplyEntity;
     }
 }
