@@ -183,6 +183,6 @@ function exportImg()
 function showModal()
 {
 	$("#houseModal").modal('show');
-	$("#srcIframe").contents().find("#svgImg").css("max-width","600px").css("max-height","600px");
+	//$("#srcIframe").contents().find("#svgImg").css("max-width","600px").css("max-height","600px");
 //	alert($("#srcIframe").contents().find("#svgImg").css("width"));
 }

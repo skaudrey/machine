@@ -10,10 +10,17 @@
 	<script src="<%=basepath%>js/jquery-1.8.3.min.js"></script>
 	<script src="<%=basepath%>js/loadsvg.js"></script>
 	<link rel="stylesheet" href="<%=basepath%>css/svg.css"/>
+	<style>
+		#svgImg
+		{
+			max-width:1200px;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	</style>
 </head>
 <body>
-<style>
-</style>
+
 </body>
 <script>
 	$(document).ready(function(){
